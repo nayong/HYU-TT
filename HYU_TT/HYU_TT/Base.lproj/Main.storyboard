@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yit-l6-Lno">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yit-l6-Lno">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -289,6 +289,7 @@
                 <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yit-l6-Lno" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gGh-ja-EoA">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
@@ -306,6 +307,10 @@
         <scene sceneID="3QZ-Yh-cxs">
             <objects>
                 <viewController id="mO8-9c-h8n" customClass="SubjectFirstViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="jsy-rV-CBi"/>
+                        <viewControllerLayoutGuide type="bottom" id="xfd-bq-Hh3"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="MmH-gM-B2U">
                         <rect key="frame" x="0.0" y="0.0" width="340" height="160"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -467,6 +472,10 @@
         <scene sceneID="dkc-vN-ixh">
             <objects>
                 <viewController id="7dL-gd-udJ" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Ia-f9-cFg"/>
+                        <viewControllerLayoutGuide type="bottom" id="k8l-Co-DvB"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="z0a-Os-snD">
                         <rect key="frame" x="0.0" y="0.0" width="340" height="190"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

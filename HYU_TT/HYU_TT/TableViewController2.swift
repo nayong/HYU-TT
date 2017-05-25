@@ -53,7 +53,8 @@ class TimeTableViewController2: UICollectionViewController {
         
         return cell
     }
-    
+  
+  
     /*
      // MARK: - Navigation
      
