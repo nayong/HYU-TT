@@ -34,7 +34,6 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         isInit = true
         parsingXMLData()
         isInit = false
