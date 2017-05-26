@@ -106,7 +106,7 @@ class TributeTableViewCell:UITableViewCell {
   
     @IBOutlet weak var check: UIButton!
     
-    var tributeForCell:Tribute? { didSet{
+    /*var tributeForCell:Tribute? { didSet{
         setUpCell()
         }}
     
@@ -120,7 +120,7 @@ class TributeTableViewCell:UITableViewCell {
         nameLabel.text = tribute.name
         quoteLabel.text = tribute.quote
         timeLabel.text = tribute.time
-    }
+    }*/
     
 }
 

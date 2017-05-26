@@ -19,7 +19,6 @@
 		B6E63CD81ECB7E7600A94CEF /* HYU_TTTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CD71ECB7E7600A94CEF /* HYU_TTTests.swift */; };
 		B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */; };
 		B6E63CE51ECBFAF300A94CEF /* SubjectFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */; };
-		B6E63CE71ECCC3C900A94CEF /* TimeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE61ECCC3C900A94CEF /* TimeTableViewController.swift */; };
 		B6E63CEA1ECCCDC400A94CEF /* nayong.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E63CE91ECCCDC400A94CEF /* nayong.strings */; };
 		CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
 		CB6968231ED6CFD5007202D2 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
@@ -59,7 +58,6 @@
 		B6E63CD91ECB7E7600A94CEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectFirstViewController.swift; sourceTree = "<group>"; };
-		B6E63CE61ECCC3C900A94CEF /* TimeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeTableViewController.swift; sourceTree = "<group>"; };
 		B6E63CE91ECCCDC400A94CEF /* nayong.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = nayong.strings; sourceTree = "<group>"; };
 		CB69681F1ED6CB1F007202D2 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		CB6968211ED6CFD5007202D2 /* liberal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = liberal.xml; sourceTree = "<group>"; };
@@ -128,7 +126,6 @@
 				B6E63CCE1ECB7E7600A94CEF /* Info.plist */,
 				B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */,
 				B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */,
-				B6E63CE61ECCC3C900A94CEF /* TimeTableViewController.swift */,
 				CB69681F1ED6CB1F007202D2 /* DataSource.swift */,
 				CB6968211ED6CFD5007202D2 /* liberal.xml */,
 				CB6968221ED6CFD5007202D2 /* major.xml */,
@@ -379,7 +376,6 @@
 				6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */,
 				B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */,
 				CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */,
-				B6E63CE71ECCC3C900A94CEF /* TimeTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
