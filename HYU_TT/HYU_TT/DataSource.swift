@@ -37,6 +37,7 @@ struct Subject {
 
 struct MySubjects {
     static var subjects:[Subject] = []
+    static var isChanged:Bool = false
 }
 
 struct Category {

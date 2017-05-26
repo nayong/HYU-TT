@@ -39,6 +39,7 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         parsingXMLData()
         isInit = false
         collegeChanged(collegeName: category.college[0])
+        MySubjects.isChanged = true
         
         self.majorPicker.delegate = self
         self.majorPicker.dataSource = self
@@ -96,6 +97,7 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         case 2: gradeChanged(grade: category.grade[row])
         default: return
         }
+        MySubjects.isChanged = true
         self.majorPicker.delegate = self
         self.majorPicker.dataSource = self
     }
