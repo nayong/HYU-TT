@@ -1,0 +1,6 @@
+framework module Pods_HYU_TT {
+  umbrella header "Pods-HYU_TT-umbrella.h"
+
+  export *
+  module * { export * }
+}
