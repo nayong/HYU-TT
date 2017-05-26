@@ -93,6 +93,7 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         case 1: majorChanged(majorName: category.major[row])
             self.majorPicker.selectRow(0, inComponent: 2, animated: true)
         case 2: gradeChanged(grade: category.grade[row])
+            
         default: return
         }
         self.majorPicker.delegate = self
@@ -145,7 +146,6 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         parsingXMLData()
         gradeChanged = false
         MySubjects.isChanged = true
-
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {

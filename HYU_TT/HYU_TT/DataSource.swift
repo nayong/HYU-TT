@@ -38,6 +38,11 @@ struct Subject {
 struct MySubjects {
     static var subjects:[Subject] = []
     static var isChanged:Bool = false
+    static let number = 1
+}
+
+struct choosenSub {
+    static var subjects:[Subject] = []
 }
 
 struct Category {
