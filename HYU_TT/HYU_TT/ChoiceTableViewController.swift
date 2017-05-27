@@ -19,7 +19,10 @@ class ChoiceTableViewController: UITableViewController {
         //refresher.attributedTitle = NSAttributedString(string: "모르겠어")
         
         _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (Timer) in
-            self.tableView.reloadData()
+            if MySubjects.isChanged == true {
+                self.tableView.reloadData()
+                MySubjects.isChanged = false
+            }
         })
         
             /*refresher.addTarget(self, action: #selector(ChoiceTableViewController.refresh), for: UIControlEvents.valueChanged)
