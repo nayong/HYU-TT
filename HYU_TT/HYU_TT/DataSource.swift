@@ -40,6 +40,10 @@ struct MySubjects {
     static var isChanged:Bool = false
 }
 
+struct ChoosenSub {
+    static var subjects:[Subject] = []
+}
+
 struct Category {
   var college:[String] = []
   var major:[String] = []

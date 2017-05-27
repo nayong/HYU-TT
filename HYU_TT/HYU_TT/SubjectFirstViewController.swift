@@ -31,6 +31,7 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
     var majorChanged:Bool = false
     var gradeChanged:Bool = false
     
+    //var refresher:UIRefreshControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,6 +43,12 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         self.majorPicker.delegate = self
         self.majorPicker.dataSource = self
 
+        /*refresher = UIRefreshControl()
+        refresher.attributedTitle = NSAttributedString(string: "모르겠어")
+        refresher.addTarget(ChoiceTableViewController.self, action: #selector(ChoiceTableViewController.refresh), for: UIControlEvents.valueChanged)*/
+        
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -90,9 +97,13 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
             collegeChanged(collegeName: category.college[row])
             self.majorPicker.selectRow(0, inComponent: 1, animated: true)
             self.majorPicker.selectRow(0, inComponent: 2, animated: true)
+            
         case 1: majorChanged(majorName: category.major[row])
             self.majorPicker.selectRow(0, inComponent: 2, animated: true)
+            
         case 2: gradeChanged(grade: category.grade[row])
+            
+            
         default: return
         }
         self.majorPicker.delegate = self
