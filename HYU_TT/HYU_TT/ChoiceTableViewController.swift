@@ -18,9 +18,15 @@ class ChoiceTableViewController: UITableViewController {
         //refresher = UIRefreshControl()
         //refresher.attributedTitle = NSAttributedString(string: "모르겠어")
         
-        _ = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true, block: { (Timer) in
-            self.tableView.reloadData()
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: { (Timer) in
+            if MySubjects.isChanged == true {
+                self.tableView.reloadData()
+                print("refresh")
+                MySubjects.isChanged = false
+            }
         })
+            
         
             /*refresher.addTarget(self, action: #selector(ChoiceTableViewController.refresh), for: UIControlEvents.valueChanged)
             tableView.addSubview(refresher)*/
@@ -93,13 +99,7 @@ class ChoiceTableViewController: UITableViewController {
             ChoosenSub.subjects.append(thisSub)
         }
         
-        /*
-        if index != nil {
-            ChoosenSub.subjects.remove(at: index!)
-            
-        } else {
-            ChoosenSub.subjects.append(thisSub)
-        }*/
+        self.tableView.reloadData()
         
         for sub in ChoosenSub.subjects {
             print(sub.nameOfLecture)
