@@ -243,7 +243,6 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="asf" destination="AnR-sT-zrj" id="oVH-wZ-AFv"/>
                                     <outlet property="check" destination="Bep-bp-q5v" id="9vD-nJ-Zbb"/>
                                     <outlet property="subjectName" destination="AnR-sT-zrj" id="p3u-5L-Vym"/>
                                 </connections>
