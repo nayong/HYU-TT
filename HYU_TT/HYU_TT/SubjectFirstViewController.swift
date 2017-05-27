@@ -125,8 +125,6 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         parsingXMLData()
         collegeChanged = false
         majorChanged(majorName: category.major[0])
-        
-        
     }
     
     func majorChanged(majorName:String) {
@@ -145,7 +143,6 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         parsingXMLData()
         gradeChanged = false
         MySubjects.isChanged = true
-
     }
     
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
