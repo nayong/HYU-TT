@@ -202,7 +202,7 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
                 tempSubject.place = string
             case "Professor":
                 
-                tempSubject.professor = string
+                tempSubject.professor = string.components(separatedBy: ",")
                 tempSubject.grade = string
                 MySubjects.subjects.append(tempSubject)
                 tempSubject = Subject()

@@ -20,7 +20,7 @@ struct Subject {
   var theoryOrPractice:String
   var time:[String]
   var place:String
-  var professor:String
+  var professor:[String]
   init() {
     grade = ""
     kindOfComplete = ""
@@ -31,7 +31,7 @@ struct Subject {
     theoryOrPractice = ""
     time = []
     place = ""
-    professor = ""
+    professor = []
   }
 }
 
