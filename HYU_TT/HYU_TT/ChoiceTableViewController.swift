@@ -18,12 +18,15 @@ class ChoiceTableViewController: UITableViewController {
         //refresher = UIRefreshControl()
         //refresher.attributedTitle = NSAttributedString(string: "모르겠어")
         
-        _ = Timer.scheduledTimer(withTimeInterval: 1, repeats: true, block: { (Timer) in
+        
+        _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: { (Timer) in
             if MySubjects.isChanged == true {
                 self.tableView.reloadData()
+                print("refresh")
                 MySubjects.isChanged = false
             }
         })
+            
         
             /*refresher.addTarget(self, action: #selector(ChoiceTableViewController.refresh), for: UIControlEvents.valueChanged)
             tableView.addSubview(refresher)*/
@@ -60,8 +63,18 @@ class ChoiceTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! TributeTableViewCell
+        let thisSub = MySubjects.subjects[indexPath.row]
         
-        cell.subjectName.text = MySubjects.subjects[indexPath.row].nameOfLecture
+        if ChoosenSub.subjects.index(where: { (subject:Subject) -> Bool in
+            subject.numberOfLecture == thisSub.numberOfLecture
+        }) != nil
+        {
+            cell.subjectName.textColor = UIColor.blue
+        } else {
+            cell.subjectName.textColor = UIColor.black
+        }
+        
+        cell.subjectName.text = thisSub.nameOfLecture
         
         
         // Configure the cell...
@@ -76,20 +89,21 @@ class ChoiceTableViewController: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! TributeTableViewCell*/
         let thisSub = MySubjects.subjects[indexPath.row]
         
-        let index = ChoosenSub.subjects.index { (subject:Subject) -> Bool in
+        if let index = ChoosenSub.subjects.index(where: { (subject:Subject) -> Bool in
             subject.numberOfLecture == thisSub.numberOfLecture
-        }
-        if index != nil {
-            ChoosenSub.subjects.remove(at: index!)
-            
+            }) {
+            ChoosenSub.subjects.remove(at: index)
         } else {
             ChoosenSub.subjects.append(thisSub)
-            
         }
-        print(ChoosenSub.subjects.count)
+        
+        self.tableView.reloadData()
+        
+        for sub in ChoosenSub.subjects {
+            print(sub.nameOfLecture)
+        }
     }
     /*
     // Override to support conditional editing of the table view.
