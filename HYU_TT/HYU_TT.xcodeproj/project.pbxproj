@@ -19,6 +19,7 @@
 		B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */; };
 		B6E63CE51ECBFAF300A94CEF /* SubjectFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */; };
 		B6E63CEA1ECCCDC400A94CEF /* nayong.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E63CE91ECCCDC400A94CEF /* nayong.strings */; };
+		CB2084C91EDFE3F800C90DDD /* MakeTImeTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */; };
 		CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
 		CB6968231ED6CFD5007202D2 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
 		CB6968241ED6CFD5007202D2 /* major.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968221ED6CFD5007202D2 /* major.xml */; };
@@ -57,6 +58,7 @@
 		B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectFirstViewController.swift; sourceTree = "<group>"; };
 		B6E63CE91ECCCDC400A94CEF /* nayong.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = nayong.strings; sourceTree = "<group>"; };
+		CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeTImeTables.swift; sourceTree = "<group>"; };
 		CB69681F1ED6CB1F007202D2 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		CB6968211ED6CFD5007202D2 /* liberal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = liberal.xml; sourceTree = "<group>"; };
 		CB6968221ED6CFD5007202D2 /* major.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = major.xml; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				CB6968211ED6CFD5007202D2 /* liberal.xml */,
 				CB6968221ED6CFD5007202D2 /* major.xml */,
 				6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */,
+				CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */,
 			);
 			path = HYU_TT;
 			sourceTree = "<group>";
@@ -372,6 +375,7 @@
 				6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */,
 				B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */,
 				CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */,
+				CB2084C91EDFE3F800C90DDD /* MakeTImeTables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -18,7 +18,7 @@ struct Subject {
   var nameOfLecture:String
   var credit:String
   var theoryOrPractice:String
-  var time:String
+  var time:[String]
   var place:String
   var professor:String
   init() {
@@ -29,7 +29,7 @@ struct Subject {
     nameOfLecture = ""
     credit = ""
     theoryOrPractice = ""
-    time = ""
+    time = []
     place = ""
     professor = ""
   }
