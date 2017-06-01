@@ -276,27 +276,27 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6f-Zh-g9V" customClass="BEMCheckBox">
+                            <view tag="1" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i6f-Zh-g9V" customClass="BEMCheckBox">
                                 <rect key="frame" x="75" y="98" width="34" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u58-2k-QG1" customClass="BEMCheckBox">
+                            <view tag="2" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u58-2k-QG1" customClass="BEMCheckBox">
                                 <rect key="frame" x="125" y="98" width="34" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQA-h3-8br" customClass="BEMCheckBox">
+                            <view tag="3" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BQA-h3-8br" customClass="BEMCheckBox">
                                 <rect key="frame" x="175" y="98" width="34" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jZ-fg-Xra" customClass="BEMCheckBox">
+                            <view tag="4" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2jZ-fg-Xra" customClass="BEMCheckBox">
                                 <rect key="frame" x="225" y="98" width="34" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </view>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKy-Ng-5sb" customClass="BEMCheckBox">
+                            <view tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aKy-Ng-5sb" customClass="BEMCheckBox">
                                 <rect key="frame" x="275" y="98" width="34" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -351,7 +351,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="friCheckBox" destination="2jZ-fg-Xra" id="l6s-Pf-uT4"/>
                         <outlet property="liberalPicker" destination="oGq-Dh-VbG" id="dj7-Qw-7f6"/>
+                        <outlet property="mondayCheckBox" destination="YlD-tm-ago" id="cEO-bs-YPJ"/>
+                        <outlet property="satCheckBox" destination="aKy-Ng-5sb" id="m4Y-Vl-nqw"/>
+                        <outlet property="thurCheckBox" destination="BQA-h3-8br" id="4Kj-Fi-mLS"/>
+                        <outlet property="tuesCheckBox" destination="i6f-Zh-g9V" id="gaj-EX-yni"/>
+                        <outlet property="wenCheckBox" destination="u58-2k-QG1" id="lSm-X5-2Ci"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ks5-Nr-prN" userLabel="First Responder" sceneMemberID="firstResponder"/>
