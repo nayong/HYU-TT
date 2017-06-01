@@ -105,10 +105,10 @@ class SubjectSecondViewController: UIViewController, UIPickerViewDelegate, UIPic
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
         //    if (currentElement == "NameOfCollege") { print (1) }
-        if (isInit && currentElement == "NameOfCollege" && category.college.contains(string) == false) {
-            category.college.append(string)
-            return
-        }
+//        if (isInit && currentElement == "NameOfCollege" && category.college.contains(string) == false) {
+//            category.college.append(string)
+//            return
+//        }
 
         
         switch currentElement {
