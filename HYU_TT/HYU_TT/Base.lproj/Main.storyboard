@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1421" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yit-l6-Lno">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="yit-l6-Lno">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -29,7 +29,7 @@
         <!--나의 시간표-->
         <scene sceneID="EAE-jG-EPZ">
             <objects>
-                <viewController id="DSi-iS-Ep3" customClass="CurrriculaViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="DSi-iS-Ep3" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OrO-yK-EA6"/>
                         <viewControllerLayoutGuide type="bottom" id="dFs-hY-RG5"/>
@@ -38,11 +38,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZt-jE-wKF" customClass="CurriculaTable" customModule="CurriculaTable">
+                            <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CZY-a9-ckg">
                                 <rect key="frame" x="0.0" y="64" width="375" height="554"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <connections>
+                                    <segue destination="E9u-BZ-XN2" kind="embed" id="l5D-Nx-Qjt"/>
+                                </connections>
+                            </containerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -225,7 +227,7 @@
                                 <rect key="frame" x="0.0" y="28" width="340" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Vyy-ca-r7K" id="gD2-n1-Wej">
-                                    <rect key="frame" x="0.0" y="0.0" width="340" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="340" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Automata" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AnR-sT-zrj">
@@ -257,7 +259,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prx-G3-CbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096" y="697"/>
+            <point key="canvasLocation" x="976" y="803"/>
         </scene>
         <!--Subject Second View Controller-->
         <scene sceneID="dkc-vN-ixh">
@@ -362,7 +364,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ks5-Nr-prN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1096" y="1005.2473763118442"/>
+            <point key="canvasLocation" x="976" y="530"/>
+        </scene>
+        <!--Curricula View Controller-->
+        <scene sceneID="u7S-LD-5Up">
+            <objects>
+                <viewController id="E9u-BZ-XN2" customClass="CurriculaViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ENJ-U0-ESJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZA1-e1-rE5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fAh-u4-kCq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QZt-jE-wKF" customClass="CurriculaTable" customModule="CurriculaTable">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="554"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="curriculaTable" destination="QZt-jE-wKF" id="CHU-gh-bOq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="udO-Zs-qOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="948" y="-30"/>
         </scene>
     </scenes>
     <resources>

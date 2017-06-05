@@ -26,6 +26,7 @@ extension CurriculaTableController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return (curriculaTable.numberOfPeriods + 1) * 8
+        //nayong : 8 -> 7
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

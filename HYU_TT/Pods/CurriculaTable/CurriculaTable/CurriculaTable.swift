@@ -13,6 +13,7 @@ public class CurriculaTable: UIView {
     private let controller = CurriculaTableController()
     private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     
+    
     public var weekdaySymbolType = CurriculaTableWeekdaySymbolType.short {
         didSet {
             collectionView.reloadData()
@@ -33,6 +34,7 @@ public class CurriculaTable: UIView {
         }
     }
     
+    //CurriculaTableItem
     public var curricula = [CurriculaTableItem]() {
         didSet {
             drawCurricula()
@@ -137,14 +139,17 @@ public class CurriculaTable: UIView {
     }
     
     var averageHeight: CGFloat {
-        return (collectionView.frame.height - heightOfWeekdaySymbols) / CGFloat(numberOfPeriods)
+        //nayong change hieght : height - n
+        return (collectionView.frame.height - heightOfWeekdaySymbols - 100) / CGFloat(numberOfPeriods)
     }
     
     var averageWidth: CGFloat {
         return (collectionView.frame.width - widthOfPeriodSymbols) / 7
+        //nayong : 7 -> 6
     }
     
     public override init(frame: CGRect) {
+        //var newFrame = CGRect.init(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height - 500) //nayong
         super.init(frame: frame)
         initialize()
     }
@@ -157,7 +162,8 @@ public class CurriculaTable: UIView {
     private func initialize() {
         controller.curriculaTable = self
         controller.collectionView = collectionView
-        
+//        controller.collectionView.frame = CGRect.init(x: 0, y: 50, width: collectionView.frame.width, height: collectionView.frame.height)
+        controller.collectionView.isScrollEnabled = false //nayong
         collectionView.dataSource = controller
         collectionView.delegate = controller
         collectionView.backgroundColor = bgColor
@@ -179,11 +185,13 @@ public class CurriculaTable: UIView {
         }
         for (index, curriculum) in curricula.enumerated() {
             let weekdayIndex = (curriculum.weekday.rawValue - firstWeekday.rawValue + 7) % 7
+            //nayong : where to draw the content
             let x = widthOfPeriodSymbols + averageWidth * CGFloat(weekdayIndex) + rectEdgeInsets.left
-            let y = heightOfWeekdaySymbols + averageHeight * CGFloat(curriculum.startPeriod - 1) + rectEdgeInsets.top
+            let y = heightOfWeekdaySymbols + averageHeight * CGFloat(curriculum.startPeriod - 1) + rectEdgeInsets.top + 65 //nayong
             let width = averageWidth - rectEdgeInsets.left - rectEdgeInsets.right
             let height = averageHeight * CGFloat(curriculum.endPeriod - curriculum.startPeriod + 1) - rectEdgeInsets.top - rectEdgeInsets.bottom
             let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
+            //nayong : x , y, w, h
             view.backgroundColor = curriculum.bgColor
             view.layer.cornerRadius = cornerRadius
             view.layer.masksToBounds = true

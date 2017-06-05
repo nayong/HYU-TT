@@ -9,7 +9,7 @@
 /* Begin PBXBuildFile section */
 		4F320B1DDF383C2AE9791094 /* Pods_HYU_TTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */; };
 		6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */; };
-		B6B4D1841ED7F4A6009BA65C /* CurrriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurrriculaViewController.swift */; };
+		B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
 		B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CC21ECB7E7600A94CEF /* AppDelegate.swift */; };
 		B6E63CC51ECB7E7600A94CEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CC41ECB7E7600A94CEF /* ViewController.swift */; };
 		B6E63CC81ECB7E7600A94CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E63CC61ECB7E7600A94CEF /* Main.storyboard */; };
@@ -49,7 +49,7 @@
 		6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewController.swift; sourceTree = "<group>"; };
 		74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYU_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99173DF071FD2AF131E44065 /* Pods-HYU_TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT/Pods-HYU_TT.debug.xcconfig"; sourceTree = "<group>"; };
-		B6B4D1831ED7F4A6009BA65C /* CurrriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrriculaViewController.swift; sourceTree = "<group>"; };
+		B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculaViewController.swift; sourceTree = "<group>"; };
 		B6E63CBF1ECB7E7600A94CEF /* HYU_TT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYU_TT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E63CC21ECB7E7600A94CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E63CC41ECB7E7600A94CEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -137,7 +137,7 @@
 				CB2084D91EE00FE600C90DDD /* CheckMarkHeader.h */,
 				B6E63CC41ECB7E7600A94CEF /* ViewController.swift */,
 				B6E63CC61ECB7E7600A94CEF /* Main.storyboard */,
-				B6B4D1831ED7F4A6009BA65C /* CurrriculaViewController.swift */,
+				B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */,
 				B6E63CC91ECB7E7600A94CEF /* Assets.xcassets */,
 				B6E63CCB1ECB7E7600A94CEF /* LaunchScreen.storyboard */,
 				B6E63CCE1ECB7E7600A94CEF /* Info.plist */,
@@ -405,7 +405,7 @@
 				CB2084D51EE00F0900C90DDD /* BEMAnimationManager.m in Sources */,
 				CB2084D81EE00F0900C90DDD /* BEMPathManager.m in Sources */,
 				B6E63CC51ECB7E7600A94CEF /* ViewController.swift in Sources */,
-				B6B4D1841ED7F4A6009BA65C /* CurrriculaViewController.swift in Sources */,
+				B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */,
 				CB2084D61EE00F0900C90DDD /* BEMCheckBox.m in Sources */,
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
 				6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */,
