@@ -251,11 +251,13 @@
                                             <rect key="frame" x="290" y="9" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="plus (1)"/>
+                                            <connections>
+                                                <action selector="asd:" destination="Vyy-ca-r7K" eventType="touchUpInside" id="mGD-cg-rdg"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="check" destination="Bep-bp-q5v" id="9vD-nJ-Zbb"/>
                                     <outlet property="subjectName" destination="AnR-sT-zrj" id="p3u-5L-Vym"/>
                                 </connections>
                             </tableViewCell>
@@ -410,11 +412,13 @@
                                             <rect key="frame" x="290" y="9" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <state key="normal" image="plus (1)"/>
+                                            <connections>
+                                                <action selector="subClicked:" destination="iSa-H1-RKF" eventType="touchUpInside" id="Esq-Du-E6F"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="check" destination="B4z-OT-rxe" id="ybm-QZ-sZN"/>
                                     <outlet property="subjectName" destination="Czu-Iv-K39" id="anr-vT-kzW"/>
                                 </connections>
                             </tableViewCell>

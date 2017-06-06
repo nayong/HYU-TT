@@ -60,38 +60,40 @@ class ChoiceTableViewController: UITableViewController {
         }
         
         cell.subjectName.text = thisSub.nameOfLecture
+        cell.currentRow = indexPath.row
         
 
         return cell
     }
 
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let thisSub = MySubjects.subjects[indexPath.row]
-        
-        if let index = ChoosenSub.subjects.index(where: { (subject:Subject) -> Bool in
-            subject.numberOfLecture == thisSub.numberOfLecture
-            }) {
-            ChoosenSub.subjects.remove(at: index)
-        } else {
-            ChoosenSub.subjects.append(thisSub)
-        }
-        
-        ChoosenSub.isChanged = true
-        self.tableView.reloadData()
-        
-        for sub in ChoosenSub.subjects {
-            print(sub.nameOfLecture)
-        }
-    }
 
 }
 
 class TributeTableViewCell:UITableViewCell {
     @IBOutlet weak var subjectName: UILabel!
-    @IBOutlet weak var check: UIButton!
     
     var currentRow:Int?
     
+    @IBAction func asd(_ sender: Any) {
+        
+        if let row = currentRow {
+            let thisSub = MySubjects.subjects[row]
+            if let index = ChoosenSub.subjects.index(where: { (subject:Subject) -> Bool in
+                subject.numberOfLecture == thisSub.numberOfLecture
+            }) {
+                ChoosenSub.subjects.remove(at: index)
+            } else {
+                ChoosenSub.subjects.append(thisSub)
+            }
+            
+            MySubjects.isChanged = true
+            ChoosenSub.isChanged = true
+            
+            for sub in ChoosenSub.subjects {
+                print(sub.nameOfLecture)
+            }
+    
+        }
+    }
+    
 }
-

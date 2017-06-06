@@ -45,6 +45,7 @@ class MyChoiceTableViewController: UITableViewController {
         let thisSub = ChoosenSub.subjects[indexPath.row]
         
         cell.subjectName.text = thisSub.nameOfLecture
+        cell.currentRow = indexPath.row
         
         return cell
     }
@@ -54,8 +55,21 @@ class MyChoiceTableViewController: UITableViewController {
 
 class MyChoiceTableViewCell:UITableViewCell {
     @IBOutlet weak var subjectName: UILabel!
-    @IBOutlet weak var check: UIButton!
-    
     var currentRow:Int?
+    
+    @IBAction func subClicked(_ sender: Any) {
+        
+        if let row = currentRow {
+            ChoosenSub.subjects.remove(at: row)
+           
+            MySubjects.isChanged = true
+            ChoosenSub.isChanged = true
+            
+            for sub in ChoosenSub.subjects {
+                print(sub.nameOfLecture)
+            }
+            
+        }
+    }
 }
 
