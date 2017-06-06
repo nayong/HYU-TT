@@ -34,7 +34,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         animator.addBehavior(gravity)
         gravity.magnitude = 4
         
-        var offset:CGFloat = 50
+        let offset:CGFloat = 50
         if let view = addViewController(atOffset: offset, dataForVC: nil){
             views.append(view)
         }
@@ -49,7 +49,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         let frameForView = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let MyChoice = sb.instantiateViewController(withIdentifier: "ChoiceTable") as! ChoiceTableViewController
+        let MyChoice = sb.instantiateViewController(withIdentifier: "MyChoice") as! MyChoiceTableViewController
         
         if let view = MyChoice.view {
             view.frame = frameForView
@@ -123,7 +123,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     func pin (view:UIView) {
-        let viewHasRechedPinLocation = view.frame.origin.y < 500
+        let viewHasRechedPinLocation = view.frame.origin.y < 430
         
         if viewHasRechedPinLocation {
             if !viewPinned {
@@ -133,7 +133,6 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
                 snap = UISnapBehavior(item: view, snapTo : snapPosition)
                 animator.addBehavior(snap)
 
-                // setVisibility
                 setVisibility(view: view, alpha: 0)
                 
                 viewPinned = true
@@ -141,7 +140,6 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         }else{
             if viewPinned {
                 animator.removeBehavior(snap)
-                // setVisibility alpha 1
                 setVisibility(view: view, alpha: 1)
                 viewPinned = false
             }
@@ -155,6 +153,8 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
             }
         }
     }
+    
+   
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

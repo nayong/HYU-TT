@@ -42,6 +42,7 @@ struct MySubjects {
 
 struct ChoosenSub {
     static var subjects:[Subject] = []
+    static var isChanged:Bool = false
 }
 
 struct Category {
