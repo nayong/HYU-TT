@@ -45,6 +45,22 @@ class MyChoiceTableViewController: UITableViewController {
         let thisSub = ChoosenSub.subjects[indexPath.row]
         
         cell.subjectName.text = thisSub.nameOfLecture
+        cell.numberOfLecture.text = thisSub.numberOfLecture
+        
+        cell.professor.append(cell.professor1)
+        cell.professor.append(cell.professor2)
+        cell.professor.append(cell.professor3)
+        cell.time.append(cell.time1)
+        cell.time.append(cell.time2)
+        cell.time.append(cell.time3)
+        
+        for i in 0...(thisSub.time.count - 1) {
+            cell.time[i].text = thisSub.time[i]
+        }
+        for i in 0...(thisSub.professor.count - 1) {
+            cell.professor[i].text = thisSub.professor[i]
+        }
+
         cell.currentRow = indexPath.row
         
         return cell
@@ -55,20 +71,29 @@ class MyChoiceTableViewController: UITableViewController {
 
 class MyChoiceTableViewCell:UITableViewCell {
     @IBOutlet weak var subjectName: UILabel!
+    @IBOutlet weak var numberOfLecture: UILabel!
+    @IBOutlet weak var time1: UILabel!
+    @IBOutlet weak var time2: UILabel!
+    @IBOutlet weak var time3: UILabel!
+    @IBOutlet weak var professor1: UILabel!
+    @IBOutlet weak var professor2: UILabel!
+    @IBOutlet weak var professor3: UILabel!
+
     var currentRow:Int?
     
-    @IBAction func subClicked(_ sender: Any) {
-        
+    var time:[UILabel] = []
+    var professor:[UILabel] = []
+    
+    @IBAction func subsClicked(_ sender: Any) {
         if let row = currentRow {
             ChoosenSub.subjects.remove(at: row)
-           
+            
             MySubjects.isChanged = true
             ChoosenSub.isChanged = true
             
             for sub in ChoosenSub.subjects {
                 print(sub.nameOfLecture)
             }
-            
         }
     }
 }

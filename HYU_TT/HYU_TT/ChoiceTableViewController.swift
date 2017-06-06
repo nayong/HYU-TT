@@ -59,9 +59,25 @@ class ChoiceTableViewController: UITableViewController {
             cell.subjectName.textColor = UIColor.black
         }
         
-        cell.subjectName.text = thisSub.nameOfLecture
-        cell.currentRow = indexPath.row
         
+        cell.subjectName.text = thisSub.nameOfLecture
+        cell.numberOfLecture.text = thisSub.numberOfLecture
+        
+        cell.professor.append(cell.professor1)
+        cell.professor.append(cell.professor2)
+        cell.professor.append(cell.professor3)
+        cell.time.append(cell.time1)
+        cell.time.append(cell.time2)
+        cell.time.append(cell.time3)
+        
+        for i in 0...(thisSub.time.count - 1) {
+            cell.time[i].text = thisSub.time[i]
+        }
+        for i in 0...(thisSub.professor.count - 1) {
+            cell.professor[i].text = thisSub.professor[i]
+        }
+        
+        cell.currentRow = indexPath.row
 
         return cell
     }
@@ -71,8 +87,18 @@ class ChoiceTableViewController: UITableViewController {
 
 class TributeTableViewCell:UITableViewCell {
     @IBOutlet weak var subjectName: UILabel!
-    
+    @IBOutlet weak var numberOfLecture: UILabel!
+    @IBOutlet weak var time1: UILabel!
+    @IBOutlet weak var time2: UILabel!
+    @IBOutlet weak var time3: UILabel!
+    @IBOutlet weak var professor1: UILabel!
+    @IBOutlet weak var professor2: UILabel!
+    @IBOutlet weak var professor3: UILabel!
+
     var currentRow:Int?
+    
+    var time:[UILabel] = []
+    var professor:[UILabel] = []
     
     @IBAction func asd(_ sender: Any) {
         

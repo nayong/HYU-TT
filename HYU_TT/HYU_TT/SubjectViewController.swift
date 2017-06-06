@@ -34,7 +34,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         animator.addBehavior(gravity)
         gravity.magnitude = 4
         
-        let offset:CGFloat = 50
+        let offset:CGFloat = 40
         if let view = addViewController(atOffset: offset, dataForVC: nil){
             views.append(view)
         }
@@ -49,7 +49,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         let frameForView = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let MyChoice = sb.instantiateViewController(withIdentifier: "MyChoice") as! MyChoiceTableViewController
+        let MyChoice = sb.instantiateViewController(withIdentifier: "MyChoiceShow") as! ViewController
         
         if let view = MyChoice.view {
             view.frame = frameForView
@@ -80,7 +80,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
             collision.addBoundary(withIdentifier: 1 as NSCopying, from: boundaryStart, to: boundaryEnd)
             
             //upper boundary
-            boundaryStart = CGPoint(x:0, y:0)
+            boundaryStart = CGPoint(x: 0, y: 0)
             boundaryEnd = CGPoint(x: self.view.bounds.size.width, y: 0)
             collision.addBoundary(withIdentifier: 2 as NSCopying, from: boundaryStart, to: boundaryEnd)
             
@@ -123,12 +123,12 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     
     func pin (view:UIView) {
-        let viewHasRechedPinLocation = view.frame.origin.y < 430
+        let viewHasRechedPinLocation = view.frame.origin.y < 250
         
         if viewHasRechedPinLocation {
             if !viewPinned {
                 var snapPosition = self.view.center
-                snapPosition.y += 370
+                snapPosition.y += 60
                 
                 snap = UISnapBehavior(item: view, snapTo : snapPosition)
                 animator.addBehavior(snap)
