@@ -141,7 +141,7 @@
                                 </connections>
                             </containerView>
                             <containerView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dNi-Y9-FPP">
-                                <rect key="frame" x="15" y="299" width="340" height="311"/>
+                                <rect key="frame" x="15" y="299" width="340" height="274"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <connections>
                                     <segue destination="aRt-0C-RbQ" kind="embed" id="M6L-8y-wsG"/>
@@ -154,6 +154,16 @@
                                     <segue destination="mO8-9c-h8n" kind="embed" id="5zT-8b-3eR"/>
                                 </connections>
                             </containerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WK2-Yw-0jd">
+                                <rect key="frame" x="296" y="128" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="만들기" backgroundImage="plus (1)">
+                                    <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="MakeTT:" destination="G7H-3Z-rK1" eventType="touchUpInside" id="wug-8w-h1Q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -170,7 +180,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="crb-be-JRa">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="yit-l6-Lno" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="Tabbar" automaticallyAdjustsScrollViewInsets="NO" id="yit-l6-Lno" customClass="TabBarController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="gGh-ja-EoA">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
@@ -217,9 +227,9 @@
         <!--Choice Table View Controller-->
         <scene sceneID="kDo-Td-C1I">
             <objects>
-                <tableViewController id="aRt-0C-RbQ" customClass="ChoiceTableViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ChoiceTable" id="aRt-0C-RbQ" customClass="ChoiceTableViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="5mh-jh-aiF">
-                        <rect key="frame" x="0.0" y="0.0" width="340" height="311"/>
+                        <rect key="frame" x="0.0" y="0.0" width="340" height="274"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -260,6 +270,33 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="prx-G3-CbV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="976" y="803"/>
+        </scene>
+        <!--My Choice View Controller-->
+        <scene sceneID="Rtv-ZJ-Gag">
+            <objects>
+                <viewController storyboardIdentifier="MyChoice" id="Py7-aN-lv9" customClass="MyChoiceViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Uhn-da-ykW"/>
+                        <viewControllerLayoutGuide type="bottom" id="l9E-ce-RBa"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="0Vh-D9-9Mm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내가 고른 과목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c35-Cp-kkx">
+                                <rect key="frame" x="16" y="10" width="246" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.97014153770736133" green="0.96489821502725781" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y3h-KW-hKE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1665" y="673"/>
         </scene>
         <!--Subject Second View Controller-->
         <scene sceneID="dkc-vN-ixh">
