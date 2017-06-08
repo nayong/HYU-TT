@@ -8,6 +8,7 @@ target 'HYU_TT' do
   # Pods for HYU_TT
     platform :ios, '10.2'
     pod 'CurriculaTable'
+    pod 'SQLite.swift', '~> 0.11.3'
 
   target 'HYU_TTTests' do
     inherit! :search_paths

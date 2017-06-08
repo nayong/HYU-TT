@@ -20,6 +20,7 @@ class ChoiceTableViewController: UITableViewController {
         Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: { (Timer) in
             if MySubjects.isChanged == true {
                 self.tableView.reloadData()
+                
                 print("refresh")
                 MySubjects.isChanged = false
             }

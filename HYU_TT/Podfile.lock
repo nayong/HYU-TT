@@ -1,12 +1,17 @@
 PODS:
   - CurriculaTable (0.2.0)
+  - SQLite.swift (0.11.3):
+    - SQLite.swift/standard (= 0.11.3)
+  - SQLite.swift/standard (0.11.3)
 
 DEPENDENCIES:
   - CurriculaTable
+  - SQLite.swift (~> 0.11.3)
 
 SPEC CHECKSUMS:
   CurriculaTable: 34897b785d3951a9540a0d43cfd78fd9089eb854
+  SQLite.swift: 99b36c22084427f0abbeb957556ce1528cf10bb3
 
-PODFILE CHECKSUM: b5bc125418191e4b8dba7c8e5d4817ee2fc984a3
+PODFILE CHECKSUM: 781c3e76911183636ec1ea7b5b3041f09d71df02
 
 COCOAPODS: 1.2.1

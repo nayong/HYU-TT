@@ -8,6 +8,24 @@
 
 import Foundation
 
+func MakeTimeTables()->[[Int]] {
+    var graph:[[Int]] = MakeGraph()
+    var temp = ChoosenSub.subjects
+    var R:[Int] = []
+    var P:[Int] = []
+    var X:[Int] = []
+    
+    for i in 0..<graph.count {
+        P.append(i)
+    }
+    var stack:[[Int]] = []
+    var tmp = BronKerbosch(R: R, P: &P , X: X, g: graph, stack: &stack)
+    if (tmp.count != 0 && tmp.count != 1) {
+        stack.append(tmp)
+    }
+    return stack
+}
+
 
 extension String {
     func index(from: Int) -> Index {
@@ -21,7 +39,24 @@ extension String {
     }
 }
 
+func MakeGraph()->[[Int]] {
+    var graph:[[Int]] = []
+    
+    for firstIndex in 0..<ChoosenSub.subjects.count {
+        graph.append([])
+        for secondIndex in 0..<firstIndex {
+            if (IsSubjectIntersect(subject1: ChoosenSub.subjects[firstIndex], subject2: ChoosenSub.subjects[secondIndex]) == false ) {
+                graph[firstIndex].append(secondIndex)
+                graph[secondIndex].append(firstIndex)
+            }
+        }
+    }
+    
+    return graph
+}
+
 func IsSubjectIntersect(subject1:Subject, subject2:Subject)->Bool {
+    if (subject1.number == subject2.number) { return true }
     for time1 in subject1.time {
         for time2 in subject2.time {
             if (time1.substring(with: 0..<1) == time2.substring(with: 0..<1)) {
@@ -40,20 +75,7 @@ func IsSubjectIntersect(subject1:Subject, subject2:Subject)->Bool {
     return false;
 }
 
-func MakeGraph()->[[Int]] {
-    var graph:[[Int]] = []
-    
-    for firstIndex in 0..<ChoosenSub.subjects.count {
-        for secondIndex in 0..<firstIndex {
-            if (IsSubjectIntersect(subject1: ChoosenSub.subjects[firstIndex], subject2: ChoosenSub.subjects[secondIndex])) {
-                graph[firstIndex].append(secondIndex)
-                graph[secondIndex].append(firstIndex)
-            }
-        }
-    }
-    
-    return graph
-}
+
 
 //합집합 구하기
 func UnionSet(A:[Int], B:[Int])->[Int] {
@@ -90,9 +112,7 @@ func SpliceArray(index:Int, howMany:Int, array:[Int])->[Int] {
     return result
 }
 
-func BronKerbosch(R:[Int], P: [Int], X:[Int], g:[[Int]], stack: [[Int]]) -> [Int] {
-    var stack = stack
-    var P = P
+func BronKerbosch(R:[Int], P:inout [Int], X:[Int], g:[[Int]], stack:inout [[Int]]) -> [Int] {
     if (P.count == 0 && X.count == 0) {
         return R
     }
@@ -110,7 +130,7 @@ func BronKerbosch(R:[Int], P: [Int], X:[Int], g:[[Int]], stack: [[Int]]) -> [Int
         R_tmp = UnionSet(A:R, B:tmp);
         P_tmp = IntersectSet(A:P, B:N);
         X_tmp = IntersectSet(A:X, B:N);
-        result = BronKerbosch(R:R_tmp, P:P_tmp, X:X_tmp, g:g, stack:stack);
+        result = BronKerbosch(R:R_tmp, P:&P_tmp, X:X_tmp, g:g, stack:&stack);
         if (result.count != 0 && result.count != 1) {
             
             var indexOfForLoop:Int = 0
@@ -118,8 +138,8 @@ func BronKerbosch(R:[Int], P: [Int], X:[Int], g:[[Int]], stack: [[Int]]) -> [Int
                 if (isBIncludedInA(A: stack[j], B: result)) { break }
                 else if (isBIncludedInA(A: result, B: stack[j])) {
                     stack[j] = result
-                    indexOfForLoop += 1
                 }
+                indexOfForLoop += 1
                 
             }
             if (indexOfForLoop == stack.count) { stack.append(result) }

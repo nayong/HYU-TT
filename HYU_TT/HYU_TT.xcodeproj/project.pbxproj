@@ -30,6 +30,7 @@
 		CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
 		CB6968231ED6CFD5007202D2 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
 		CB6968241ED6CFD5007202D2 /* major.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968221ED6CFD5007202D2 /* major.xml */; };
+		CBFF76D01EE83CC0003F5442 /* Sqlite3Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */; };
 		D2CC9C69DE11850505670996 /* Pods_HYU_TT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40947DC9DD0EB3B72B11D000 /* Pods_HYU_TT.framework */; };
 /* End PBXBuildFile section */
 
@@ -81,6 +82,8 @@
 		CB69681F1ED6CB1F007202D2 /* DataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSource.swift; sourceTree = "<group>"; };
 		CB6968211ED6CFD5007202D2 /* liberal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = liberal.xml; sourceTree = "<group>"; };
 		CB6968221ED6CFD5007202D2 /* major.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = major.xml; sourceTree = "<group>"; };
+		CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sqlite3Class.swift; sourceTree = "<group>"; };
+		CBFF76D11EE83CC7003F5442 /* MakedTable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakedTable.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,10 +154,12 @@
 				CB69681F1ED6CB1F007202D2 /* DataSource.swift */,
 				CB6968211ED6CFD5007202D2 /* liberal.xml */,
 				CB6968221ED6CFD5007202D2 /* major.xml */,
+				CBFF76D11EE83CC7003F5442 /* MakedTable.db */,
 				6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */,
 				CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */,
 				6A4037A91EE671A1003BB6EC /* TabBarController.swift */,
 				6A5D7B0B1EE691A100C392F0 /* MyChoiceTableViewController.swift */,
+				CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */,
 			);
 			path = HYU_TT;
 			sourceTree = "<group>";
@@ -415,6 +420,7 @@
 				B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */,
 				CB2084D61EE00F0900C90DDD /* BEMCheckBox.m in Sources */,
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
+				CBFF76D01EE83CC0003F5442 /* Sqlite3Class.swift in Sources */,
 				6A5D7B0C1EE691A100C392F0 /* MyChoiceTableViewController.swift in Sources */,
 				6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */,
 				B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */,

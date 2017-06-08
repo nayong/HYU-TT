@@ -9,7 +9,6 @@
 import Foundation
 
 
-
 struct Subject {
   var grade:String
   var kindOfComplete:String

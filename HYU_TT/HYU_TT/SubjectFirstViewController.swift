@@ -174,8 +174,9 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         if (currentElement == "NameOfCollege") { passedCollegeName = string }
             
         else if (currentElement == "NameOfMajor") {
-            passedMajorName = string
-            if (collegeChanged && passedCollegeName == selectedCollege && category.major.contains(string) == false) { category.major.append(string) }
+            let tempMajorSplit = string.components(separatedBy: "(")[0]
+            passedMajorName = tempMajorSplit
+            if (collegeChanged && passedCollegeName == selectedCollege && category.major.contains(tempMajorSplit) == false) { category.major.append(tempMajorSplit) }
         }
         else if (currentElement == "Grade") {
             passedGrade = string

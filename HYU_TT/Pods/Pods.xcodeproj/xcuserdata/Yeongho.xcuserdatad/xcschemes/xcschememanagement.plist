@@ -6,18 +6,23 @@
 	<dict>
 		<key>CurriculaTable.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>0</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-HYU_TT.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>1</integer>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>Pods-HYU_TTTests.xcscheme</key>
 		<dict>
-			<key>orderHint</key>
-			<integer>2</integer>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SQLite.swift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -27,7 +32,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7C165415C017F6508D3C115E6ADCFB73</key>
+		<key>3251A70591195389FB4E955A6EA8EC79</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>58D306AEF6F86E187A0D641490E442CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
