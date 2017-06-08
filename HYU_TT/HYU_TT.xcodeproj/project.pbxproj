@@ -12,6 +12,10 @@
 		6A5D7B0C1EE691A100C392F0 /* MyChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D7B0B1EE691A100C392F0 /* MyChoiceTableViewController.swift */; };
 		6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */; };
 		B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
+		B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */; };
+		B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */; };
+		B6D218821EE84F17005DCD7F /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6D218801EE84F17005DCD7F /* MainInterface.storyboard */; };
+		B6D218861EE84F17005DCD7F /* WidgetTest.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = B6D2187A1EE84F17005DCD7F /* WidgetTest.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CC21ECB7E7600A94CEF /* AppDelegate.swift */; };
 		B6E63CC51ECB7E7600A94CEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CC41ECB7E7600A94CEF /* ViewController.swift */; };
 		B6E63CC81ECB7E7600A94CEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B6E63CC61ECB7E7600A94CEF /* Main.storyboard */; };
@@ -35,6 +39,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		B6D218841EE84F17005DCD7F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B6E63CB71ECB7E7600A94CEF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B6D218791EE84F17005DCD7F;
+			remoteInfo = WidgetTest;
+		};
 		B6E63CD41ECB7E7600A94CEF /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = B6E63CB71ECB7E7600A94CEF /* Project object */;
@@ -43,6 +54,20 @@
 			remoteInfo = HYU_TT;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B6D2188A1EE84F17005DCD7F /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				B6D218861EE84F17005DCD7F /* WidgetTest.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		13095219E493AD967886AE2A /* Pods-HYU_TTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TTTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TTTests/Pods-HYU_TTTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -55,6 +80,11 @@
 		74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYU_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		99173DF071FD2AF131E44065 /* Pods-HYU_TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT/Pods-HYU_TT.debug.xcconfig"; sourceTree = "<group>"; };
 		B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculaViewController.swift; sourceTree = "<group>"; };
+		B6D2187A1EE84F17005DCD7F /* WidgetTest.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetTest.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		B6D218811EE84F17005DCD7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		B6D218831EE84F17005DCD7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B6E63CBF1ECB7E7600A94CEF /* HYU_TT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HYU_TT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6E63CC21ECB7E7600A94CEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B6E63CC41ECB7E7600A94CEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +117,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		B6D218771EE84F17005DCD7F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6E63CBC1ECB7E7600A94CEF /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -111,8 +149,19 @@
 			children = (
 				40947DC9DD0EB3B72B11D000 /* Pods_HYU_TT.framework */,
 				74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */,
+				B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6D2187D1EE84F17005DCD7F /* WidgetTest */ = {
+			isa = PBXGroup;
+			children = (
+				B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */,
+				B6D218801EE84F17005DCD7F /* MainInterface.storyboard */,
+				B6D218831EE84F17005DCD7F /* Info.plist */,
+			);
+			path = WidgetTest;
 			sourceTree = "<group>";
 		};
 		B6E63CB61ECB7E7600A94CEF = {
@@ -121,6 +170,7 @@
 				B6E63CE81ECCCD9200A94CEF /* Memo */,
 				B6E63CC11ECB7E7600A94CEF /* HYU_TT */,
 				B6E63CD61ECB7E7600A94CEF /* HYU_TTTests */,
+				B6D2187D1EE84F17005DCD7F /* WidgetTest */,
 				B6E63CC01ECB7E7600A94CEF /* Products */,
 				C307812A516AAB4109FE4AAD /* Pods */,
 				751167964F73893613CCD04D /* Frameworks */,
@@ -132,6 +182,7 @@
 			children = (
 				B6E63CBF1ECB7E7600A94CEF /* HYU_TT.app */,
 				B6E63CD31ECB7E7600A94CEF /* HYU_TTTests.xctest */,
+				B6D2187A1EE84F17005DCD7F /* WidgetTest.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -210,6 +261,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		B6D218791EE84F17005DCD7F /* WidgetTest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B6D218891EE84F17005DCD7F /* Build configuration list for PBXNativeTarget "WidgetTest" */;
+			buildPhases = (
+				B6D218761EE84F17005DCD7F /* Sources */,
+				B6D218771EE84F17005DCD7F /* Frameworks */,
+				B6D218781EE84F17005DCD7F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WidgetTest;
+			productName = WidgetTest;
+			productReference = B6D2187A1EE84F17005DCD7F /* WidgetTest.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		B6E63CBE1ECB7E7600A94CEF /* HYU_TT */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6E63CDC1ECB7E7600A94CEF /* Build configuration list for PBXNativeTarget "HYU_TT" */;
@@ -220,10 +288,12 @@
 				B6E63CBD1ECB7E7600A94CEF /* Resources */,
 				0866BE44A74DDD3D4C65FC38 /* [CP] Embed Pods Frameworks */,
 				F178ABD12AF8C00E9E1145B2 /* [CP] Copy Pods Resources */,
+				B6D2188A1EE84F17005DCD7F /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				B6D218851EE84F17005DCD7F /* PBXTargetDependency */,
 			);
 			name = HYU_TT;
 			productName = HYU_TT;
@@ -261,6 +331,10 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "김나용";
 				TargetAttributes = {
+					B6D218791EE84F17005DCD7F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					B6E63CBE1ECB7E7600A94CEF = {
 						CreatedOnToolsVersion = 8.2.1;
 						ProvisioningStyle = Automatic;
@@ -287,11 +361,20 @@
 			targets = (
 				B6E63CBE1ECB7E7600A94CEF /* HYU_TT */,
 				B6E63CD21ECB7E7600A94CEF /* HYU_TTTests */,
+				B6D218791EE84F17005DCD7F /* WidgetTest */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		B6D218781EE84F17005DCD7F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D218821EE84F17005DCD7F /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6E63CBD1ECB7E7600A94CEF /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -408,6 +491,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		B6D218761EE84F17005DCD7F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		B6E63CBB1ECB7E7600A94CEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -442,6 +533,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		B6D218851EE84F17005DCD7F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B6D218791EE84F17005DCD7F /* WidgetTest */;
+			targetProxy = B6D218841EE84F17005DCD7F /* PBXContainerItemProxy */;
+		};
 		B6E63CD51ECB7E7600A94CEF /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = B6E63CBE1ECB7E7600A94CEF /* HYU_TT */;
@@ -450,6 +546,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		B6D218801EE84F17005DCD7F /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B6D218811EE84F17005DCD7F /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
 		B6E63CC61ECB7E7600A94CEF /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -469,6 +573,30 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		B6D218871EE84F17005DCD7F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WidgetTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SoftwareStudio.HYU-TT.WidgetTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B6D218881EE84F17005DCD7F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = WidgetTest/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "SoftwareStudio.HYU-TT.WidgetTest";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		B6E63CDA1ECB7E7600A94CEF /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -566,6 +694,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 99173DF071FD2AF131E44065 /* Pods-HYU_TT.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HYU_TT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -580,6 +709,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 1502B6A28160B1432EA80EE1 /* Pods-HYU_TT.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = HYU_TT/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -623,6 +753,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		B6D218891EE84F17005DCD7F /* Build configuration list for PBXNativeTarget "WidgetTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6D218871EE84F17005DCD7F /* Debug */,
+				B6D218881EE84F17005DCD7F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		B6E63CBA1ECB7E7600A94CEF /* Build configuration list for PBXProject "HYU_TT" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
