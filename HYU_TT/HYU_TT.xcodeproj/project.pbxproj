@@ -12,7 +12,6 @@
 		6A5D7B0C1EE691A100C392F0 /* MyChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D7B0B1EE691A100C392F0 /* MyChoiceTableViewController.swift */; };
 		6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */; };
 		7E0AE9C840BAAC639CD8DDCF /* Pods_HYU_TT_WidgetTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AFC885E849B2692D000ACE /* Pods_HYU_TT_WidgetTest.framework */; };
-		B20FDD7E8405CBD69F143FF4 /* Pods_WidgetTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E050BF0D2A546B33F3DBE5 /* Pods_WidgetTest.framework */; };
 		B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
 		B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */; };
 		B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */; };
@@ -122,7 +121,6 @@
 		CB6968211ED6CFD5007202D2 /* liberal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = liberal.xml; sourceTree = "<group>"; };
 		CB6968221ED6CFD5007202D2 /* major.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = major.xml; sourceTree = "<group>"; };
 		CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sqlite3Class.swift; sourceTree = "<group>"; };
-		CBFF76D11EE83CC7003F5442 /* MakedTable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakedTable.db; sourceTree = "<group>"; };
 		F0F6F693F9D6061F709F0B44 /* Pods-HYU_TT-WidgetTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT-WidgetTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT-WidgetTest/Pods-HYU_TT-WidgetTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,7 +131,6 @@
 			files = (
 				B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */,
 				7E0AE9C840BAAC639CD8DDCF /* Pods_HYU_TT_WidgetTest.framework in Frameworks */,
-				B20FDD7E8405CBD69F143FF4 /* Pods_WidgetTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -220,7 +217,6 @@
 				CB69681F1ED6CB1F007202D2 /* DataSource.swift */,
 				CB6968211ED6CFD5007202D2 /* liberal.xml */,
 				CB6968221ED6CFD5007202D2 /* major.xml */,
-				CBFF76D11EE83CC7003F5442 /* MakedTable.db */,
 				6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */,
 				CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */,
 				6A4037A91EE671A1003BB6EC /* TabBarController.swift */,
