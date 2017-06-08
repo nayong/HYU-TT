@@ -51,8 +51,9 @@ class ChoiceTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyCell", for: indexPath) as! TributeTableViewCell
         let thisSub = MySubjects.subjects[indexPath.row]
         
-        if ChoosenSub.subjects.index(where: { (subject:Subject) -> Bool in
-            subject.numberOfLecture == thisSub.numberOfLecture
+        
+        if ChoosenSub.subjects.index(where: { (subject:(Subject, Bool)) -> Bool in
+            subject.0.numberOfLecture == thisSub.numberOfLecture
         }) != nil
         {
             cell.subjectName.textColor = UIColor.blue
@@ -105,19 +106,19 @@ class TributeTableViewCell:UITableViewCell {
         
         if let row = currentRow {
             let thisSub = MySubjects.subjects[row]
-            if let index = ChoosenSub.subjects.index(where: { (subject:Subject) -> Bool in
-                subject.numberOfLecture == thisSub.numberOfLecture
+            if let index = ChoosenSub.subjects.index(where: { (subject:(Subject,Bool)) -> Bool in
+                subject.0.numberOfLecture == thisSub.numberOfLecture
             }) {
                 ChoosenSub.subjects.remove(at: index)
             } else {
-                ChoosenSub.subjects.append(thisSub)
+                ChoosenSub.subjects.append((thisSub, true))
             }
             
             MySubjects.isChanged = true
             ChoosenSub.isChanged = true
             
             for sub in ChoosenSub.subjects {
-                print(sub.nameOfLecture)
+                print(sub.0.nameOfLecture)
             }
     
         }

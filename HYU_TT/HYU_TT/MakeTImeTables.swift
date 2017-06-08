@@ -10,11 +10,9 @@ import Foundation
 
 func MakeTimeTables()->[[Int]] {
     var graph:[[Int]] = MakeGraph()
-    var temp = ChoosenSub.subjects
     var R:[Int] = []
     var P:[Int] = []
     var X:[Int] = []
-    
     for i in 0..<graph.count {
         P.append(i)
     }
@@ -31,7 +29,6 @@ extension String {
     func index(from: Int) -> Index {
         return self.index(startIndex, offsetBy: from)
     }
-    
     func substring(with r: Range<Int>) -> String {
         let startIndex = index(from: r.lowerBound)
         let endIndex = index(from: r.upperBound)
@@ -41,17 +38,15 @@ extension String {
 
 func MakeGraph()->[[Int]] {
     var graph:[[Int]] = []
-    
     for firstIndex in 0..<ChoosenSub.subjects.count {
         graph.append([])
         for secondIndex in 0..<firstIndex {
-            if (IsSubjectIntersect(subject1: ChoosenSub.subjects[firstIndex], subject2: ChoosenSub.subjects[secondIndex]) == false ) {
+            if (IsSubjectIntersect(subject1: ChoosenSub.subjects[firstIndex].0, subject2: ChoosenSub.subjects[secondIndex].0) == false ) {
                 graph[firstIndex].append(secondIndex)
                 graph[secondIndex].append(firstIndex)
             }
         }
     }
-    
     return graph
 }
 
@@ -82,7 +77,6 @@ func UnionSet(A:[Int], B:[Int])->[Int] {
     let Set_A = Set(A)
     let Set_B = Set(B)
     return Array(Set_A.union(Set_B))
-    
 }
 
 //교집합 구하기
@@ -132,7 +126,6 @@ func BronKerbosch(R:[Int], P:inout [Int], X:[Int], g:[[Int]], stack:inout [[Int]
         X_tmp = IntersectSet(A:X, B:N);
         result = BronKerbosch(R:R_tmp, P:&P_tmp, X:X_tmp, g:g, stack:&stack);
         if (result.count != 0 && result.count != 1) {
-            
             var indexOfForLoop:Int = 0
             for j in 0..<stack.count {
                 if (isBIncludedInA(A: stack[j], B: result)) { break }

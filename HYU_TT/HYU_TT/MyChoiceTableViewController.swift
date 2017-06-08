@@ -42,7 +42,7 @@ class MyChoiceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "MyChoiceCell", for: indexPath) as! MyChoiceTableViewCell
 
-        let thisSub = ChoosenSub.subjects[indexPath.row]
+        let thisSub = ChoosenSub.subjects[indexPath.row].0
         
         cell.subjectName.text = thisSub.nameOfLecture
         cell.numberOfLecture.text = thisSub.numberOfLecture
@@ -92,7 +92,7 @@ class MyChoiceTableViewCell:UITableViewCell {
             ChoosenSub.isChanged = true
             
             for sub in ChoosenSub.subjects {
-                print(sub.nameOfLecture)
+                print(sub.0.nameOfLecture)
             }
         }
     }
