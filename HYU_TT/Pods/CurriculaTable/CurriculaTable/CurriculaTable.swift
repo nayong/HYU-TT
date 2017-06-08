@@ -14,6 +14,8 @@ public class CurriculaTable: UIView {
     private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
     private var mMarginHeight:CGFloat = 0
     private var mMarginWidth:CGFloat = 0
+    private var mMarginX:CGFloat = 0
+    private var mMarginY:CGFloat = 0
     
     public var weekdaySymbolType = CurriculaTableWeekdaySymbolType.short {
         didSet {
@@ -150,6 +152,18 @@ public class CurriculaTable: UIView {
             mMarginWidth = marginWidth
         }
     }
+    
+    public var marginX = CGFloat(0) {
+        didSet {
+            mMarginX = marginX
+        }
+    }
+    
+    public var marginY = CGFloat(0) {
+        didSet {
+            mMarginY = marginY
+        }
+    }
 
     var averageHeight: CGFloat {
         //nayong change hieght : height - n
@@ -198,8 +212,8 @@ public class CurriculaTable: UIView {
         for (index, curriculum) in curricula.enumerated() {
             let weekdayIndex = (curriculum.weekday.rawValue - firstWeekday.rawValue + 7) % 7
             //nayong : where to draw the content
-            let x = widthOfPeriodSymbols + averageWidth * CGFloat(weekdayIndex) + rectEdgeInsets.left
-            let y = heightOfWeekdaySymbols + averageHeight * CGFloat(curriculum.startPeriod - 1) + rectEdgeInsets.top + 65 //nayong
+            let x = widthOfPeriodSymbols + averageWidth * CGFloat(weekdayIndex) + rectEdgeInsets.left - mMarginX //nayong
+            let y = heightOfWeekdaySymbols + averageHeight * CGFloat(curriculum.startPeriod - 1) + rectEdgeInsets.top - marginY//nayong
             let width = averageWidth - rectEdgeInsets.left - rectEdgeInsets.right
             let height = averageHeight * CGFloat(curriculum.endPeriod - curriculum.startPeriod + 1) - rectEdgeInsets.top - rectEdgeInsets.bottom
             let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))

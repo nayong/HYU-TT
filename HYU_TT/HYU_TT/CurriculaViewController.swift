@@ -43,6 +43,7 @@ class CurriculaViewController: UIViewController {
         
         //view settings
         curriculaTable.marginHeight = 100
+        curriculaTable.marginY = -65
         curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
         curriculaTable.borderWidth = 0.5
         curriculaTable.borderColor = UIColor(red: 0.9, green: 0.9, blue: 0.9, alpha: 0.9)
