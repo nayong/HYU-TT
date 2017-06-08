@@ -16,6 +16,8 @@ public class CurriculaTable: UIView {
     private var mMarginWidth:CGFloat = 0
     private var mMarginX:CGFloat = 0
     private var mMarginY:CGFloat = 0
+    private var mBoundHeight:CGFloat = 0
+    private var mBoundWidth:CGFloat = 0
     
     public var weekdaySymbolType = CurriculaTableWeekdaySymbolType.short {
         didSet {
@@ -164,6 +166,18 @@ public class CurriculaTable: UIView {
             mMarginY = marginY
         }
     }
+    
+    public var boundHeight = CGFloat(0) {
+        didSet {
+            mBoundHeight = boundHeight
+        }
+    }
+    
+    public var boundWidth = CGFloat(0) {
+        didSet {
+            mBoundWidth = boundWidth
+        }
+    }
 
     var averageHeight: CGFloat {
         //nayong change hieght : height - n
@@ -175,7 +189,6 @@ public class CurriculaTable: UIView {
     }
     
     public override init(frame: CGRect) {
-        //var newFrame = CGRect.init(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height - 500) //nayong
         super.init(frame: frame)
         initialize()
     }
@@ -199,7 +212,9 @@ public class CurriculaTable: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        collectionView.frame = bounds
+//        collectionView.frame = bounds
+        var mBounds = CGRect(x:bounds.minX, y:bounds.minY, width: bounds.width - mBoundWidth, height: bounds.height - mBoundHeight)
+        collectionView.frame = mBounds
         drawCurricula()
     }
     

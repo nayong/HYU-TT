@@ -38,8 +38,8 @@ class WidgetCurriculaViewController: UIViewController {
         curriculaTable.curricula = [infoSecA, infoSecB, databaseA, databaseB, comOrgA, comOrgB]
 
         //view size settings
-        curriculaTable.marginWidth = 15
         curriculaTable.marginHeight = 10
+        curriculaTable.boundWidth = 15
         
         //view settings
         curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
