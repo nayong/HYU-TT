@@ -11,12 +11,15 @@ import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
         
-    @IBOutlet weak var MyTextField: UILabel!
+    let mSize:CGFloat = 400
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //load big view with custom height
+        //self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.compact
+        //load small view which can change the height -> func widgetActiveDisplayModeDidChange
         self.extensionContext?.widgetLargestAvailableDisplayMode = NCWidgetDisplayMode.expanded
-        clockUpdate()
+        //clockUpdate()
     }
     
     override func didReceiveMemoryWarning() {
@@ -39,15 +42,15 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         if(activeDisplayMode == NCWidgetDisplayMode.compact){
             self.preferredContentSize = maxSize
         }else{
-            self.preferredContentSize = CGSize(width: maxSize.width, height: 150)
+            self.preferredContentSize = CGSize(width: maxSize.width, height: mSize)
         }
-
     }
     
-    func clockUpdate(){
-        let currentTime = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: .full, timeStyle: .full)
-        MyTextField.text = currentTime
-    }
+
+//    func clockUpdate(){
+//        let currentTime = DateFormatter.localizedString(from: NSDate() as Date, dateStyle: .full, timeStyle: .full)
+//        MyTextField.text = currentTime
+//    }
     
 
 

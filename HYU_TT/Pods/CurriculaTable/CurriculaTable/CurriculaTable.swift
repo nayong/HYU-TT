@@ -12,7 +12,8 @@ public class CurriculaTable: UIView {
     
     private let controller = CurriculaTableController()
     private let collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout())
-    
+    private var mMarginHeight:CGFloat = 0
+    private var mMarginWidth:CGFloat = 0
     
     public var weekdaySymbolType = CurriculaTableWeekdaySymbolType.short {
         didSet {
@@ -138,13 +139,24 @@ public class CurriculaTable: UIView {
         return weekdaySymbols
     }
     
-    var averageHeight: CGFloat {
-        //nayong change hieght : height - n
-        return (collectionView.frame.height - heightOfWeekdaySymbols - 100) / CGFloat(numberOfPeriods)
+    public var marginHeight = CGFloat(0) {
+        didSet {
+            mMarginHeight = marginHeight
+        }
     }
     
+    public var marginWidth = CGFloat(0) {
+        didSet {
+            mMarginWidth = marginWidth
+        }
+    }
+
+    var averageHeight: CGFloat {
+        //nayong change hieght : height - n
+        return (collectionView.frame.height - heightOfWeekdaySymbols - mMarginHeight) / CGFloat(numberOfPeriods)
+    }
     var averageWidth: CGFloat {
-        return (collectionView.frame.width - widthOfPeriodSymbols) / 7
+        return (collectionView.frame.width - widthOfPeriodSymbols - mMarginWidth) / 7
         //nayong : 7 -> 6
     }
     

@@ -6,13 +6,17 @@ target 'HYU_TT' do
   use_frameworks!
 
   # Pods for HYU_TT
-    platform :ios, '10.2'
-    pod 'CurriculaTable'
-    pod 'SQLite.swift', '~> 0.11.3'
+  platform :ios, '10.2'
+  pod 'CurriculaTable'
+  pod 'SQLite.swift', '~> 0.11.3'
 
   target 'HYU_TTTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
+  target 'WidgetTest' do
+  end
+  
 end
+

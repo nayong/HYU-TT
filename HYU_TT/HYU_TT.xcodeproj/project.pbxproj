@@ -11,6 +11,8 @@
 		6A4037AA1EE671A1003BB6EC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4037A91EE671A1003BB6EC /* TabBarController.swift */; };
 		6A5D7B0C1EE691A100C392F0 /* MyChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D7B0B1EE691A100C392F0 /* MyChoiceTableViewController.swift */; };
 		6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */; };
+		7E0AE9C840BAAC639CD8DDCF /* Pods_HYU_TT_WidgetTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AFC885E849B2692D000ACE /* Pods_HYU_TT_WidgetTest.framework */; };
+		B20FDD7E8405CBD69F143FF4 /* Pods_WidgetTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99E050BF0D2A546B33F3DBE5 /* Pods_WidgetTest.framework */; };
 		B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
 		B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */; };
 		B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */; };
@@ -25,6 +27,7 @@
 		B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */; };
 		B6E63CE51ECBFAF300A94CEF /* SubjectFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */; };
 		B6E63CEA1ECCCDC400A94CEF /* nayong.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E63CE91ECCCDC400A94CEF /* nayong.strings */; };
+		B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
 		CB2084C91EDFE3F800C90DDD /* MakeTImeTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */; };
 		CB2084CB1EE0027700C90DDD /* SubjectSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084CA1EE0027700C90DDD /* SubjectSecondViewController.swift */; };
 		CB2084D51EE00F0900C90DDD /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2084CE1EE00F0900C90DDD /* BEMAnimationManager.m */; };
@@ -72,13 +75,18 @@
 /* Begin PBXFileReference section */
 		13095219E493AD967886AE2A /* Pods-HYU_TTTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TTTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TTTests/Pods-HYU_TTTests.release.xcconfig"; sourceTree = "<group>"; };
 		1502B6A28160B1432EA80EE1 /* Pods-HYU_TT.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT/Pods-HYU_TT.release.xcconfig"; sourceTree = "<group>"; };
+		25AD752FC71D047A3BE5B818 /* Pods-WidgetTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WidgetTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-WidgetTest/Pods-WidgetTest.release.xcconfig"; sourceTree = "<group>"; };
 		40947DC9DD0EB3B72B11D000 /* Pods_HYU_TT.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYU_TT.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		53AFC885E849B2692D000ACE /* Pods_HYU_TT_WidgetTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYU_TT_WidgetTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		59349A4B72180EEF8CE3D9BD /* Pods-HYU_TTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TTTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TTTests/Pods-HYU_TTTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A4037A91EE671A1003BB6EC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6A5D7B0B1EE691A100C392F0 /* MyChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChoiceTableViewController.swift; sourceTree = "<group>"; };
 		6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewController.swift; sourceTree = "<group>"; };
 		74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYU_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		77A14AA203D737F6BAB22358 /* Pods-WidgetTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WidgetTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WidgetTest/Pods-WidgetTest.debug.xcconfig"; sourceTree = "<group>"; };
 		99173DF071FD2AF131E44065 /* Pods-HYU_TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT/Pods-HYU_TT.debug.xcconfig"; sourceTree = "<group>"; };
+		99E050BF0D2A546B33F3DBE5 /* Pods_WidgetTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WidgetTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB6AF7C6447D023EB6AD1946 /* Pods-HYU_TT-WidgetTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT-WidgetTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT-WidgetTest/Pods-HYU_TT-WidgetTest.debug.xcconfig"; sourceTree = "<group>"; };
 		B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculaViewController.swift; sourceTree = "<group>"; };
 		B6D2187A1EE84F17005DCD7F /* WidgetTest.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetTest.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -98,6 +106,7 @@
 		B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectViewController.swift; sourceTree = "<group>"; };
 		B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectFirstViewController.swift; sourceTree = "<group>"; };
 		B6E63CE91ECCCDC400A94CEF /* nayong.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = nayong.strings; sourceTree = "<group>"; };
+		B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCurriculaViewController.swift; sourceTree = "<group>"; };
 		CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeTImeTables.swift; sourceTree = "<group>"; };
 		CB2084CA1EE0027700C90DDD /* SubjectSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectSecondViewController.swift; sourceTree = "<group>"; };
 		CB2084CD1EE00F0900C90DDD /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
@@ -114,6 +123,7 @@
 		CB6968221ED6CFD5007202D2 /* major.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = major.xml; sourceTree = "<group>"; };
 		CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sqlite3Class.swift; sourceTree = "<group>"; };
 		CBFF76D11EE83CC7003F5442 /* MakedTable.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakedTable.db; sourceTree = "<group>"; };
+		F0F6F693F9D6061F709F0B44 /* Pods-HYU_TT-WidgetTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT-WidgetTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT-WidgetTest/Pods-HYU_TT-WidgetTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +132,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */,
+				7E0AE9C840BAAC639CD8DDCF /* Pods_HYU_TT_WidgetTest.framework in Frameworks */,
+				B20FDD7E8405CBD69F143FF4 /* Pods_WidgetTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,6 +162,8 @@
 				40947DC9DD0EB3B72B11D000 /* Pods_HYU_TT.framework */,
 				74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */,
 				B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */,
+				53AFC885E849B2692D000ACE /* Pods_HYU_TT_WidgetTest.framework */,
+				99E050BF0D2A546B33F3DBE5 /* Pods_WidgetTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -160,6 +174,7 @@
 				B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */,
 				B6D218801EE84F17005DCD7F /* MainInterface.storyboard */,
 				B6D218831EE84F17005DCD7F /* Info.plist */,
+				B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */,
 			);
 			path = WidgetTest;
 			sourceTree = "<group>";
@@ -239,6 +254,10 @@
 				1502B6A28160B1432EA80EE1 /* Pods-HYU_TT.release.xcconfig */,
 				59349A4B72180EEF8CE3D9BD /* Pods-HYU_TTTests.debug.xcconfig */,
 				13095219E493AD967886AE2A /* Pods-HYU_TTTests.release.xcconfig */,
+				AB6AF7C6447D023EB6AD1946 /* Pods-HYU_TT-WidgetTest.debug.xcconfig */,
+				F0F6F693F9D6061F709F0B44 /* Pods-HYU_TT-WidgetTest.release.xcconfig */,
+				77A14AA203D737F6BAB22358 /* Pods-WidgetTest.debug.xcconfig */,
+				25AD752FC71D047A3BE5B818 /* Pods-WidgetTest.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -265,9 +284,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B6D218891EE84F17005DCD7F /* Build configuration list for PBXNativeTarget "WidgetTest" */;
 			buildPhases = (
+				9BA8AA455A1E01A100C9428E /* [CP] Check Pods Manifest.lock */,
 				B6D218761EE84F17005DCD7F /* Sources */,
 				B6D218771EE84F17005DCD7F /* Frameworks */,
 				B6D218781EE84F17005DCD7F /* Resources */,
+				A2D63852F8FFD1F7C9EE9BF4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -473,6 +494,36 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYU_TTTests/Pods-HYU_TTTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9BA8AA455A1E01A100C9428E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		A2D63852F8FFD1F7C9EE9BF4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-HYU_TT-WidgetTest/Pods-HYU_TT-WidgetTest-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F178ABD12AF8C00E9E1145B2 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -496,6 +547,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */,
+				B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -575,6 +627,7 @@
 /* Begin XCBuildConfiguration section */
 		B6D218871EE84F17005DCD7F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB6AF7C6447D023EB6AD1946 /* Pods-HYU_TT-WidgetTest.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WidgetTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -587,6 +640,7 @@
 		};
 		B6D218881EE84F17005DCD7F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0F6F693F9D6061F709F0B44 /* Pods-HYU_TT-WidgetTest.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = WidgetTest/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -760,6 +814,7 @@
 				B6D218881EE84F17005DCD7F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		B6E63CBA1ECB7E7600A94CEF /* Build configuration list for PBXProject "HYU_TT" */ = {
 			isa = XCConfigurationList;

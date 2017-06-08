@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "3251A70591195389FB4E955A6EA8EC79"
-               BuildableName = "Pods_HYU_TT.framework"
-               BlueprintName = "Pods-HYU_TT"
+               BlueprintIdentifier = "4331DD65CEF9112BD2EEB7641445CF5B"
+               BuildableName = "Pods_HYU_TT_WidgetTest.framework"
+               BlueprintName = "Pods-HYU_TT-WidgetTest"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -45,9 +45,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "3251A70591195389FB4E955A6EA8EC79"
-            BuildableName = "Pods_HYU_TT.framework"
-            BlueprintName = "Pods-HYU_TT"
+            BlueprintIdentifier = "4331DD65CEF9112BD2EEB7641445CF5B"
+            BuildableName = "Pods_HYU_TT_WidgetTest.framework"
+            BlueprintName = "Pods-HYU_TT-WidgetTest"
             ReferencedContainer = "container:Pods.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
