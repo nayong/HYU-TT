@@ -10,6 +10,10 @@
 		4F320B1DDF383C2AE9791094 /* Pods_HYU_TTTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */; };
 		6A4037AA1EE671A1003BB6EC /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A4037A91EE671A1003BB6EC /* TabBarController.swift */; };
 		6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */; };
+		6AE78F981EEAC52100049BEE /* check.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE78F971EEAC52100049BEE /* check.png */; };
+		6AE78F9A1EEAC61F00049BEE /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE78F991EEAC61F00049BEE /* plus.png */; };
+		6AE78F9C1EEAC6A900049BEE /* minus.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AE78F9B1EEAC6A900049BEE /* minus.png */; };
+		6AE78F9E1EEACA1700049BEE /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE78F9D1EEACA1700049BEE /* DetailViewController.swift */; };
 		7E0AE9C840BAAC639CD8DDCF /* Pods_HYU_TT_WidgetTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AFC885E849B2692D000ACE /* Pods_HYU_TT_WidgetTest.framework */; };
 		B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */; };
 		B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
@@ -81,6 +85,10 @@
 		59349A4B72180EEF8CE3D9BD /* Pods-HYU_TTTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TTTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TTTests/Pods-HYU_TTTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6A4037A91EE671A1003BB6EC /* TabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChoiceTableViewController.swift; sourceTree = "<group>"; };
+		6AE78F971EEAC52100049BEE /* check.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = check.png; sourceTree = SOURCE_ROOT; };
+		6AE78F991EEAC61F00049BEE /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = SOURCE_ROOT; };
+		6AE78F9B1EEAC6A900049BEE /* minus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minus.png; sourceTree = SOURCE_ROOT; };
+		6AE78F9D1EEACA1700049BEE /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		74CE342EB2982CCC5C7E1C98 /* Pods_HYU_TTTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_HYU_TTTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		77A14AA203D737F6BAB22358 /* Pods-WidgetTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WidgetTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WidgetTest/Pods-WidgetTest.debug.xcconfig"; sourceTree = "<group>"; };
 		99173DF071FD2AF131E44065 /* Pods-HYU_TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT/Pods-HYU_TT.debug.xcconfig"; sourceTree = "<group>"; };
@@ -204,6 +212,9 @@
 		B6E63CC11ECB7E7600A94CEF /* HYU_TT */ = {
 			isa = PBXGroup;
 			children = (
+				6AE78F9B1EEAC6A900049BEE /* minus.png */,
+				6AE78F991EEAC61F00049BEE /* plus.png */,
+				6AE78F971EEAC52100049BEE /* check.png */,
 				CB2084CC1EE00F0900C90DDD /* Classes */,
 				B6E63CC21ECB7E7600A94CEF /* AppDelegate.swift */,
 				CB2084D91EE00FE600C90DDD /* CheckMarkHeader.h */,
@@ -225,6 +236,7 @@
 				6A4037A91EE671A1003BB6EC /* TabBarController.swift */,
 				CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */,
 				B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */,
+				6AE78F9D1EEACA1700049BEE /* DetailViewController.swift */,
 			);
 			path = HYU_TT;
 			sourceTree = "<group>";
@@ -401,10 +413,13 @@
 			files = (
 				CB6968231ED6CFD5007202D2 /* liberal.xml in Resources */,
 				B6E63CCD1ECB7E7600A94CEF /* LaunchScreen.storyboard in Resources */,
+				6AE78F9C1EEAC6A900049BEE /* minus.png in Resources */,
+				6AE78F981EEAC52100049BEE /* check.png in Resources */,
 				B6E63CCA1ECB7E7600A94CEF /* Assets.xcassets in Resources */,
 				CB6968241ED6CFD5007202D2 /* major.xml in Resources */,
 				B6E63CEA1ECCCDC400A94CEF /* nayong.strings in Resources */,
 				B6E63CC81ECB7E7600A94CEF /* Main.storyboard in Resources */,
+				6AE78F9A1EEAC61F00049BEE /* plus.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -562,7 +577,8 @@
 				B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */,
 				CB2084D61EE00F0900C90DDD /* BEMCheckBox.m in Sources */,
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
-				CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */,
+				CBFF76D01EE83CC0003F5442 /* Sqlite3Class.swift in Sources */,
+				6AE78F9E1EEACA1700049BEE /* DetailViewController.swift in Sources */,
 				B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */,
 				6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */,
 				B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */,

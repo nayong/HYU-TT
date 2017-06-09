@@ -56,9 +56,9 @@ class ChoiceTableViewController: UITableViewController {
             subject.0.numberOfLecture == thisSub.numberOfLecture
         }) != nil
         {
-            cell.subjectName.textColor = UIColor.blue
+            cell.button.setImage(UIImage(named: "check.png"), for: .normal)
         } else {
-            cell.subjectName.textColor = UIColor.black
+            cell.button.setImage(UIImage(named: "plus.png"), for: .normal)
         }
         
         
@@ -68,15 +68,22 @@ class ChoiceTableViewController: UITableViewController {
         cell.professor.append(cell.professor1)
         cell.professor.append(cell.professor2)
         cell.professor.append(cell.professor3)
+        cell.professor.append(cell.professor4)
+        
         cell.time.append(cell.time1)
         cell.time.append(cell.time2)
         cell.time.append(cell.time3)
+        cell.time.append(cell.time4)
         
         for i in 0...(thisSub.time.count - 1) {
             cell.time[i].text = thisSub.time[i]
-        }
-        for i in 0...(thisSub.professor.count - 1) {
             cell.professor[i].text = thisSub.professor[i]
+        }
+        if thisSub.time.count < 4 {
+            for i in thisSub.time.count...3 {
+                cell.time[i].text = ""
+                cell.professor[i].text = ""
+            }
         }
         
         cell.currentRow = indexPath.row
@@ -93,35 +100,47 @@ class TributeTableViewCell:UITableViewCell {
     @IBOutlet weak var time1: UILabel!
     @IBOutlet weak var time2: UILabel!
     @IBOutlet weak var time3: UILabel!
+    @IBOutlet weak var time4: UILabel!
     @IBOutlet weak var professor1: UILabel!
     @IBOutlet weak var professor2: UILabel!
     @IBOutlet weak var professor3: UILabel!
-
+    @IBOutlet weak var professor4: UILabel!
+    @IBOutlet weak var button: UIButton!
+    
     var currentRow:Int?
     
     var time:[UILabel] = []
     var professor:[UILabel] = []
     
+
     @IBAction func asd(_ sender: Any) {
         
         if let row = currentRow {
             let thisSub = MySubjects.subjects[row]
-            if let index = ChoosenSub.subjects.index(where: { (subject:(Subject,Bool)) -> Bool in
+            if let index = ChoosenSub.subjects.index(where: { (subject:(Subject, Bool)) -> Bool in
                 subject.0.numberOfLecture == thisSub.numberOfLecture
             }) {
                 ChoosenSub.subjects.remove(at: index)
             } else {
                 ChoosenSub.subjects.append((thisSub, true))
             }
+            MySubjects.isChanged = true
+            ChoosenSub.isChanged = true
+        }
+    }
+    @IBAction func subClicked(_ sender: Any) {
+        if let row = currentRow {
+            ChoosenSub.subjects.remove(at: row)
             
             MySubjects.isChanged = true
             ChoosenSub.isChanged = true
             
             for sub in ChoosenSub.subjects {
-                print(sub.subject.nameOfLecture)
+                print(sub.0.nameOfLecture)
             }
-    
         }
     }
+
     
 }
+
