@@ -300,8 +300,8 @@ public class CurriculaTable: UIView {
     }
     
     func curriculumTapped(_ sender: UITapGestureRecognizer) {
-        let curriculum = curricula[(sender.view as! UILabel).tag]
-        curriculum.tapHandler(curriculum)
+//        let curriculum = curricula[(sender.view as! UILabel).tag]
+//        curriculum.tapHandler(curriculum)
     }
     
 }

@@ -7,26 +7,31 @@
 //
 
 import UIKit
-
+/*                                        전공 카테고리                        */
 class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource, XMLParserDelegate {
     
     @IBOutlet weak var majorPicker: UIPickerView!
+    //탐색 카테고리 (대학 , 전공 , 학년)
     var category = Category()
+    //xml 탐색 시 태그이름 저장
     var currentElement:String = ""
-    
+    //xml 탐색 시 카테고리 조건에 맞는 과목을 임시로 저장
     var tempSubject = Subject()
     
     var parser = XMLParser()
+    //최초 탐색인지 아닌지
     var isInit:Bool = false
-    
+    //xml탐색 시 과목에 해당하는 대학, 전공, 학년 저장
     var passedCollegeName:String?
     var passedMajorName:String?
     var passedGrade:String?
     
+    //탐색 카테고리에 해당하는 대학, 전공, 학년 저장
     var selectedCollege:String?
     var selectedMajor:String?
     var seletedGrade:String?
     
+    //선택된 대학, 전공, 학년이 바뀌었는지 저장
     var collegeChanged:Bool = false
     var majorChanged:Bool = false
     var gradeChanged:Bool = false
@@ -35,10 +40,13 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //대학 목록 초기화
         isInit = true
         parsingXMLData()
         isInit = false
-        collegeChanged(collegeName: category.college[0])
+        
+        //대학 목록 중 첫번째 대학을 선택
+        ChangeCollege(collegeName: category.college[0])
         
         self.majorPicker.delegate = self
         self.majorPicker.dataSource = self
@@ -94,14 +102,14 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         switch(component) {
         case 0:
-            collegeChanged(collegeName: category.college[row])
+            ChangeCollege(collegeName: category.college[row])
             self.majorPicker.selectRow(0, inComponent: 1, animated: true)
             self.majorPicker.selectRow(0, inComponent: 2, animated: true)
             
-        case 1: majorChanged(majorName: category.major[row])
+        case 1: ChangeMajor(majorName: category.major[row])
             self.majorPicker.selectRow(0, inComponent: 2, animated: true)
             
-        case 2: gradeChanged(grade: category.grade[row])
+        case 2: ChangeGrade(grade: category.grade[row])
             
             
         default: return
@@ -129,25 +137,25 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
         }
     }
     
-    func collegeChanged(collegeName:String) {
+    func ChangeCollege(collegeName:String) {
         category.major = []
         collegeChanged = true
         selectedCollege = collegeName
         parsingXMLData()
         collegeChanged = false
-        majorChanged(majorName: category.major[0])
+        ChangeMajor(majorName: category.major[0])
     }
     
-    func majorChanged(majorName:String) {
+    func ChangeMajor(majorName:String) {
         category.grade = []
         majorChanged = true
         selectedMajor = majorName
         parsingXMLData()
         majorChanged = false
-        gradeChanged(grade: category.grade[0])
+        ChangeGrade(grade: category.grade[0])
     }
     
-    func gradeChanged(grade:String) {
+    func ChangeGrade(grade:String) {
         MySubjects.subjects = []
         gradeChanged = true
         seletedGrade = grade
@@ -165,7 +173,7 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
     }
     
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-        //    if (currentElement == "NameOfCollege") { print (1) }
+        //처음 카테고리가 만들어질 때 대학 목록을 저장
         if (isInit && currentElement == "NameOfCollege" && category.college.contains(string) == false) {
             category.college.append(string)
             return
@@ -200,7 +208,10 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
             case "Time":
                 tempSubject.time = string.components(separatedBy: ",")
             case "Place":
-                tempSubject.place = string.components(separatedBy: ",")
+                let tempPlace = string.components(separatedBy: ",")
+                for place in tempPlace {
+                    tempSubject.place.append(changeBuildingNumberToName(buildingNumber: place))
+                }
             case "Professor":
                 
                 tempSubject.professor = string.components(separatedBy: ",")

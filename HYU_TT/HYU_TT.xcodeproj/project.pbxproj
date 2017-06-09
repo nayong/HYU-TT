@@ -37,7 +37,7 @@
 		CB6968231ED6CFD5007202D2 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
 		CB6968241ED6CFD5007202D2 /* major.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968221ED6CFD5007202D2 /* major.xml */; };
 		CBF10E1C1EEA815500B5CDE5 /* MyChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10E1B1EEA815500B5CDE5 /* MyChoiceTableViewController.swift */; };
-		CBFF76D01EE83CC0003F5442 /* Sqlite3Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */; };
+		CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
 		D2CC9C69DE11850505670996 /* Pods_HYU_TT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40947DC9DD0EB3B72B11D000 /* Pods_HYU_TT.framework */; };
 /* End PBXBuildFile section */
 
@@ -122,7 +122,7 @@
 		CB6968211ED6CFD5007202D2 /* liberal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = liberal.xml; sourceTree = "<group>"; };
 		CB6968221ED6CFD5007202D2 /* major.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = major.xml; sourceTree = "<group>"; };
 		CBF10E1B1EEA815500B5CDE5 /* MyChoiceTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChoiceTableViewController.swift; sourceTree = "<group>"; };
-		CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sqlite3Class.swift; sourceTree = "<group>"; };
+		CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseManagement.swift; sourceTree = "<group>"; };
 		F0F6F693F9D6061F709F0B44 /* Pods-HYU_TT-WidgetTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT-WidgetTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT-WidgetTest/Pods-HYU_TT-WidgetTest.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -223,7 +223,7 @@
 				6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */,
 				CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */,
 				6A4037A91EE671A1003BB6EC /* TabBarController.swift */,
-				CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */,
+				CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */,
 				B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */,
 			);
 			path = HYU_TT;
@@ -562,8 +562,7 @@
 				B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */,
 				CB2084D61EE00F0900C90DDD /* BEMCheckBox.m in Sources */,
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
-				CBFF76D01EE83CC0003F5442 /* Sqlite3Class.swift in Sources */,
-				6A5D7B0C1EE691A100C392F0 /* MyChoiceTableViewController.swift in Sources */,
+				CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */,
 				B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */,
 				6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */,
 				B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */,

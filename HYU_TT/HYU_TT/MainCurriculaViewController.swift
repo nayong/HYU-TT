@@ -17,6 +17,8 @@ class MainCurriculaViewController: UIViewController {
         super.viewDidLoad()
         
         var temp = Subject()
+        DatabaseManagement.MakedServeralTables.deleteTable()
+        temp.numberOfLecture = "15607"
         temp.nameOfLecture = "소프트웨어 스튜디오"
         temp.professor = ["링고스타"]
         temp.place = ["ITBT 508호"]
@@ -25,25 +27,29 @@ class MainCurriculaViewController: UIViewController {
 //        
 
 //        //Subject 불러 올 때
-//        let subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
-//        
-//        //dummy Subject
-//        let tempSubject = subjects[0][0]
-//        let periods = getTime(time: temp.time)
+        let subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
         
+        let handler = { (curriculum: CurriculaTableItem) in }
         
-        //item click event
-        let handler = { (curriculum: CurriculaTableItem) in
-            print(curriculum.name, curriculum.identifier)
+        //각 강의들을 시간표에 맞는 struct로 바꾼 배열
+        var tableItemArray:[CurriculaTableItem] = []
+        
+        //불러온 Table 을 과목 하나씩 돌기
+        for subject in subjects[0] {
+            
+            //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
+            let periods = getTime(time:subject.time)
+            
+            //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
+            for indexForTime in 0..<subject.time.count {
+                tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
+, startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: UIColor(red: 0.78, green: 0.49, blue: 0.87, alpha: 1.0), identifier: "20393", tapHandler: handler))
+                
+            }
         }
         
-        //get data
-        let subject1 = CurriculaTableItem(name: temp.nameOfLecture, place: temp.place[0],weekday: .wednesday, startPeriod: 5, endPeriod: 11, textColor: UIColor.white, bgColor: UIColor(red: 0.78, green: 0.49, blue: 0.87, alpha: 1.0), identifier: "20393", tapHandler: handler)
-
-        
         //set data
-        //curriculaTable.curricula = [infoSecA, infoSecB, databaseA, databaseB, comOrgA, comOrgB]
-        curriculaTable.curricula = [subject1]
+        curriculaTable.curricula = tableItemArray
         
         //view settings
         curriculaTable.marginHeight = 100
@@ -88,7 +94,7 @@ class MainCurriculaViewController: UIViewController {
                 time1 = 2*time1 - 17
             }
             
-            time2 = Int(mTime.substring(with:2..<4))!
+            time2 = Int(mTime.substring(with:8..<10))!
             if(mTime.substring(with:11..<12) != "0"){
                 time2 = 2*time2 - 16
             }else{
@@ -107,7 +113,7 @@ class MainCurriculaViewController: UIViewController {
         return times
     }
     
-    func getWeekday (weekday: String) -> Int{
+    func getWeekday (weekday: String) -> Int {
         var newWeekday = 0
         if(weekday == "월"){
             newWeekday = 2
@@ -126,3 +132,5 @@ class MainCurriculaViewController: UIViewController {
     }
     
 }
+
+

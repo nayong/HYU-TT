@@ -16,7 +16,6 @@ class DatabaseManagement {
     private let db: Connection?
     
     private let makedSubjectsTable = Table("MakedSubjectsTable")
-    private let choosenSubjectsTable = Table("choosenSubjectsTable")
     private let id = Expression<Int64>("id")
     private let idForTable = Expression<Int>("idForTable")
     private let grade = Expression<String>("grade")
@@ -44,7 +43,8 @@ class DatabaseManagement {
     
     init(DBName : String) {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        
+        print (path)
+
         do {
             db = try Connection("\(path)/\(DBName).sqlite3")
             createTableProduct()
@@ -71,24 +71,6 @@ class DatabaseManagement {
                 table.column(place)
                 table.column(professor)
                 
-            })
-            print("create table successfully")
-        } catch {
-            print("Unable to create table")
-        }
-        do {
-            
-            try db!.run(choosenSubjectsTable.create(ifNotExists: true) { table in
-                table.column(grade)
-                table.column(kindOfComplete)
-                table.column(number)
-                table.column(numberOfLecture)
-                table.column(nameOfLecture)
-                table.column(credit)
-                table.column(theoryOrPractice)
-                table.column(time)
-                table.column(place)
-                table.column(professor)
             })
             print("create table successfully")
         } catch {
@@ -157,7 +139,7 @@ class DatabaseManagement {
     }
     
 
-    func deleteTalbe() -> Bool {
+    func deleteTable() -> Bool {
         do {
             try db!.run(makedSubjectsTable.delete())
             print("delete sucessfully")

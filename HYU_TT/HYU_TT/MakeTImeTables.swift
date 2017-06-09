@@ -8,6 +8,14 @@
 
 import Foundation
 
+func MakeEssensialSubjectArray()->[Int] {
+    var essensialArray:[Int] = []
+    for index in 0..<ChoosenSub.subjects.count {
+        if (ChoosenSub.subjects[index].isEssencial) { essensialArray.append(index) }
+    }
+    return essensialArray
+}
+
 func MakeTimeTables()->[[Int]] {
     let graph:[[Int]] = MakeGraph()
     let R:[Int] = []
