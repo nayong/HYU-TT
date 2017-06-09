@@ -248,7 +248,7 @@
                                         <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bep-bp-q5v">
                                             <rect key="frame" x="290" y="9" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="plus (1)"/>
+                                            <state key="normal" image="plus.png"/>
                                             <connections>
                                                 <action selector="asd:" destination="Vyy-ca-r7K" eventType="touchUpInside" id="mGD-cg-rdg"/>
                                             </connections>
@@ -319,6 +319,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="button" destination="Bep-bp-q5v" id="Rvp-og-Fi0"/>
                                     <outlet property="numberOfLecture" destination="pDF-cL-m6v" id="gJT-IC-joc"/>
                                     <outlet property="professor1" destination="jB2-kw-gdD" id="HD7-5l-TEh"/>
                                     <outlet property="professor2" destination="N0b-0v-H80" id="vgz-Hf-Oi2"/>
@@ -474,7 +475,7 @@
                                         <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5u0-PP-TiV">
                                             <rect key="frame" x="290" y="9" width="22" height="22"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <state key="normal" image="plus (1)"/>
+                                            <state key="normal" image="minus.png"/>
                                             <connections>
                                                 <action selector="subClicked:" destination="T1F-fv-DQQ" eventType="touchUpInside" id="fHY-bL-nRq"/>
                                             </connections>
@@ -566,7 +567,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qz8-n5-mbl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2080.8000000000002" y="215.44227886056973"/>
+            <point key="canvasLocation" x="3199" y="142"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="6XF-FO-nRQ">
@@ -601,7 +602,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dM8-5U-PhZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3199.1999999999998" y="741.67916041979015"/>
+            <point key="canvasLocation" x="2329" y="142"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Dee-0b-Jt5">
+            <objects>
+                <viewController id="gmf-yd-z8v" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wpW-Xf-F2n"/>
+                        <viewControllerLayoutGuide type="bottom" id="Uhr-tY-llV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C6e-7f-etM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jYI-mR-tiq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2329" y="859"/>
         </scene>
         <!--Main Curricula View Controller-->
         <scene sceneID="u7S-LD-5Up">
@@ -636,6 +655,7 @@
         <image name="folder" width="25" height="25"/>
         <image name="home" width="25" height="25"/>
         <image name="list" width="25" height="25"/>
-        <image name="plus (1)" width="24" height="24"/>
+        <image name="minus.png" width="256" height="256"/>
+        <image name="plus.png" width="512" height="512"/>
     </resources>
 </document>

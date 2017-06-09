@@ -56,9 +56,9 @@ class ChoiceTableViewController: UITableViewController {
             subject.0.numberOfLecture == thisSub.numberOfLecture
         }) != nil
         {
-            cell.subjectName.textColor = UIColor.blue
+            cell.button.setImage(UIImage(named: "check.png"), for: .normal)
         } else {
-            cell.subjectName.textColor = UIColor.black
+            cell.button.setImage(UIImage(named: "plus.png"), for: .normal)
         }
         
         
@@ -105,29 +105,27 @@ class TributeTableViewCell:UITableViewCell {
     @IBOutlet weak var professor2: UILabel!
     @IBOutlet weak var professor3: UILabel!
     @IBOutlet weak var professor4: UILabel!
-
+    @IBOutlet weak var button: UIButton!
+    
     var currentRow:Int?
     
     var time:[UILabel] = []
     var professor:[UILabel] = []
     
+
     @IBAction func asd(_ sender: Any) {
         
         if let row = currentRow {
             let thisSub = MySubjects.subjects[row]
-            if let index = ChoosenSub.subjects.index(where: { (subject:(Subject,Bool)) -> Bool in
+            if let index = ChoosenSub.subjects.index(where: { (subject:(Subject, Bool)) -> Bool in
                 subject.0.numberOfLecture == thisSub.numberOfLecture
             }) {
-                print("Nothing")
+                ChoosenSub.subjects.remove(at: index)
             } else {
                 ChoosenSub.subjects.append((thisSub, true))
-                MySubjects.isChanged = true
-                ChoosenSub.isChanged = true
             }
-            for sub in ChoosenSub.subjects {
-                print(sub.subject.nameOfLecture)
-            }
-    
+            MySubjects.isChanged = true
+            ChoosenSub.isChanged = true
         }
     }
     @IBAction func subClicked(_ sender: Any) {
