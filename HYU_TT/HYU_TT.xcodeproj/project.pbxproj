@@ -12,6 +12,7 @@
 		6A5D7B0C1EE691A100C392F0 /* MyChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A5D7B0B1EE691A100C392F0 /* MyChoiceTableViewController.swift */; };
 		6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A7A24691ED8186D00E4C68F /* ChoiceTableViewController.swift */; };
 		7E0AE9C840BAAC639CD8DDCF /* Pods_HYU_TT_WidgetTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53AFC885E849B2692D000ACE /* Pods_HYU_TT_WidgetTest.framework */; };
+		B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */; };
 		B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
 		B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */; };
 		B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */; };
@@ -86,6 +87,7 @@
 		99173DF071FD2AF131E44065 /* Pods-HYU_TT.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT/Pods-HYU_TT.debug.xcconfig"; sourceTree = "<group>"; };
 		99E050BF0D2A546B33F3DBE5 /* Pods_WidgetTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WidgetTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB6AF7C6447D023EB6AD1946 /* Pods-HYU_TT-WidgetTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-HYU_TT-WidgetTest.debug.xcconfig"; path = "Pods/Target Support Files/Pods-HYU_TT-WidgetTest/Pods-HYU_TT-WidgetTest.debug.xcconfig"; sourceTree = "<group>"; };
+		B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCurriculaViewController.swift; sourceTree = "<group>"; };
 		B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculaViewController.swift; sourceTree = "<group>"; };
 		B6D2187A1EE84F17005DCD7F /* WidgetTest.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetTest.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -222,6 +224,7 @@
 				6A4037A91EE671A1003BB6EC /* TabBarController.swift */,
 				6A5D7B0B1EE691A100C392F0 /* MyChoiceTableViewController.swift */,
 				CBFF76CF1EE83CC0003F5442 /* Sqlite3Class.swift */,
+				B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */,
 			);
 			path = HYU_TT;
 			sourceTree = "<group>";
@@ -561,6 +564,7 @@
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
 				CBFF76D01EE83CC0003F5442 /* Sqlite3Class.swift in Sources */,
 				6A5D7B0C1EE691A100C392F0 /* MyChoiceTableViewController.swift in Sources */,
+				B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */,
 				6A7A246A1ED8186D00E4C68F /* ChoiceTableViewController.swift in Sources */,
 				B6E63CC31ECB7E7600A94CEF /* AppDelegate.swift in Sources */,
 				CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */,

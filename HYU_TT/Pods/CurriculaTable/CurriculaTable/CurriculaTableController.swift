@@ -25,7 +25,7 @@ class CurriculaTableController: UIViewController {
 extension CurriculaTableController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return (curriculaTable.numberOfPeriods + 1) * 8
+        return (curriculaTable.numberOfPeriods + 1) * 7
         //nayong : 8 -> 7
     }
     
@@ -37,10 +37,16 @@ extension CurriculaTableController: UICollectionViewDataSource {
         cell.textLabel.font = UIFont.systemFont(ofSize: curriculaTable.symbolsFontSize)
         if indexPath.row == 0 {
             cell.textLabel.text = ""
-        } else if indexPath.row < 8 {
+        } else if indexPath.row < 7 { //nayong 8->7
             cell.textLabel.text = curriculaTable.weekdaySymbols[indexPath.row - 1]
-        } else if indexPath.row % 8 == 0 {
-            cell.textLabel.text = String(indexPath.row / 8)
+        } else if indexPath.row % 14 == 7 { //nayong 8->7
+            let time:Int = (indexPath.row / 14 + 9) % 12
+            if time == 0 {
+                cell.textLabel.text = String(12)
+            }else{
+                cell.textLabel.text = String(time)
+            }
+            //cell.textLabel.text = String((indexPath.row / 14 + 9) % 12) //nayong 8->7 + ~
         } else {
             cell.textLabel.text = ""
             cell.backgroundColor = UIColor.clear
@@ -55,9 +61,9 @@ extension CurriculaTableController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         if indexPath.row == 0 {
             return CGSize(width: curriculaTable.widthOfPeriodSymbols, height: curriculaTable.heightOfWeekdaySymbols)
-        } else if indexPath.row < 8 {
+        } else if indexPath.row < 7 { //nayong 8->7
             return CGSize(width: curriculaTable.averageWidth, height: curriculaTable.heightOfWeekdaySymbols)
-        } else if indexPath.row % 8 == 0 {
+        } else if indexPath.row % 7 == 0 { //nayong 8->7
             return CGSize(width: curriculaTable.widthOfPeriodSymbols, height: curriculaTable.averageHeight)
         } else {
             return CGSize(width: curriculaTable.averageWidth, height: curriculaTable.averageHeight)

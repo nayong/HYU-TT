@@ -571,10 +571,10 @@
             </objects>
             <point key="canvasLocation" x="3199.1999999999998" y="741.67916041979015"/>
         </scene>
-        <!--Curricula View Controller-->
+        <!--Main Curricula View Controller-->
         <scene sceneID="u7S-LD-5Up">
             <objects>
-                <viewController id="E9u-BZ-XN2" customClass="CurriculaViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="E9u-BZ-XN2" customClass="MainCurriculaViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ENJ-U0-ESJ"/>
                         <viewControllerLayoutGuide type="bottom" id="ZA1-e1-rE5"/>
@@ -592,7 +592,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="curriculaTable" destination="QZt-jE-wKF" id="CHU-gh-bOq"/>
+                        <outlet property="curriculaTable" destination="QZt-jE-wKF" id="pGQ-do-4Pc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="udO-Zs-qOw" userLabel="First Responder" sceneMemberID="firstResponder"/>
