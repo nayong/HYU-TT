@@ -17,6 +17,7 @@ struct MapBuildingNumberToName {
 //복잡한 건물번호를 알아보기 쉽게 바꿔주는 함수
 func changeBuildingNumberToName(buildingNumber : String) -> String {
     //H일 경우 미정
+    if (buildingNumber == "") { return "" }
     if (buildingNumber == "H") { return "미정" }
     
     var result = ""
@@ -27,6 +28,8 @@ func changeBuildingNumberToName(buildingNumber : String) -> String {
     //결과에 "건물이름 - "저장
     result += nameOfBuilding + " "
     
+    //xml을 파싱하는 과정중에서 강의실이 한글일 때, H10- 에서 짤리므로 이 경우는 강의실을 따로 추가하지 않고 바로 리턴
+    if (buildingNumber.characters.count == 4) { return result }
     //강의실번호
     let roomNumber:String
     //강의실번호 시작이 0일 경우 지상, B일 경우 지하

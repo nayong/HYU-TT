@@ -18,16 +18,12 @@ class SubjectSecondViewController: UIViewController, UIPickerViewDelegate, UIPic
 
     var isInit:Bool = true
     
-    var passedCollegeName:String?
-    var passedMajorName:String?
-    var passedGrade:String?
-    
-    var selectedCollege:String?
-    var selectedMajor:String?
-    var seletedGrade:String?
+
 
     var tempSubject = Subject()
     var currentElement:String = ""
+    var isPlaceSplited = false
+    var splitedPlace = ""
 
     @IBOutlet weak var mondayCheckBox: BEMCheckBox!
     @IBOutlet weak var tuesCheckBox: BEMCheckBox!
@@ -190,15 +186,29 @@ class SubjectSecondViewController: UIViewController, UIPickerViewDelegate, UIPic
             case "Time":
                 tempSubject.time = string.components(separatedBy: ",")
             case "Place":
-                tempSubject.place = string.components(separatedBy: ",")
-                
-//                for place in tempPlace {
-//                    tempSubject.place.append(changeBuildingNumberToName(buildingNumber: place))
-//                }
+                if (isPlaceSplited) {
+                    splitedPlace += string
+                    tempSubject.place.append(splitedPlace)
+                    splitedPlace = ""
+                    isPlaceSplited = false
+                }
+                else {
+                    if (string.characters.count == 4) {
+                        splitedPlace = changeBuildingNumberToName(buildingNumber: string)
+                        isPlaceSplited = true
+                    }
+                    else {
+                        tempSubject.place = []
+                        let tempPlace = string.components(separatedBy: ",")
+                        for place in tempPlace {
+                            tempSubject.place.append(changeBuildingNumberToName(buildingNumber: place))
+                        }
+                        
+                    }
+                }
             case "Professor":
                 if (isTimeInSelectedDay(times: tempSubject.time)) {
                     tempSubject.professor = string.components(separatedBy: ",")
-                    tempSubject.grade = string
                     MySubjects.subjects.append(tempSubject)
                 }
                 tempSubject = Subject()

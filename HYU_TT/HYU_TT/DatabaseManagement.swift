@@ -28,23 +28,9 @@ class DatabaseManagement {
     private let time = Expression<String>("time")
     private let place = Expression<String>("place")
     private let professor = Expression<String>("professor")
-    
-    init() {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         
-        do {
-            db = try Connection("\(path)/mysubjects.sqlite3")
-            createTableProduct()
-        } catch {
-            db = nil
-            print ("Unable to open database")
-        }
-    }
-    
     init(DBName : String) {
         let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        print (path)
-
         do {
             db = try Connection("\(path)/\(DBName).sqlite3")
             createTableProduct()
