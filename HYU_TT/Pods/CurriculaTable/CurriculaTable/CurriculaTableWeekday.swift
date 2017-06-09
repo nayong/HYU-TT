@@ -9,13 +9,13 @@
 import Foundation
 
 public enum CurriculaTableWeekday: Int {
-    case sunday = 1
+    //case sunday = 1 //nayong
     case monday = 2
     case tuesday = 3
     case wednesday = 4
     case thursday = 5
     case friday = 6
-    case saturday = 7
+    case saturday = 1
 }
 
 public enum CurriculaTableWeekdaySymbolType: Int {

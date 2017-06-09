@@ -18,7 +18,7 @@ struct Subject {
     var credit:String
     var theoryOrPractice:String
     var time:[String]
-    var place:String
+    var place:[String]
     var professor:[String]
     init() {
         grade = ""
@@ -29,7 +29,7 @@ struct Subject {
         credit = ""
         theoryOrPractice = ""
         time = []
-        place = ""
+        place = []
         professor = []
     }
     init(grade:String, kindOfComplete:String, number:String, numberOfLecture:String, nameOfLecture:String, credit:String, theoryOrPractice:String, time:String, place:String, professor:String) {
@@ -42,7 +42,7 @@ struct Subject {
         self.credit = credit
         self.theoryOrPractice = theoryOrPractice
         self.time.append(time)
-        self.place = place
+        self.place.append(place)
         self.professor.append(professor)
     }
 }
@@ -53,7 +53,7 @@ struct MySubjects {
 }
 
 struct ChoosenSub {
-    static var subjects:[(Subject, Bool)] = []
+    static var subjects:[(subject : Subject,isessencial : Bool)] = []
     static var isChanged:Bool = false
 }
 

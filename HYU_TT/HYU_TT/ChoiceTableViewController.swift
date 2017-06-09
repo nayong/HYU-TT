@@ -118,7 +118,7 @@ class TributeTableViewCell:UITableViewCell {
             ChoosenSub.isChanged = true
             
             for sub in ChoosenSub.subjects {
-                print(sub.0.nameOfLecture)
+                print(sub.subject.nameOfLecture)
             }
     
         }

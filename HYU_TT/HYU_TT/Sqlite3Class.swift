@@ -99,7 +99,7 @@ class DatabaseManagement {
     func addSubject(subject : Subject, index : Int) {
         for indexForTime in 0..<subject.time.count {
             do {
-                let insert = makedSubjectsTable.insert(idForTable <- index, grade <- subject.grade, kindOfComplete <- subject.kindOfComplete, number <- subject.number, numberOfLecture <- subject.numberOfLecture, nameOfLecture <- subject.nameOfLecture, credit <- subject.credit, theoryOrPractice <- subject.theoryOrPractice, time <- subject.time[indexForTime], place <- subject.place, professor <- subject.professor[indexForTime])
+                let insert = makedSubjectsTable.insert(idForTable <- index, grade <- subject.grade, kindOfComplete <- subject.kindOfComplete, number <- subject.number, numberOfLecture <- subject.numberOfLecture, nameOfLecture <- subject.nameOfLecture, credit <- subject.credit, theoryOrPractice <- subject.theoryOrPractice, time <- subject.time[indexForTime], place <- subject.place[indexForTime], professor <- subject.professor[indexForTime])
                 try db!.run(insert)
             } catch {
                 print("Cannot insert to database")
@@ -143,6 +143,7 @@ class DatabaseManagement {
                 else {
                     tempSubject.time.append(subject[time])
                     tempSubject.professor.append(subject[professor])
+                    tempSubject.place.append(subject[place])
                 }
             }
             subjects.append(tempSubject)

@@ -9,15 +9,15 @@
 import Foundation
 
 func MakeTimeTables()->[[Int]] {
-    var graph:[[Int]] = MakeGraph()
-    var R:[Int] = []
+    let graph:[[Int]] = MakeGraph()
+    let R:[Int] = []
     var P:[Int] = []
-    var X:[Int] = []
+    let X:[Int] = []
     for i in 0..<graph.count {
         P.append(i)
     }
     var stack:[[Int]] = []
-    var tmp = BronKerbosch(R: R, P: &P , X: X, g: graph, stack: &stack)
+    let tmp = BronKerbosch(R: R, P: &P , X: X, g: graph, stack: &stack)
     if (tmp.count != 0 && tmp.count != 1) {
         stack.append(tmp)
     }

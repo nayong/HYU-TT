@@ -16,6 +16,8 @@ public class CurriculaTable: UIView {
     private var mMarginWidth:CGFloat = 0
     private var mMarginX:CGFloat = 0
     private var mMarginY:CGFloat = 0
+    private var mBoundHeight:CGFloat = 0
+    private var mBoundWidth:CGFloat = 0
     
     public var weekdaySymbolType = CurriculaTableWeekdaySymbolType.short {
         didSet {
@@ -30,7 +32,7 @@ public class CurriculaTable: UIView {
         }
     }
     
-    public var numberOfPeriods = 13 {
+    public var numberOfPeriods = 24 { //nayong 13
         didSet {
             collectionView.reloadData()
             drawCurricula()
@@ -164,18 +166,29 @@ public class CurriculaTable: UIView {
             mMarginY = marginY
         }
     }
+    
+    public var boundHeight = CGFloat(0) {
+        didSet {
+            mBoundHeight = boundHeight
+        }
+    }
+    
+    public var boundWidth = CGFloat(0) {
+        didSet {
+            mBoundWidth = boundWidth
+        }
+    }
 
     var averageHeight: CGFloat {
         //nayong change hieght : height - n
         return (collectionView.frame.height - heightOfWeekdaySymbols - mMarginHeight) / CGFloat(numberOfPeriods)
     }
     var averageWidth: CGFloat {
-        return (collectionView.frame.width - widthOfPeriodSymbols - mMarginWidth) / 7
+        return (collectionView.frame.width - widthOfPeriodSymbols - mMarginWidth) / 6
         //nayong : 7 -> 6
     }
     
     public override init(frame: CGRect) {
-        //var newFrame = CGRect.init(x: frame.minX, y: frame.minY, width: frame.width, height: frame.height - 500) //nayong
         super.init(frame: frame)
         initialize()
     }
@@ -199,7 +212,9 @@ public class CurriculaTable: UIView {
     public override func layoutSubviews() {
         super.layoutSubviews()
         
-        collectionView.frame = bounds
+//        collectionView.frame = bounds
+        var mBounds = CGRect(x:bounds.minX, y:bounds.minY, width: bounds.width - mBoundWidth, height: bounds.height - mBoundHeight)
+        collectionView.frame = mBounds
         drawCurricula()
     }
     
@@ -210,25 +225,27 @@ public class CurriculaTable: UIView {
             }
         }
         for (index, curriculum) in curricula.enumerated() {
-            let weekdayIndex = (curriculum.weekday.rawValue - firstWeekday.rawValue + 7) % 7
+            let weekdayIndex = (curriculum.weekday.rawValue - firstWeekday.rawValue + 6) % 6
             //nayong : where to draw the content
             let x = widthOfPeriodSymbols + averageWidth * CGFloat(weekdayIndex) + rectEdgeInsets.left - mMarginX //nayong
             let y = heightOfWeekdaySymbols + averageHeight * CGFloat(curriculum.startPeriod - 1) + rectEdgeInsets.top - marginY//nayong
             let width = averageWidth - rectEdgeInsets.left - rectEdgeInsets.right
             let height = averageHeight * CGFloat(curriculum.endPeriod - curriculum.startPeriod + 1) - rectEdgeInsets.top - rectEdgeInsets.bottom
+            
             let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
-            //nayong : x , y, w, h
             view.backgroundColor = curriculum.bgColor
             view.layer.cornerRadius = cornerRadius
             view.layer.masksToBounds = true
-            
+
             let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
             var name = curriculum.name
             if maximumNameLength > 0 {
                 name.truncate(maximumNameLength)
             }
-            let attrStr = NSMutableAttributedString(string: name + "\n\n" + curriculum.place, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize)])
+            
+            let attrStr = NSMutableAttributedString(string: name + "\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)])
             attrStr.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)], range: NSRange(0..<name.characters.count))
+            
             label.attributedText = attrStr
             label.textColor = curriculum.textColor
             label.textAlignment = textAlignment
@@ -238,7 +255,47 @@ public class CurriculaTable: UIView {
             label.isUserInteractionEnabled = true
             
             view.addSubview(label)
+            
+            let label1 = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
+            let attrStr1 = NSMutableAttributedString(string: "\n\n"+curriculum.place, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))])
+            attrStr1.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))], range: NSRange(0..<10))
+            
+            label1.attributedText = attrStr1
+            label1.textColor = curriculum.textColor
+            label1.textAlignment = textAlignment
+            label1.numberOfLines = 0
+            label1.tag = index + 1000 //???nayong
+            label1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curriculumTapped)))
+            label1.isUserInteractionEnabled = true
+            
+            view.addSubview(label1)
             addSubview(view)
+
+
+            
+            
+            
+//            let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
+//            var name = curriculum.name
+//            if maximumNameLength > 0 {
+//                name.truncate(maximumNameLength)
+//            }
+//            
+//            let attrStr = NSMutableAttributedString(string: name + "\n\n" + curriculum.place, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize)])
+//            attrStr.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)], range: NSRange(0..<name.characters.count))
+//            
+//            label.attributedText = attrStr
+//            label.textColor = curriculum.textColor
+//            label.textAlignment = textAlignment
+//            label.numberOfLines = 0
+//            label.tag = index
+//            label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curriculumTapped)))
+//            label.isUserInteractionEnabled = true
+//            
+//            view.addSubview(label)
+//            addSubview(view)
+            
+            
         }
     }
     

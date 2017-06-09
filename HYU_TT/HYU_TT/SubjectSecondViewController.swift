@@ -190,7 +190,7 @@ class SubjectSecondViewController: UIViewController, UIPickerViewDelegate, UIPic
             case "Time":
                 tempSubject.time = string.components(separatedBy: ",")
             case "Place":
-                tempSubject.place = string
+                tempSubject.place = string.components(separatedBy: ",")
             case "Professor":
                 if (isTimeInSelectedDay(times: tempSubject.time)) {
                     tempSubject.professor = string.components(separatedBy: ",")
