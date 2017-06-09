@@ -22,14 +22,14 @@ class MainCurriculaViewController: UIViewController {
         temp.place = ["ITBT 508호"]
         temp.time = ["금(11:00-13:00)"]
         DatabaseManagement.MakedServeralTables.addSubject(subject: temp, index: 0)
-//
+//        
+
 //        //Subject 불러 올 때
 //        let subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
 //        
 //        //dummy Subject
 //        let tempSubject = subjects[0][0]
 //        let periods = getTime(time: temp.time)
-
         
         
         //item click event
