@@ -60,15 +60,18 @@ class ChoiceTableViewController: UITableViewController {
         
         cell.subjectName.text = thisSub.nameOfLecture+"("+"\(CFStringGetIntValue(thisSub.credit as CFString!))"+")"
         cell.numberOfLecture.text = thisSub.numberOfLecture
-        cell.professor.append(cell.professor1)
-        cell.professor.append(cell.professor2)
-        cell.professor.append(cell.professor3)
-        cell.professor.append(cell.professor4)
         
         cell.time.append(cell.time1)
         cell.time.append(cell.time2)
         cell.time.append(cell.time3)
         cell.time.append(cell.time4)
+        
+        cell.professor.append(cell.professor1)
+        cell.professor.append(cell.professor2)
+        cell.professor.append(cell.professor3)
+        cell.professor.append(cell.professor4)
+        
+        
         
         for i in 0...(thisSub.time.count - 1) {
             cell.time[i].text = thisSub.time[i]
@@ -86,15 +89,9 @@ class ChoiceTableViewController: UITableViewController {
         return cell
     }
     
-    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        /*let myViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
-        myViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
-        myViewController.modalPresentationStyle = UIModalPresentationStyle.formSheet;*/
-        // "self" here is a ViewController instance
-        
-        let SubjectView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SubjectView") as! SubjectViewController
-        SubjectView.click(Any.self)
-    }*/
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Detail.subject = MySubjects.subjects[indexPath.row]
+    }
 
 
 }
@@ -126,7 +123,19 @@ class TributeTableViewCell:UITableViewCell {
                 subject.0.numberOfLecture == thisSub.numberOfLecture
             }) {
                 ChoosenSub.subjects.remove(at: index)
+                if ChoosenSub.subjects.index(where: { (subject:(Subject, Bool)) -> Bool in
+                    subject.0.number == thisSub.number
+                }) == nil {
+                    ChoosenSub.totalCredit = ChoosenSub.totalCredit - Int(CFStringGetIntValue(thisSub.credit as CFString))
+                    ChoosenSub.totalCreditChanged = true
+                }
             } else {
+                if ChoosenSub.subjects.index(where: { (subject:(Subject, Bool)) -> Bool in
+                    subject.0.number == thisSub.number
+                }) == nil {
+                    ChoosenSub.totalCredit = ChoosenSub.totalCredit + Int(CFStringGetIntValue(thisSub.credit as CFString))
+                    ChoosenSub.totalCreditChanged = true
+                }
                 ChoosenSub.subjects.append((thisSub, true))
             }
             MySubjects.isChanged = true
@@ -134,12 +143,20 @@ class TributeTableViewCell:UITableViewCell {
         }
     }
     @IBAction func subClicked(_ sender: Any) {
+        
         if let row = currentRow {
+            let thisSub = ChoosenSub.subjects[row].0
+
             ChoosenSub.subjects.remove(at: row)
+            if ChoosenSub.subjects.index(where: { (subject:(Subject, Bool)) -> Bool in
+                subject.0.number == thisSub.number
+            }) == nil {
+                ChoosenSub.totalCredit = ChoosenSub.totalCredit - Int(CFStringGetIntValue(thisSub.credit as CFString))
+                ChoosenSub.totalCreditChanged = true
+            }
             
             MySubjects.isChanged = true
             ChoosenSub.isChanged = true
-            
             for sub in ChoosenSub.subjects {
                 print(sub.0.nameOfLecture)
             }

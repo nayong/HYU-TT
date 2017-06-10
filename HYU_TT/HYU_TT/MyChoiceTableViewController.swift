@@ -75,12 +75,7 @@ class MyChoiceTableViewController: UITableViewController {
 
     }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let V2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
-        
-        self.presentedViewController?.addChildViewController(V2)
-        self.view.addSubview(V2.view)
-        V2.view.frame = CGRect(x: 0, y: -50, width: self.view.frame.width, height: 5000)
-        V2.didMove(toParentViewController: self)
+        Detail.subject = MySubjects.subjects[indexPath.row]
     }
 }
 
