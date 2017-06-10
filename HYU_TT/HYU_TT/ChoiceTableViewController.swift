@@ -108,6 +108,7 @@ class TributeTableViewCell:UITableViewCell {
     @IBOutlet weak var professor3: UILabel!
     @IBOutlet weak var professor4: UILabel!
     @IBOutlet weak var button: UIButton!
+    @IBOutlet weak var essential: UIButton!
     
     var currentRow:Int?
     
@@ -115,7 +116,7 @@ class TributeTableViewCell:UITableViewCell {
     var professor:[UILabel] = []
     
 
-    @IBAction func asd(_ sender: Any) {
+    @IBAction func addClicked(_ sender: Any) {
         
         if let row = currentRow {
             let thisSub = MySubjects.subjects[row]
@@ -160,6 +161,16 @@ class TributeTableViewCell:UITableViewCell {
             for sub in ChoosenSub.subjects {
                 print(sub.0.nameOfLecture)
             }
+        }
+    }
+    @IBAction func essentilClicked(_ sender: Any) {
+        if let row = currentRow {
+            if ChoosenSub.subjects[row].1 == true {
+                ChoosenSub.subjects[row].1 = false
+            } else {
+                ChoosenSub.subjects[row].1 = true
+            }
+            ChoosenSub.isChanged = true
         }
     }
 

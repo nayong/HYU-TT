@@ -70,6 +70,12 @@ class MyChoiceTableViewController: UITableViewController {
             }
         }
         
+        if ChoosenSub.subjects[indexPath.row].1 == true {
+            cell.essential.setImage(UIImage(named: "essential.png"), for: .normal)
+        } else {
+            cell.essential.setImage(UIImage(named: "option.png"), for: .normal)
+        }
+        
         cell.currentRow = indexPath.row
         return cell
 
