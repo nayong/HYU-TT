@@ -18,6 +18,7 @@ public class CurriculaTable: UIView {
     private var mMarginY:CGFloat = 0
     private var mBoundHeight:CGFloat = 0
     private var mBoundWidth:CGFloat = 0
+    private var mShowPlace = true
     
     public var weekdaySymbolType = CurriculaTableWeekdaySymbolType.short {
         didSet {
@@ -178,6 +179,13 @@ public class CurriculaTable: UIView {
             mBoundWidth = boundWidth
         }
     }
+    
+    //nayong
+    public var showPlace = true{
+        didSet{
+            mShowPlace = showPlace
+        }
+    }
 
     var averageHeight: CGFloat {
         //nayong change hieght : height - n
@@ -256,6 +264,7 @@ public class CurriculaTable: UIView {
             
             view.addSubview(label)
             
+            if(mShowPlace == true){
             let label1 = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
             let attrStr1 = NSMutableAttributedString(string: "\n\n"+curriculum.place, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))])
             attrStr1.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))], range: NSRange(0..<10))
@@ -264,16 +273,13 @@ public class CurriculaTable: UIView {
             label1.textColor = curriculum.textColor
             label1.textAlignment = textAlignment
             label1.numberOfLines = 0
-            label1.tag = index + 1000 //???nayong
+            //label1.tag = index + 1000 //???nayong
             label1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curriculumTapped)))
             label1.isUserInteractionEnabled = true
-            
             view.addSubview(label1)
+            }
+            
             addSubview(view)
-
-
-            
-            
             
 //            let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
 //            var name = curriculum.name
@@ -302,6 +308,7 @@ public class CurriculaTable: UIView {
     func curriculumTapped(_ sender: UITapGestureRecognizer) {
 //        let curriculum = curricula[(sender.view as! UILabel).tag]
 //        curriculum.tapHandler(curriculum)
+
     }
     
 }

@@ -18,15 +18,16 @@ class MainCurriculaViewController: UIViewController {
         
         var temp = Subject()
         DatabaseManagement.MakedServeralTables.deleteTable()
+        
         temp.numberOfLecture = "15607"
         temp.nameOfLecture = "소프트웨어 스튜디오"
-        temp.professor = ["링고스타"]
-        temp.place = ["ITBT 508호"]
-        temp.time = ["금(11:00-13:00)"]
+        temp.professor = ["링고스타","링고스타","링고스타","링고스타","링고스타"]
+        temp.place = ["ITBT 508호","ITBT 508호","ITBT 508호","ITBT 508호","ITBT 508호"]
+        temp.time = ["월(10:00-11:00)","화(11:00-13:00)","수(09:00-13:00)","목(15:00-19:00)","금(18:00-21:00)"]
+        
         DatabaseManagement.MakedServeralTables.addSubject(subject: temp, index: 0)
-//        
 
-//        //Subject 불러 올 때
+        //Subject 불러 올 때
         let subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
         
         let handler = { (curriculum: CurriculaTableItem) in }
@@ -50,17 +51,8 @@ class MainCurriculaViewController: UIViewController {
         
         //set data
         curriculaTable.curricula = tableItemArray
-        
-        //view settings
-        curriculaTable.marginHeight = 100
-        curriculaTable.marginY = -65
-        curriculaTable.bgColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
-        curriculaTable.borderWidth = 0.5
-        curriculaTable.borderColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.0)
-        curriculaTable.cornerRadius = 3 //item courner radius
-        curriculaTable.textFontSize = 11
-        curriculaTable.textEdgeInsets = UIEdgeInsets(top: 1, left: 2, bottom: 1, right: 1.5) //padding (when positive number)
-        curriculaTable.maximumNameLength = 15
+        setTable()
+
     }
     
     override func didReceiveMemoryWarning() {
@@ -129,6 +121,21 @@ class MainCurriculaViewController: UIViewController {
             newWeekday = 1
         }
         return newWeekday
+    }
+    
+    func setTable(){
+        
+        //view settings
+        curriculaTable.marginHeight = 100
+        curriculaTable.marginY = -65
+        curriculaTable.bgColor = UIColor(red: 0.95, green: 0.95, blue: 0.95, alpha: 1.0)
+        curriculaTable.borderWidth = 0.5
+        curriculaTable.borderColor = UIColor(red: 0.90, green: 0.90, blue: 0.90, alpha: 1.0)
+        curriculaTable.cornerRadius = 3 //item courner radius
+        curriculaTable.textFontSize = 11
+        curriculaTable.textEdgeInsets = UIEdgeInsets(top: 1, left: 2, bottom: 1, right: 1.5) //padding (when positive number)
+        curriculaTable.maximumNameLength = 15
+        
     }
     
 }

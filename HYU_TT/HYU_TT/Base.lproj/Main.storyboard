@@ -94,7 +94,7 @@
         <!--시간표 저장소-->
         <scene sceneID="VIG-wd-vQG">
             <objects>
-                <viewController id="05M-Jb-yFn" customClass="TimeTableViewController2" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="05M-Jb-yFn" customClass="StorageViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="c5a-Ct-rzD"/>
                         <viewControllerLayoutGuide type="bottom" id="oxc-2n-eV5"/>
@@ -102,13 +102,51 @@
                     <view key="view" contentMode="scaleToFill" id="tZq-MR-uwX">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="WnE-Vr-Jn6">
+                                <rect key="frame" x="10" y="10" width="358" height="667"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kDP-az-9b8">
+                                    <size key="itemSize" width="174" height="238"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="1Rr-cL-4a2" customClass="StorageCellCollectionViewCell" customModule="HYU_TT" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="174" height="238"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="174" height="238"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WGS-H8-fpH" customClass="CurriculaTable" customModule="CurriculaTable">
+                                                    <rect key="frame" x="4" y="4" width="166" height="230"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.93087369109947649" green="0.93055142383260414" blue="0.9227710014985151" alpha="1" colorSpace="calibratedRGB"/>
+                                        <size key="customSize" width="174" height="238"/>
+                                        <connections>
+                                            <outlet property="curriculaTable" destination="WGS-H8-fpH" id="n7U-ua-W4Q"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="시간표 저장소" id="NKb-WH-FJS"/>
+                    <connections>
+                        <outlet property="collectionView" destination="WnE-Vr-Jn6" id="peV-XT-mCV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxS-NE-LGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="254" y="1340"/>
+            <point key="canvasLocation" x="668" y="1339.8800599700151"/>
         </scene>
         <!--과목 고르기-->
         <scene sceneID="cy4-b8-un4">
@@ -616,7 +654,8 @@
             </objects>
             <point key="canvasLocation" x="2328.8000000000002" y="141.67916041979012"/>
         </scene>
-        <!--Detail View Controller-->
+
+<!--Detail View Controller-->
         <scene sceneID="Dee-0b-Jt5">
             <objects>
                 <viewController storyboardIdentifier="DetailView" id="gmf-yd-z8v" customClass="DetailViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
@@ -666,6 +705,7 @@
             </objects>
             <point key="canvasLocation" x="2328.8000000000002" y="858.62068965517244"/>
         </scene>
+
         <!--Main Curricula View Controller-->
         <scene sceneID="u7S-LD-5Up">
             <objects>
