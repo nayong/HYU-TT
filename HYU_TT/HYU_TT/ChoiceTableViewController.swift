@@ -58,9 +58,8 @@ class ChoiceTableViewController: UITableViewController {
         }
         
         
-        cell.subjectName.text = thisSub.nameOfLecture
+        cell.subjectName.text = thisSub.nameOfLecture+"("+"\(CFStringGetIntValue(thisSub.credit as CFString!))"+")"
         cell.numberOfLecture.text = thisSub.numberOfLecture
-        
         cell.professor.append(cell.professor1)
         cell.professor.append(cell.professor2)
         cell.professor.append(cell.professor3)
@@ -87,7 +86,7 @@ class ChoiceTableViewController: UITableViewController {
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    /*override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         /*let myViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
         myViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         myViewController.modalPresentationStyle = UIModalPresentationStyle.formSheet;*/
@@ -95,7 +94,7 @@ class ChoiceTableViewController: UITableViewController {
         
         let SubjectView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SubjectView") as! SubjectViewController
         SubjectView.click(Any.self)
-    }
+    }*/
 
 
 }

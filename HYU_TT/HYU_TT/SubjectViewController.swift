@@ -155,12 +155,12 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
     }
     */
     @IBAction func click(_ sender: Any) {
-        print("ㅠㅠ")
+        
         let V2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
         
-        self.presentedViewController?.addChildViewController(V2)
+        self.addChildViewController(V2)
         self.view.addSubview(V2.view)
-        print("했는데")
+        V2.didMove(toParentViewController: self)
         
     }
     

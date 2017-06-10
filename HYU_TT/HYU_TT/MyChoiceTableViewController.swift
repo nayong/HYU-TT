@@ -46,7 +46,7 @@ class MyChoiceTableViewController: UITableViewController {
         
         
         
-        cell.subjectName.text = thisSub.nameOfLecture
+        cell.subjectName.text = thisSub.nameOfLecture+"("+"\(CFStringGetIntValue(thisSub.credit as CFString!))"+")"
         cell.numberOfLecture.text = thisSub.numberOfLecture
         
         cell.professor.append(cell.professor1)
@@ -73,6 +73,14 @@ class MyChoiceTableViewController: UITableViewController {
         cell.currentRow = indexPath.row
         return cell
 
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let V2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        
+        self.presentedViewController?.addChildViewController(V2)
+        self.view.addSubview(V2.view)
+        V2.view.frame = CGRect(x: 0, y: -50, width: self.view.frame.width, height: 5000)
+        V2.didMove(toParentViewController: self)
     }
 }
 
