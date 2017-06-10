@@ -676,6 +676,9 @@
                                 <state key="normal" title="시간표만들기">
                                     <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="make:" destination="LBh-K5-Upk" eventType="touchUpInside" id="7wF-5C-Ih7"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="총학점 : 0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Q8-Ll-weH">
                                 <rect key="frame" x="10" y="12" width="88" height="21"/>

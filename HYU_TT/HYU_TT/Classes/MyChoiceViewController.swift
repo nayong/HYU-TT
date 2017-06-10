@@ -37,6 +37,26 @@ class MyChoiceViewController: UIViewController {
             V2.didMove(toParentViewController: self)
         }
     }
+    @IBAction func make(_ sender: Any) {
+        var title = ""
+        var message = ""
+        var okText = ""
+        if(ChoosenSub.subjects.count != 0) {
+            title = "생성 완료"
+            message = "시간표가 만들어졌습니다!\n시간표 저장소 탭에서 확인하세요\u{1F496}"
+            okText = "확인"
+        } else {
+            title = "생성 실패"
+            message = "듣고 싶은 과목을 선택해 주세요."
+            okText = "확인"
+        }
+        
+        let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        let okayButton = UIAlertAction(title: okText, style: UIAlertActionStyle.cancel, handler: nil)
+        alert.addAction(okayButton)
+        
+        self.present(alert, animated: true, completion: nil)
+    }
     
 
     /*
