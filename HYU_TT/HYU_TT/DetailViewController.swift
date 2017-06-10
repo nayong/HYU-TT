@@ -58,8 +58,11 @@ class DetailViewController: UIViewController {
         if let detailSubject = Detail.subject {
             nameOfLecture.text = detailSubject.nameOfLecture+"("+"\(CFStringGetIntValue(detailSubject.credit as CFString!))"+"학점)"
             
-            grade.text = detailSubject.grade + "학년"
-            
+            if detailSubject.grade == "" {
+                grade.text = "전학년"
+            } else {
+                grade.text = detailSubject.grade + "학년"
+            }
             number.text = "학수번호 : " + detailSubject.number
             
             numberOfLecture.text = "수업번호 : " + detailSubject.numberOfLecture
