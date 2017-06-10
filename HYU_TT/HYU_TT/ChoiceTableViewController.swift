@@ -9,10 +9,7 @@
 import UIKit
 
 class ChoiceTableViewController: UITableViewController {
-    
-    //var refresher: UIRefreshControl!
-    
-    
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -88,6 +85,16 @@ class ChoiceTableViewController: UITableViewController {
         cell.currentRow = indexPath.row
 
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        /*let myViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        myViewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        myViewController.modalPresentationStyle = UIModalPresentationStyle.formSheet;*/
+        // "self" here is a ViewController instance
+        
+        let SubjectView = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SubjectView") as! SubjectViewController
+        SubjectView.click(Any.self)
     }
 
 

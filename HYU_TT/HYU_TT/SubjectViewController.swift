@@ -15,8 +15,6 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
 
     var majorSubjects:[Subject] = []
     var liberalSubjects:[Subject] = []
-    
-    var views = [UIView]()
     var animator:UIDynamicAnimator!
     var gravity:UIGravityBehavior!
     var snap:UISnapBehavior!
@@ -35,16 +33,15 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         gravity.magnitude = 4
         
         let offset:CGFloat = 40
-        if let view = addViewController(atOffset: offset, dataForVC: nil){
-            views.append(view)
-        }
+        
+         addViewController(atOffset: offset, dataForVC: nil)
         
         
         
         // Do any additional setup after loading the view.
     }
     
-    func addViewController (atOffset offset:CGFloat, dataForVC:AnyObject?) -> UIView? {
+    func addViewController (atOffset offset:CGFloat, dataForVC:AnyObject?) {
 
         let frameForView = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
@@ -88,10 +85,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
             
             let itemBehavior = UIDynamicItemBehavior(items: [view])
             animator.addBehavior(itemBehavior)
-            
-            return view
         }
-        return nil
     }
     
     func handlePan (gestureRecognizer:UIPanGestureRecognizer) {
@@ -133,39 +127,22 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
                 snap = UISnapBehavior(item: view, snapTo : snapPosition)
                 animator.addBehavior(snap)
 
-                setVisibility(view: view, alpha: 0)
-                
                 viewPinned = true
             }
         }else{
             if viewPinned {
                 animator.removeBehavior(snap)
-                setVisibility(view: view, alpha: 1)
                 viewPinned = false
             }
         }
     }
     
-    func setVisibility (view: UIView, alpha:CGFloat) {
-        for aView in views {
-            if aView != view {
-                aView.alpha = alpha
-            }
-        }
-    }
     
    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-    }
-    
-    @IBAction func MakeTT(_ sender: Any) {
-        let sb = UIStoryboard(name: "Main", bundle: nil)
-        let Tabbar = sb.instantiateViewController(withIdentifier: "Tabbar") as! TabBarController
-        
-        Tabbar.selectedIndex = 2
     }
 
     /*
@@ -177,6 +154,15 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         // Pass the selected object to the new view controller.
     }
     */
+    @IBAction func click(_ sender: Any) {
+        print("ㅠㅠ")
+        let V2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+        
+        self.presentedViewController?.addChildViewController(V2)
+        self.view.addSubview(V2.view)
+        print("했는데")
+        
+    }
     
     /* 전공/교양 따라 페이지 바꿈 */
     @IBAction func showContainer(_ sender: UISegmentedControl) {

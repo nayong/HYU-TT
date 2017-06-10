@@ -113,7 +113,7 @@
         <!--과목 고르기-->
         <scene sceneID="cy4-b8-un4">
             <objects>
-                <viewController id="G7H-3Z-rK1" customClass="SubjectViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SubjectView" id="G7H-3Z-rK1" customClass="SubjectViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ybh-md-7eV"/>
                         <viewControllerLayoutGuide type="bottom" id="8UI-Wf-aJT"/>
@@ -160,6 +160,14 @@
                                 <state key="normal" title="Make"/>
                                 <connections>
                                     <action selector="buttonTabed:" destination="G7H-3Z-rK1" eventType="touchUpInside" id="RpX-Ev-wsD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P0B-Pt-tNw">
+                                <rect key="frame" x="86" y="278" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="test"/>
+                                <connections>
+                                    <action selector="click:" destination="G7H-3Z-rK1" eventType="touchUpInside" id="9l2-gR-cHg"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -604,10 +612,10 @@
             </objects>
             <point key="canvasLocation" x="2329" y="142"/>
         </scene>
-        <!--View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="Dee-0b-Jt5">
             <objects>
-                <viewController id="gmf-yd-z8v" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DetailView" id="gmf-yd-z8v" customClass="DetailViewController" customModule="HYU_TT" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wpW-Xf-F2n"/>
                         <viewControllerLayoutGuide type="bottom" id="Uhr-tY-llV"/>
@@ -615,6 +623,13 @@
                     <view key="view" contentMode="scaleToFill" id="C6e-7f-etM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cyy-eh-otS">
+                                <rect key="frame" x="67" y="269" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.89508289740000002" blue="0.47295971850000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>

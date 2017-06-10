@@ -104,3 +104,7 @@ struct Category {
 
     init() {}
 }
+
+struct detail {
+    static var isClicked = false
+}
