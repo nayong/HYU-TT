@@ -46,7 +46,7 @@ class MyChoiceTableViewController: UITableViewController {
         
         
         
-        cell.subjectName.text = thisSub.nameOfLecture
+        cell.subjectName.text = thisSub.nameOfLecture+"("+"\(CFStringGetIntValue(thisSub.credit as CFString!))"+")"
         cell.numberOfLecture.text = thisSub.numberOfLecture
         
         cell.professor.append(cell.professor1)
@@ -70,9 +70,18 @@ class MyChoiceTableViewController: UITableViewController {
             }
         }
         
+        if ChoosenSub.subjects[indexPath.row].1 == true {
+            cell.essential.setImage(UIImage(named: "essential.png"), for: .normal)
+        } else {
+            cell.essential.setImage(UIImage(named: "option.png"), for: .normal)
+        }
+        
         cell.currentRow = indexPath.row
         return cell
 
+    }
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        Detail.subject = ChoosenSub.subjects[indexPath.row].0
     }
 }
 

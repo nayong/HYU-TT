@@ -46,7 +46,7 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         let frameForView = self.view.bounds.offsetBy(dx: 0, dy: self.view.bounds.size.height - offset)
         
         let sb = UIStoryboard(name: "Main", bundle: nil)
-        let MyChoice = sb.instantiateViewController(withIdentifier: "MyChoiceShow") as! ViewController
+        let MyChoice = sb.instantiateViewController(withIdentifier: "MyChoiceShow") as! MyChoiceViewController
         
         if let view = MyChoice.view {
             view.frame = frameForView
@@ -154,14 +154,14 @@ class SubjectViewController: UIViewController, UICollisionBehaviorDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func click(_ sender: Any) {
-        print("ㅠㅠ")
-        let V2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
-        
-        self.presentedViewController?.addChildViewController(V2)
-        self.view.addSubview(V2.view)
-        print("했는데")
-        
+
+    @IBAction func detail(_ sender: Any) {
+        if Detail.subject != nil {
+            let V2 = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailView") as! DetailViewController
+            self.addChildViewController(V2)
+            self.view.addSubview(V2.view)
+            V2.didMove(toParentViewController: self)
+        }
     }
     
     /* 전공/교양 따라 페이지 바꿈 */

@@ -94,6 +94,8 @@ struct MySubjects {
 struct ChoosenSub {
     static var subjects:[(subject : Subject,isEssencial : Bool)] = []
     static var isChanged:Bool = false
+    static var totalCredit:Int = 0
+    static var totalCreditChanged:Bool = false
 }
 
 struct Category {
@@ -105,6 +107,6 @@ struct Category {
     init() {}
 }
 
-struct detail {
-    static var isClicked = false
+struct Detail {
+    static var subject:Subject?
 }
