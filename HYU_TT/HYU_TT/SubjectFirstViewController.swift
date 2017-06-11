@@ -213,9 +213,8 @@ class SubjectFirstViewController: UIViewController, UIPickerViewDelegate, UIPick
                     tempSubject.place.append(changeBuildingNumberToName(buildingNumber: place))
                 }
             case "Professor":
-                
+                tempSubject.grade = passedGrade!
                 tempSubject.professor = string.components(separatedBy: ",")
-                tempSubject.grade = string
                 MySubjects.subjects.append(tempSubject)
                 tempSubject = Subject()
             default: return

@@ -41,10 +41,31 @@ class MyChoiceViewController: UIViewController {
         var title = ""
         var message = ""
         var okText = ""
+        let timeTable = MakeTimeTables()
+        let essentialList = MakeEssensialSubjectArray()
+        var indexForTable = 0
+        
+        DatabaseManagement.MakedServeralTables.deleteTable()
         if(ChoosenSub.subjects.count != 0) {
-            title = "생성 완료"
-            message = "시간표가 만들어졌습니다!\n시간표 저장소 탭에서 확인하세요\u{1F496}"
-            okText = "확인"
+            for table in timeTable {
+                if (isBIncludedInA(A: table, B: essentialList)) {
+                    for subjectNumber in table {
+                        DatabaseManagement.MakedServeralTables.addSubject(subject: ChoosenSub.subjects[subjectNumber].subject, index: indexForTable)
+                    }
+                    indexForTable = indexForTable + 1
+                }
+            }
+            
+            if (indexForTable == 0) {
+                title = "생성 실패"
+                message = "조건을 만족하는 시간표가\n지구상에 존재하지 않습니다.\n필수 과목을 확인해 주세요^^;;"
+                okText = "확인"
+            }
+            else {
+                title = "생성 완료"
+                message = "시간표가 만들어졌습니다!\n시간표 저장소 탭에서 확인하세요\u{1F496}"
+                okText = "확인"
+            }
         } else {
             title = "생성 실패"
             message = "듣고 싶은 과목을 선택해 주세요."
