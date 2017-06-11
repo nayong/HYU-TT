@@ -233,6 +233,7 @@ public class CurriculaTable: UIView {
             }
         }
         for (index, curriculum) in curricula.enumerated() {
+            print("curricula table : \(index) \(curriculum.name)")
             let weekdayIndex = (curriculum.weekday.rawValue - firstWeekday.rawValue + 6) % 6
             //nayong : where to draw the content
             let x = widthOfPeriodSymbols + averageWidth * CGFloat(weekdayIndex) + rectEdgeInsets.left - mMarginX //nayong
@@ -240,19 +241,27 @@ public class CurriculaTable: UIView {
             let width = averageWidth - rectEdgeInsets.left - rectEdgeInsets.right
             let height = averageHeight * CGFloat(curriculum.endPeriod - curriculum.startPeriod + 1) - rectEdgeInsets.top - rectEdgeInsets.bottom
             
+            print("2curricula table : \(index) \(curriculum.name)")
+            
             let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
             view.backgroundColor = curriculum.bgColor
             view.layer.cornerRadius = cornerRadius
             view.layer.masksToBounds = true
 
+            print("3curricula table : \(index) \(curriculum.name)")
+            
             let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
             var name = curriculum.name
             if maximumNameLength > 0 {
                 name.truncate(maximumNameLength)
             }
             
+            print("4curricula table : \(index) \(curriculum.name)")
+            
             let attrStr = NSMutableAttributedString(string: name + "\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)])
             attrStr.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)], range: NSRange(0..<name.characters.count))
+            
+            print("6curricula table : \(index) \(curriculum.name)")
             
             label.attributedText = attrStr
             label.textColor = curriculum.textColor
@@ -262,7 +271,11 @@ public class CurriculaTable: UIView {
             label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curriculumTapped)))
             label.isUserInteractionEnabled = true
             
+            print("7curricula table : \(index) \(curriculum.name)")
+            
             view.addSubview(label)
+            
+            print("8curricula table : \(index) \(curriculum.name)")
             
             if(mShowPlace == true){
             let label1 = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
@@ -279,7 +292,12 @@ public class CurriculaTable: UIView {
             view.addSubview(label1)
             }
             
+            print("9curricula table : \(index) \(curriculum.name)")
+            
             addSubview(view)
+            
+            print("10curricula table : \(index) \(curriculum.name)")
+
             
 //            let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
 //            var name = curriculum.name

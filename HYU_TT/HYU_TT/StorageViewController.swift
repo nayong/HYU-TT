@@ -11,18 +11,36 @@ import CurriculaTable
 
 class StorageViewController: UIViewController {
     
-    public let number = ["1","2","3","4","4","4","4","4"]
+    var subjects:[[Subject]] = []
     
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        collectionView.dataSource = self
+        subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
+        print("load number..." + String(subjects.count))
+        self.collectionView.reloadData()
         
+        
+//        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: {
+//            (Timer) in
+//            if true {
+//            }
+//        })
+//        
+        collectionView.dataSource = self
 
     }
-
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
+        print("appear number..." + String(self.subjects.count))
+        self.collectionView.reloadData()
+    }
+    
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -35,16 +53,17 @@ class StorageViewController: UIViewController {
 extension StorageViewController : UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return number.count
+        print("cellection number..." + String(self.subjects.count))
+        return subjects.count
     }
     
     @available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as!StorageCellCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! StorageCellCollectionViewCell
         let cellSize = CGSize(width: CGFloat((collectionView.frame.size.width / 1) - 20), height: CGFloat(100))
         cell.sizeThatFits(cellSize)
-        setData(curriculaTable: cell.curriculaTable)
         setTable(curriculaTable: cell.curriculaTable)
+        setData(curriculaTable: cell.curriculaTable, index: indexPath.item)
         return cell
     }
     
@@ -118,32 +137,53 @@ extension StorageViewController : UICollectionViewDataSource {
         return newWeekday
     }
     
-    func setData(curriculaTable :CurriculaTable){
+    func setData(curriculaTable :CurriculaTable, index: Int){
         
         //Subject 불러 올 때
-        let subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
+//        subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
         
         let handler = { (curriculum: CurriculaTableItem) in }
         
         //각 강의들을 시간표에 맞는 struct로 바꾼 배열
         var tableItemArray:[CurriculaTableItem] = []
         
-        //불러온 Table 을 과목 하나씩 돌기
-        for subject in subjects[0] {
-            
+        let set = subjects[index]
+        print("index : " + String(index) + "set = subjects[index]")
+        print("set.count : " + String(set.count) + "set = subjects[index]")
+
+        for subject in set {
+            print("start of data setting..")
+
             //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
             let periods = getTime(time:subject.time)
-            
             //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
             for indexForTime in 0..<subject.time.count {
+                print("subject lecture name" + subject.nameOfLecture)
                 tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
                     , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: UIColor(red: 0.78, green: 0.49, blue: 0.87, alpha: 1.0), identifier: "20393", tapHandler: handler))
             }
+            print("end of data setting..")
         }
         
-        //set data
-        curriculaTable.curricula = tableItemArray
+//        //불러온 Table 을 과목 하나씩 돌기
+//        for set in subjects {
+//            for subject in set {
+//                //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
+//                let periods = getTime(time:subject.time)
+//                //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
+//                for indexForTime in 0..<subject.time.count {
+//                    tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
+//                        , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: UIColor(red: 0.78, green: 0.49, blue: 0.87, alpha: 1.0), identifier: "20393", tapHandler: handler))
+//                }
+//            }
+//        }
         
+        //set data
+        for item1 in tableItemArray{
+            print("tableItemArray"+item1.name)
+        }
+        curriculaTable.curricula = tableItemArray
+        print("index : " + String(index) + "curriculaTable.curricula = tableItemArray")
     }
 
 }
