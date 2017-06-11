@@ -13,5 +13,7 @@ import CurriculaTable
 class StorageCellCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var curriculaTable: CurriculaTable!
+    @IBOutlet weak var checkBox: BEMCheckBox!
+    @IBOutlet weak var background: UIView!
     
 }

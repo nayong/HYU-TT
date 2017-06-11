@@ -12,14 +12,15 @@ import CurriculaTable
 class StorageViewController: UIViewController {
     
     var subjects:[[Subject]] = []
-    
+    var clickedIndex:Int = -1
+    var clickedIndexPath:IndexPath = []
+
     @IBOutlet weak var collectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
-        print("load number..." + String(subjects.count))
         self.collectionView.reloadData()
         
         
@@ -30,43 +31,77 @@ class StorageViewController: UIViewController {
 //        })
 //        
         collectionView.dataSource = self
+        collectionView.delegate = self
 
     }
     
     override func viewWillAppear(_ animated: Bool) {
         self.subjects = DatabaseManagement.MakedServeralTables.queryAllProduct()
-        print("appear number..." + String(self.subjects.count))
         self.collectionView.reloadData()
     }
-    
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-    
-    
 }
 
-extension StorageViewController : UICollectionViewDataSource {
+extension StorageViewController : UICollectionViewDataSource, UICollectionViewDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        print("cellection number..." + String(self.subjects.count))
+        self.collectionView.delegate = self
         return subjects.count
     }
     
-    @available(iOS 6.0, *)
+    //@available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        //cell setting
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! StorageCellCollectionViewCell
+        collectionView.isUserInteractionEnabled = true
         let cellSize = CGSize(width: CGFloat((collectionView.frame.size.width / 1) - 20), height: CGFloat(100))
         cell.sizeThatFits(cellSize)
         setTable(curriculaTable: cell.curriculaTable)
         setData(curriculaTable: cell.curriculaTable, index: indexPath.item)
+        
+//        //touch event
+//        let touchGesture = UITapGestureRecognizer(target: self, action: #selector(StorageViewController.tableTapped(sender:)))
+//        cell.curriculaTable.addGestureRecognizer(touchGesture)
+    
+        clickedIndexPath = indexPath
+        clickedIndex = indexPath.item
+        
+        //delete
+        //self.setEditing(true, animated: true)
+        
         return cell
     }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        print("selecete")
+
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! StorageCellCollectionViewCell
+        cell.background.backgroundColor = UIColor(red: 0.99, green: 0.00, blue: 0.87, alpha: 1.0)
+        collectionView.reloadData()
+        
+        //set data
+        let set = subjects[indexPath.item]
+        for _ in 0..<DatabaseManagement.SeletedTable.queryAllProduct().count{
+            DatabaseManagement.SeletedTable.deleteTable()
+        }
+        for subject in set {
+            DatabaseManagement.SeletedTable.addSubject(subject: subject, index: 0)
+            print("\(subject.nameOfLecture)")
+        }
+        //self.collectionView.deleteItems(at: [clickedIndex])
+        
+    }
+    
+//    func tableTapped(sender: UITapGestureRecognizer){
+//        print("tapped")
+//    }
+//    
     func setTable(curriculaTable :CurriculaTable){
         
         //view settings
@@ -148,21 +183,16 @@ extension StorageViewController : UICollectionViewDataSource {
         var tableItemArray:[CurriculaTableItem] = []
         
         let set = subjects[index]
-        print("index : " + String(index) + "set = subjects[index]")
-        print("set.count : " + String(set.count) + "set = subjects[index]")
-
+ 
         for subject in set {
-            print("start of data setting..")
 
             //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
             let periods = getTime(time:subject.time)
             //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
             for indexForTime in 0..<subject.time.count {
-                print("subject lecture name" + subject.nameOfLecture)
                 tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
                     , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: UIColor(red: 0.78, green: 0.49, blue: 0.87, alpha: 1.0), identifier: "20393", tapHandler: handler))
             }
-            print("end of data setting..")
         }
         
 //        //불러온 Table 을 과목 하나씩 돌기
@@ -183,7 +213,7 @@ extension StorageViewController : UICollectionViewDataSource {
             print("tableItemArray"+item1.name)
         }
         curriculaTable.curricula = tableItemArray
-        print("index : " + String(index) + "curriculaTable.curricula = tableItemArray")
+        
     }
 
 }
