@@ -89,6 +89,7 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         let mCell:StorageCellCollectionViewCell = collectionView.cellForItem(at: indexPath) as! StorageCellCollectionViewCell
     
         if mCell.background.backgroundColor == colorBlue{
+            
             mCell.background.backgroundColor = colorTrasparent
             mCell.checkBox.isHidden = true
             mCell.checkBox.setOn(false, animated: true)
