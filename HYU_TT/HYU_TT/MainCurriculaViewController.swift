@@ -12,11 +12,24 @@ import CurriculaTable
 class MainCurriculaViewController: UIViewController {
     
     @IBOutlet weak var curriculaTable: CurriculaTable!
+    let colors:[UIColor] = [
+        UIColor(red:0.27, green:0.70, blue:0.62, alpha:1.0),
+        UIColor(red:0.94, green:0.79, blue:0.30, alpha:1.0),
+        UIColor(red:0.89, green:0.48, blue:0.25, alpha:1.0),
+        UIColor(red:0.87, green:0.35, blue:0.29, alpha:1.0),
+        UIColor(red:0.29, green:0.44, blue:0.53, alpha:1.0),
+        UIColor(red:0.56, green:0.40, blue:0.64, alpha:1.0),
+        UIColor(red:0.38, green:0.70, blue:0.40, alpha:1.0),
+        UIColor(red:0.94, green:0.68, blue:0.21, alpha:1.0),
+        UIColor(red:0.89, green:0.44, blue:0.36, alpha:1.0),
+        UIColor(red:0.87, green:0.44, blue:0.49, alpha:1.0),
+        UIColor(red:0.25, green:0.64, blue:0.53, alpha:1.0),
+        UIColor(red:0.70, green:0.70, blue:0.28, alpha:1.0)
+    ]
+    var colorIndex = 0
     
     override func viewDidLoad() {
-        super.viewDidLoad()
-        DatabaseManagement.SeletedTable.deleteTable()
-        
+        super.viewDidLoad()        
 //        var temp = Subject()
 //        DatabaseManagement.MakedServeralTables.deleteTable()
 //        
@@ -34,7 +47,6 @@ class MainCurriculaViewController: UIViewController {
         print("main view")
         //Subject 불러 올 때
         let subjects = DatabaseManagement.SeletedTable.queryAllProduct()
-        
         let handler = { (curriculum: CurriculaTableItem) in }
         
         //각 강의들을 시간표에 맞는 struct로 바꾼 배열
@@ -53,11 +65,11 @@ class MainCurriculaViewController: UIViewController {
             //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
             for indexForTime in 0..<subject.time.count {
                 tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
-                    , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: UIColor(red: 0.78, green: 0.49, blue: 0.87, alpha: 1.0), identifier: "20393", tapHandler: handler))
-                
+                    , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: colors[colorIndex], identifier: "20393", tapHandler: handler))
             }
+            colorIndex = (colorIndex + 1) % 12
         }
-        
+        colorIndex = 0
         //set data
         setTable()
         curriculaTable.curricula = tableItemArray
