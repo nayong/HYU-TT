@@ -240,19 +240,23 @@ public class CurriculaTable: UIView {
             let width = averageWidth - rectEdgeInsets.left - rectEdgeInsets.right
             let height = averageHeight * CGFloat(curriculum.endPeriod - curriculum.startPeriod + 1) - rectEdgeInsets.top - rectEdgeInsets.bottom
             
+            
             let view = UIView(frame: CGRect(x: x, y: y, width: width, height: height))
             view.backgroundColor = curriculum.bgColor
             view.layer.cornerRadius = cornerRadius
             view.layer.masksToBounds = true
 
+            
             let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
             var name = curriculum.name
             if maximumNameLength > 0 {
                 name.truncate(maximumNameLength)
             }
             
+            
             let attrStr = NSMutableAttributedString(string: name + "\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)])
             attrStr.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)], range: NSRange(0..<name.characters.count))
+            
             
             label.attributedText = attrStr
             label.textColor = curriculum.textColor
@@ -262,7 +266,9 @@ public class CurriculaTable: UIView {
             label.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curriculumTapped)))
             label.isUserInteractionEnabled = true
             
+            
             view.addSubview(label)
+            
             
             if(mShowPlace == true){
             let label1 = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
@@ -279,7 +285,10 @@ public class CurriculaTable: UIView {
             view.addSubview(label1)
             }
             
+            
             addSubview(view)
+            
+
             
 //            let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
 //            var name = curriculum.name
