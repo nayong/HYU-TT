@@ -16,6 +16,21 @@ class StorageViewController: UIViewController {
     var clickedIndexPath:IndexPath = []
     let colorBlue:UIColor = UIColor(red: 0.55, green: 0.55, blue: 0.88, alpha: 0.1)
     let colorTrasparent:UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
+    let colors:[UIColor] = [
+        UIColor(red:0.27, green:0.70, blue:0.62, alpha:1.0),
+        UIColor(red:0.94, green:0.79, blue:0.30, alpha:1.0),
+        UIColor(red:0.89, green:0.48, blue:0.25, alpha:1.0),
+        UIColor(red:0.87, green:0.35, blue:0.29, alpha:1.0),
+        UIColor(red:0.29, green:0.44, blue:0.53, alpha:1.0),
+        UIColor(red:0.56, green:0.40, blue:0.64, alpha:1.0),
+        UIColor(red:0.38, green:0.70, blue:0.40, alpha:1.0),
+        UIColor(red:0.94, green:0.68, blue:0.21, alpha:1.0),
+        UIColor(red:0.89, green:0.44, blue:0.36, alpha:1.0),
+        UIColor(red:0.87, green:0.44, blue:0.49, alpha:1.0),
+        UIColor(red:0.25, green:0.64, blue:0.53, alpha:1.0),
+        UIColor(red:0.70, green:0.70, blue:0.28, alpha:1.0)
+    ]
+    var colorIndex = 0
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -64,19 +79,26 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         collectionView.isUserInteractionEnabled = true
         let cellSize = CGSize(width: CGFloat((collectionView.frame.size.width / 1) - 20), height: CGFloat(100))
         cell.sizeThatFits(cellSize)
+        
         setTable(curriculaTable: cell.curriculaTable)
         setData(curriculaTable: cell.curriculaTable, index: indexPath.item)
         
         cell.checkBox.delegate = self
         cell.checkBox.isEnabled = false
         
+        //for clicked initialize
+        clickedIndex = -1
+        cell.background.backgroundColor = colorTrasparent
+        cell.checkBox.isHidden = true
+        cell.checkBox.setOn(false, animated: true)
+        
+        
 //        //touch event
 //        let touchGesture = UITapGestureRecognizer(target: self, action: #selector(StorageViewController.tableTapped(sender:)))
 //        cell.curriculaTable.addGestureRecognizer(touchGesture)
     
-        clickedIndexPath = indexPath
-        clickedIndex = indexPath.item
-        
+
+//        
         //delete
         //self.setEditing(true, animated: true)
         
@@ -84,20 +106,36 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("selecete")
 
+        //for select item at once
+        if(clickedIndex != -1){
+            print("clickedIndex != -1")
+            let beforeCell = collectionView.cellForItem(at: clickedIndexPath) as! StorageCellCollectionViewCell
+            beforeCell.background.backgroundColor = colorTrasparent
+            beforeCell.checkBox.isHidden = true
+            beforeCell.checkBox.setOn(false, animated: true)
+        }
+        
+        print("indexPath : \(indexPath)")
+        print("clickedIndexPath : \(clickedIndexPath)")
+        
         let mCell:StorageCellCollectionViewCell = collectionView.cellForItem(at: indexPath) as! StorageCellCollectionViewCell
-    
-        if mCell.background.backgroundColor == colorBlue{
-            
+        
+        if clickedIndexPath == indexPath {
             mCell.background.backgroundColor = colorTrasparent
             mCell.checkBox.isHidden = true
             mCell.checkBox.setOn(false, animated: true)
-        }else{
+        } else if mCell.background.backgroundColor == colorBlue {
+            mCell.background.backgroundColor = colorTrasparent
+            mCell.checkBox.isHidden = true
+            mCell.checkBox.setOn(false, animated: true)
+        } else {
             mCell.background.backgroundColor = colorBlue
             mCell.checkBox.isHidden = false
             mCell.checkBox.setOn(true, animated: true)
         }
+        clickedIndexPath = indexPath
+        clickedIndex = indexPath.item
         
         //set data
         let set = subjects[indexPath.item]
@@ -109,7 +147,6 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
             print("\(subject.nameOfLecture)")
         }
         //self.collectionView.deleteItems(at: [clickedIndex])
-        
     }
 
     
@@ -200,15 +237,16 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         let set = subjects[index]
  
         for subject in set {
-
             //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
             let periods = getTime(time:subject.time)
             //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
             for indexForTime in 0..<subject.time.count {
                 tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
-                    , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: UIColor(red: 0.78, green: 0.49, blue: 0.87, alpha: 1.0), identifier: "20393", tapHandler: handler))
+                    , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: colors[colorIndex], identifier: "20393", tapHandler: handler))
             }
+            colorIndex = (colorIndex + 1) % 12
         }
+        colorIndex = 0
         
 //        //불러온 Table 을 과목 하나씩 돌기
 //        for set in subjects {

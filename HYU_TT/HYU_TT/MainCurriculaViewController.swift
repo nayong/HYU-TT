@@ -15,6 +15,7 @@ class MainCurriculaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        DatabaseManagement.SeletedTable.deleteTable()
         
 //        var temp = Subject()
 //        DatabaseManagement.MakedServeralTables.deleteTable()
@@ -58,8 +59,8 @@ class MainCurriculaViewController: UIViewController {
         }
         
         //set data
-        curriculaTable.curricula = tableItemArray
         setTable()
+        curriculaTable.curricula = tableItemArray
         self.curriculaTable.reloadInputViews()
     }
     
