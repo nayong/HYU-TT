@@ -126,12 +126,12 @@
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="tintColor" red="0.43280857290000002" green="0.49537553049999999" blue="0.87765870420000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 </view>
-                                                <view tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-XE-bJG" customClass="BEMCheckBox">
-                                                    <rect key="frame" x="10" y="10" width="20" height="20"/>
+                                                <view hidden="YES" tag="5" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FoQ-XE-bJG" customClass="BEMCheckBox">
+                                                    <rect key="frame" x="46.444088541506972" y="79.322207807505038" width="80" height="80"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 </view>
-                                                <view opaque="NO" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="593-wK-7xt">
+                                                <view clearsContextBeforeDrawing="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="593-wK-7xt">
                                                     <rect key="frame" x="0.0" y="0.0" width="174" height="238"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </view>
@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UxS-NE-LGP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="1339.8800599700151"/>
+            <point key="canvasLocation" x="282" y="1340"/>
         </scene>
         <!--과목 고르기-->
         <scene sceneID="cy4-b8-un4">

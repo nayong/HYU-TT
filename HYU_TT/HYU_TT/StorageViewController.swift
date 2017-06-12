@@ -14,6 +14,8 @@ class StorageViewController: UIViewController {
     var subjects:[[Subject]] = []
     var clickedIndex:Int = -1
     var clickedIndexPath:IndexPath = []
+    let colorBlue:UIColor = UIColor(red: 0.55, green: 0.55, blue: 0.88, alpha: 0.1)
+    let colorTrasparent:UIColor = UIColor(red: 0.0, green: 0.0, blue: 0.0, alpha: 0.0)
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -47,7 +49,7 @@ class StorageViewController: UIViewController {
     
 }
 
-extension StorageViewController : UICollectionViewDataSource, UICollectionViewDelegate {
+extension StorageViewController : UICollectionViewDataSource, UICollectionViewDelegate, BEMCheckBoxDelegate {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         self.collectionView.delegate = self
@@ -65,6 +67,9 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         setTable(curriculaTable: cell.curriculaTable)
         setData(curriculaTable: cell.curriculaTable, index: indexPath.item)
         
+        cell.checkBox.delegate = self
+        cell.checkBox.isEnabled = false
+        
 //        //touch event
 //        let touchGesture = UITapGestureRecognizer(target: self, action: #selector(StorageViewController.tableTapped(sender:)))
 //        cell.curriculaTable.addGestureRecognizer(touchGesture)
@@ -81,9 +86,18 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         print("selecete")
 
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! StorageCellCollectionViewCell
-        cell.background.backgroundColor = UIColor(red: 0.99, green: 0.00, blue: 0.87, alpha: 1.0)
-        collectionView.reloadData()
+        let mCell:StorageCellCollectionViewCell = collectionView.cellForItem(at: indexPath) as! StorageCellCollectionViewCell
+    
+        if mCell.background.backgroundColor == colorBlue{
+            
+            mCell.background.backgroundColor = colorTrasparent
+            mCell.checkBox.isHidden = true
+            mCell.checkBox.setOn(false, animated: true)
+        }else{
+            mCell.background.backgroundColor = colorBlue
+            mCell.checkBox.isHidden = false
+            mCell.checkBox.setOn(true, animated: true)
+        }
         
         //set data
         let set = subjects[indexPath.item]
@@ -97,6 +111,7 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         //self.collectionView.deleteItems(at: [clickedIndex])
         
     }
+
     
 //    func tableTapped(sender: UITapGestureRecognizer){
 //        print("tapped")
