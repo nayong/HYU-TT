@@ -69,12 +69,12 @@ typedef NS_ENUM(NSInteger, BEMAnimationType) {
 };
 
 /** The object that acts as the delegate of the receiving check box.
-* @discussion The delegate must adopt the \p BEMCheckBoxDelegate protocol. The delegate is not retained.
+ * @discussion The delegate must adopt the \p BEMCheckBoxDelegate protocol. The delegate is not retained.
  */
 @property (nonatomic, weak) IBOutlet id <BEMCheckBoxDelegate> delegate;
 
 /** This property allows you to retrieve and set (without animation) a value determining whether the BEMCheckBox object is On or Off.
-  * Default to NO.
+ * Default to NO.
  */
 @property (nonatomic) IBInspectable BOOL on;
 
@@ -119,19 +119,19 @@ typedef NS_ENUM(NSInteger, BEMAnimationType) {
 @property (strong, nonatomic, nullable, readonly) BEMCheckBoxGroup *group;
 
 /** The type of box.
- * @see BEMBoxType. 
+ * @see BEMBoxType.
  */
 @property (nonatomic) BEMBoxType boxType;
 
 /** The animation type when the check mark gets set to On.
  * @warning Some animations might not look as intended if the different colors of the control are not appropriatly configured.
- * @see BEMAnimationType. 
+ * @see BEMAnimationType.
  */
 @property (nonatomic) BEMAnimationType onAnimationType;
 
 /** The animation type when the check mark gets set to Off.
  * @warning Some animations might not look as intended if the different colors of the control are not appropriatly configured.
- * @see BEMAnimationType. 
+ * @see BEMAnimationType.
  */
 @property (nonatomic) BEMAnimationType offAnimationType;
 
