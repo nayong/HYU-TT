@@ -36,8 +36,6 @@
 		B6E63CE51ECBFAF300A94CEF /* SubjectFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */; };
 		B6E63CEA1ECCCDC400A94CEF /* nayong.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E63CE91ECCCDC400A94CEF /* nayong.strings */; };
 		B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
-		CB14B14B1EF04499000135CC /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB14B1491EF04499000135CC /* liberal.xml */; };
-		CB14B14C1EF04499000135CC /* major.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14A1EF04499000135CC /* major.xml */; };
 		CB14B14F1EF04581000135CC /* MakedDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14D1EF04581000135CC /* MakedDB.sqlite3 */; };
 		CB14B1501EF04581000135CC /* SelectedDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14E1EF04581000135CC /* SelectedDB.sqlite3 */; };
 		CB14B1511EF0487E000135CC /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
@@ -133,8 +131,6 @@
 		B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectFirstViewController.swift; sourceTree = "<group>"; };
 		B6E63CE91ECCCDC400A94CEF /* nayong.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = nayong.strings; sourceTree = "<group>"; };
 		B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCurriculaViewController.swift; sourceTree = "<group>"; };
-		CB14B1491EF04499000135CC /* liberal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = liberal.xml; sourceTree = "<group>"; };
-		CB14B14A1EF04499000135CC /* major.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = major.xml; sourceTree = "<group>"; };
 		CB14B14D1EF04581000135CC /* MakedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakedDB.sqlite3; sourceTree = "<group>"; };
 		CB14B14E1EF04581000135CC /* SelectedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectedDB.sqlite3; sourceTree = "<group>"; };
 		CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeTImeTables.swift; sourceTree = "<group>"; };
@@ -200,8 +196,6 @@
 		B6D2187D1EE84F17005DCD7F /* WidgetTest */ = {
 			isa = PBXGroup;
 			children = (
-				CB14B1491EF04499000135CC /* liberal.xml */,
-				CB14B14A1EF04499000135CC /* major.xml */,
 				B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */,
 				B6D218801EE84F17005DCD7F /* MainInterface.storyboard */,
 				B6D218831EE84F17005DCD7F /* Info.plist */,
@@ -434,9 +428,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CB14B14C1EF04499000135CC /* major.xml in Resources */,
 				B6D218821EE84F17005DCD7F /* MainInterface.storyboard in Resources */,
-				CB14B14B1EF04499000135CC /* liberal.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

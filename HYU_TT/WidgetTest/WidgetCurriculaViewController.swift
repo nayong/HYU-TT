@@ -16,10 +16,11 @@ class WidgetCurriculaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let path = Bundle.main.path(forResource: "liberal", ofType: "xml")?.components(separatedBy: "/PlugIns/WidgetTest.appex/liberal.xml")[0] else {
+        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist")?.components(separatedBy: "/PlugIns/WidgetTest.appex")[0] else {
             print("cannot find file!")
             return
         }
+        print (path)
         let selectedDB = DatabaseManagement(path: path, DBName: "SelectedDB")
         
         //item click event
