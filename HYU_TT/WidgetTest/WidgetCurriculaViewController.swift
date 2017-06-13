@@ -9,6 +9,7 @@
 import UIKit
 import CurriculaTable
 
+
 class WidgetCurriculaViewController: UIViewController {
     
     @IBOutlet weak var curriculaTable: CurriculaTable!

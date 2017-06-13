@@ -92,6 +92,7 @@ class ChoiceTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         Detail.subject = MySubjects.subjects[indexPath.row]
     }
+    
 
 
 }

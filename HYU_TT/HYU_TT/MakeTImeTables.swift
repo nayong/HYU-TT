@@ -26,9 +26,9 @@ func MakeTimeTables()->[[Int]] {
     }
     var stack:[[Int]] = []
     let tmp = BronKerbosch(R: R, P: &P , X: X, g: graph, stack: &stack)
-    if (tmp.count != 0 && tmp.count != 1) {
-        stack.append(tmp)
-    }
+//    if (tmp.count != 0 && tmp.count != 1) {
+    stack.append(tmp)
+//    }
     return stack
 }
 
@@ -133,18 +133,18 @@ func BronKerbosch(R:[Int], P:inout [Int], X:[Int], g:[[Int]], stack:inout [[Int]
         P_tmp = IntersectSet(A:P, B:N);
         X_tmp = IntersectSet(A:X, B:N);
         result = BronKerbosch(R:R_tmp, P:&P_tmp, X:X_tmp, g:g, stack:&stack);
-        if (result.count != 0 && result.count != 1) {
-            var indexOfForLoop:Int = 0
-            for j in 0..<stack.count {
-                if (isBIncludedInA(A: stack[j], B: result)) { break }
-                else if (isBIncludedInA(A: result, B: stack[j])) {
-                    stack[j] = result
-                }
-                indexOfForLoop += 1
-                
+//        if (result.count != 0 && result.count != 1) {
+        var indexOfForLoop:Int = 0
+        for j in 0..<stack.count {
+            if (isBIncludedInA(A: stack[j], B: result)) { break }
+            else if (isBIncludedInA(A: result, B: stack[j])) {
+                stack[j] = result
             }
-            if (indexOfForLoop == stack.count) { stack.append(result) }
+            indexOfForLoop += 1
+            
         }
+        if (indexOfForLoop == stack.count) { stack.append(result) }
+//        }
         
         P = SpliceArray(index: 0, howMany: 1, array: P)
         tmp = SpliceArray(index: 0, howMany: tmp.count, array: tmp)//tmp.splice(0, tmp.length);

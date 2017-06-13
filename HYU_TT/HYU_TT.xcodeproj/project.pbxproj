@@ -45,6 +45,7 @@
 		CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
 		CB6968231ED6CFD5007202D2 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
 		CB6968241ED6CFD5007202D2 /* major.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968221ED6CFD5007202D2 /* major.xml */; };
+		CB78D39D1EEF0074008E021A /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
 		CBF10E1C1EEA815500B5CDE5 /* MyChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10E1B1EEA815500B5CDE5 /* MyChoiceTableViewController.swift */; };
 		CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
 		D2CC9C69DE11850505670996 /* Pods_HYU_TT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40947DC9DD0EB3B72B11D000 /* Pods_HYU_TT.framework */; };
@@ -597,6 +598,7 @@
 				B6013F131EEBAF1E0031857A /* StorageViewController.swift in Sources */,
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
 				CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */,
+				CB78D39D1EEF0074008E021A /* WidgetCurriculaViewController.swift in Sources */,
 				6A19E0721EEC2031002B8C09 /* MyChoiceViewController.swift in Sources */,
 				6AE78F9E1EEACA1700049BEE /* DetailViewController.swift in Sources */,
 				B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */,

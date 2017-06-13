@@ -109,7 +109,6 @@ class MainCurriculaViewController: UIViewController {
             // 시 : (2(h-8)-1) = 2h - 17
             // 분 : !=0 -> 2h-16
         }
-        
         return times
     }
     
