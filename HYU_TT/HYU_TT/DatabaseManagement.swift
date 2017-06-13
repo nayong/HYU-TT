@@ -30,12 +30,9 @@ class DatabaseManagement {
     private let professor = Expression<String>("professor")
         
     init(DBName : String) {
-        guard let path = Bundle.main.path(forResource: DBName, ofType: "sqlite3") else {
-            db = nil
-            return
-        }
+        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
         do {
-            db = try Connection("\(path)")
+            db = try Connection("\(path)/\(DBName).sqlite3")
             createTableProduct()
         } catch {
             db = nil

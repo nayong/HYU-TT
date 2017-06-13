@@ -16,12 +16,12 @@ class WidgetCurriculaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist")?.components(separatedBy: "/PlugIns/WidgetTest.appex")[0] else {
-            print("cannot find file!")
-            return
-        }
-        print (path)
-        let selectedDB = DatabaseManagement(path: path, DBName: "SelectedDB")
+////        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist")?.components(separatedBy: "/PlugIns/WidgetTest.appex")[0] else {
+//            print("cannot find file!")
+//            return
+//        }
+//        print (path)
+//        let selectedDB = DatabaseManagement(path: path, DBName: "SelectedDB")
         
         //item click event
         let handler = { (curriculum: CurriculaTableItem) in
