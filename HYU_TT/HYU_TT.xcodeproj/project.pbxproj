@@ -36,6 +36,13 @@
 		B6E63CE51ECBFAF300A94CEF /* SubjectFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */; };
 		B6E63CEA1ECCCDC400A94CEF /* nayong.strings in Resources */ = {isa = PBXBuildFile; fileRef = B6E63CE91ECCCDC400A94CEF /* nayong.strings */; };
 		B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
+		CB14B14B1EF04499000135CC /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB14B1491EF04499000135CC /* liberal.xml */; };
+		CB14B14C1EF04499000135CC /* major.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14A1EF04499000135CC /* major.xml */; };
+		CB14B14F1EF04581000135CC /* MakedDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14D1EF04581000135CC /* MakedDB.sqlite3 */; };
+		CB14B1501EF04581000135CC /* SelectedDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14E1EF04581000135CC /* SelectedDB.sqlite3 */; };
+		CB14B1511EF0487E000135CC /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
+		CB14B1521EF04891000135CC /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
+		CB14B1531EF048F4000135CC /* MakeTImeTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */; };
 		CB2084C91EDFE3F800C90DDD /* MakeTImeTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */; };
 		CB2084CB1EE0027700C90DDD /* SubjectSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084CA1EE0027700C90DDD /* SubjectSecondViewController.swift */; };
 		CB2084D51EE00F0900C90DDD /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2084CE1EE00F0900C90DDD /* BEMAnimationManager.m */; };
@@ -126,6 +133,10 @@
 		B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectFirstViewController.swift; sourceTree = "<group>"; };
 		B6E63CE91ECCCDC400A94CEF /* nayong.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = nayong.strings; sourceTree = "<group>"; };
 		B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetCurriculaViewController.swift; sourceTree = "<group>"; };
+		CB14B1491EF04499000135CC /* liberal.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = liberal.xml; sourceTree = "<group>"; };
+		CB14B14A1EF04499000135CC /* major.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = major.xml; sourceTree = "<group>"; };
+		CB14B14D1EF04581000135CC /* MakedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakedDB.sqlite3; sourceTree = "<group>"; };
+		CB14B14E1EF04581000135CC /* SelectedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectedDB.sqlite3; sourceTree = "<group>"; };
 		CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MakeTImeTables.swift; sourceTree = "<group>"; };
 		CB2084CA1EE0027700C90DDD /* SubjectSecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubjectSecondViewController.swift; sourceTree = "<group>"; };
 		CB2084CD1EE00F0900C90DDD /* BEMAnimationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BEMAnimationManager.h; sourceTree = "<group>"; };
@@ -189,6 +200,8 @@
 		B6D2187D1EE84F17005DCD7F /* WidgetTest */ = {
 			isa = PBXGroup;
 			children = (
+				CB14B1491EF04499000135CC /* liberal.xml */,
+				CB14B14A1EF04499000135CC /* major.xml */,
 				B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */,
 				B6D218801EE84F17005DCD7F /* MainInterface.storyboard */,
 				B6D218831EE84F17005DCD7F /* Info.plist */,
@@ -234,6 +247,8 @@
 				CB2084D91EE00FE600C90DDD /* CheckMarkHeader.h */,
 				B6E63CC41ECB7E7600A94CEF /* ViewController.swift */,
 				B6E63CC61ECB7E7600A94CEF /* Main.storyboard */,
+				CB14B14D1EF04581000135CC /* MakedDB.sqlite3 */,
+				CB14B14E1EF04581000135CC /* SelectedDB.sqlite3 */,
 				B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */,
 				B6E63CC91ECB7E7600A94CEF /* Assets.xcassets */,
 				B6E63CCB1ECB7E7600A94CEF /* LaunchScreen.storyboard */,
@@ -419,7 +434,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CB14B14C1EF04499000135CC /* major.xml in Resources */,
 				B6D218821EE84F17005DCD7F /* MainInterface.storyboard in Resources */,
+				CB14B14B1EF04499000135CC /* liberal.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,7 +450,9 @@
 				B6E63CCD1ECB7E7600A94CEF /* LaunchScreen.storyboard in Resources */,
 				6AE78F9C1EEAC6A900049BEE /* minus.png in Resources */,
 				6AE78F981EEAC52100049BEE /* check.png in Resources */,
+				CB14B1501EF04581000135CC /* SelectedDB.sqlite3 in Resources */,
 				B6E63CCA1ECB7E7600A94CEF /* Assets.xcassets in Resources */,
+				CB14B14F1EF04581000135CC /* MakedDB.sqlite3 in Resources */,
 				CB6968241ED6CFD5007202D2 /* major.xml in Resources */,
 				B6E63CEA1ECCCDC400A94CEF /* nayong.strings in Resources */,
 				6A19E0791EEC58C7002B8C09 /* essential.png in Resources */,
@@ -581,6 +600,9 @@
 			files = (
 				B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */,
 				B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */,
+				CB14B1521EF04891000135CC /* DataSource.swift in Sources */,
+				CB14B1511EF0487E000135CC /* DatabaseManagement.swift in Sources */,
+				CB14B1531EF048F4000135CC /* MakeTImeTables.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
