@@ -227,12 +227,18 @@ public class CurriculaTable: UIView {
     }
     
     private func drawCurricula() {
+        
+        print("\(1)")
+        
         for subview in subviews {
             if !(subview is UICollectionView) {
                 subview.removeFromSuperview()
             }
         }
+        
+        
         for (index, curriculum) in curricula.enumerated() {
+            
             let weekdayIndex = (curriculum.weekday.rawValue - firstWeekday.rawValue + 6) % 6
             //nayong : where to draw the content
             let x = widthOfPeriodSymbols + averageWidth * CGFloat(weekdayIndex) + rectEdgeInsets.left - mMarginX //nayong
@@ -245,7 +251,6 @@ public class CurriculaTable: UIView {
             view.backgroundColor = curriculum.bgColor
             view.layer.cornerRadius = cornerRadius
             view.layer.masksToBounds = true
-
             
             let label = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
             var name = curriculum.name
@@ -253,10 +258,18 @@ public class CurriculaTable: UIView {
                 name.truncate(maximumNameLength)
             }
             
+            //setting space
+            var stringSpace = ""
+            if(name.characters.count>10){
+                stringSpace = "\n"
+            }
             
-            let attrStr = NSMutableAttributedString(string: name + "\n", attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)])
+            let attrStr = NSMutableAttributedString(string: name + "\n" + stringSpace, attributes: [NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)])
             attrStr.setAttributes([NSFontAttributeName: UIFont.boldSystemFont(ofSize: textFontSize)], range: NSRange(0..<name.characters.count))
             
+            
+            print("\(curriculum.name) 3")
+
             
             label.attributedText = attrStr
             label.textColor = curriculum.textColor
@@ -269,22 +282,33 @@ public class CurriculaTable: UIView {
             
             view.addSubview(label)
             
-            
-            if(mShowPlace == true){
-            let label1 = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
-            let attrStr1 = NSMutableAttributedString(string: "\n\n"+curriculum.place, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))])
-            attrStr1.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))], range: NSRange(0..<10))
-            
-            label1.attributedText = attrStr1
-            label1.textColor = curriculum.textColor
-            label1.textAlignment = textAlignment
-            label1.numberOfLines = 0
-            //label1.tag = index + 1000 //???nayong
-            label1.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(curriculumTapped)))
-            label1.isUserInteractionEnabled = true
-            view.addSubview(label1)
+            var placeStringSpace = ""
+            if(curriculum.place.characters.count>5){
+                placeStringSpace = "\n"
             }
             
+            if(mShowPlace == true){
+                
+                let label1 = UILabel(frame: CGRect(x: textEdgeInsets.left, y: textEdgeInsets.top, width: view.frame.width - textEdgeInsets.left - textEdgeInsets.right, height: view.frame.height - textEdgeInsets.top - textEdgeInsets.bottom))
+                let attrStr1 = NSMutableAttributedString(string: stringSpace+placeStringSpace+"\n\n"+curriculum.place, attributes: [NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))])
+                let countString = curriculum.place.characters.count + 2
+                attrStr1.setAttributes([NSFontAttributeName: UIFont.systemFont(ofSize: textFontSize - CGFloat(2))], range: NSRange(0..<countString))
+                
+                
+                label1.attributedText = attrStr1
+                label1.textColor = curriculum.textColor
+                label1.textAlignment = textAlignment
+                label1.numberOfLines = 0
+                //label1.tag = index + 1000 //???nayong
+                
+                print("\(curriculum.name) add subView 1")
+            view.addSubview(label1)
+                print("\(curriculum.name) add subView 2")
+            }
+            
+            
+            print("\(curriculum.name) 5")
+
             
             addSubview(view)
             
