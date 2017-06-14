@@ -111,18 +111,13 @@ class MainCurriculaViewController: UIViewController {
             
             time2 = Int(mTime.substring(with:8..<10))!
             if(mTime.substring(with:11..<12) != "0"){
-                time2 = 2*time2 - 16
-            }else{
                 time2 = 2*time2 - 17
+            }else{
+                time2 = 2*time2 - 18
             }
             
             times.append((weekday, time1, time2))
             
-            //요일 -> .요일
-            //시간 -> startPeriod 3~5 == 10, 10.5, 11
-            //9 - 1 / 9:30 - 2 / 10 - 3 / 10.5 - 4 / 11 - 5
-            // 시 : (2(h-8)-1) = 2h - 17
-            // 분 : !=0 -> 2h-16
         }
         return times
     }

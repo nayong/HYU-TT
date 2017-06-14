@@ -30,22 +30,23 @@ class WidgetCurriculaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        print("main view")
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        print("widget appear")
         //Subject 불러 올 때
         let subjects = DatabaseManagement.SeletedTable.queryAllProduct()
         let handler = { (curriculum: CurriculaTableItem) in }
         print("widget subjects[0] ::: " + String(subjects[0].count))
-//        //각 강의들을 시간표에 맞는 struct로 바꾼 배열
+        //각 강의들을 시간표에 맞는 struct로 바꾼 배열
         var tableItemArray:[CurriculaTableItem] = []
         
         //불러온 Table 을 과목 하나씩 돌기
         let index = 0
         for subject in subjects[index] {
-            
+            print("widget ::: subject.name" + String(subject.nameOfLecture))
             //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
             let periods = getTime(time:subject.time)
-                        
             //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
             for indexForTime in 0..<subject.time.count {
                 tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
@@ -58,18 +59,7 @@ class WidgetCurriculaViewController: UIViewController {
         setTable()
         print("widget ::: " + String(tableItemArray.count))
         curriculaTable.curricula = tableItemArray
-        self.curriculaTable.reloadInputViews()
-        
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
-        let tableItemArray:[CurriculaTableItem] = MainCurriculaViewController.tableItemArray
-        setTable()
-        print("widget ::: " + String(tableItemArray.count))
-        curriculaTable.curricula = tableItemArray
-        self.curriculaTable.reloadInputViews()
+        //self.curriculaTable.reloadInputViews()
     }
     
     override func didReceiveMemoryWarning() {
@@ -105,9 +95,9 @@ class WidgetCurriculaViewController: UIViewController {
             
             time2 = Int(mTime.substring(with:8..<10))!
             if(mTime.substring(with:11..<12) != "0"){
-                time2 = 2*time2 - 16
-            }else{
                 time2 = 2*time2 - 17
+            }else{
+                time2 = 2*time2 - 18
             }
             
             times.append((weekday, time1, time2))
@@ -143,8 +133,8 @@ class WidgetCurriculaViewController: UIViewController {
     func setTable(){
         
         curriculaTable.marginHeight = 30
-        curriculaTable.marginWidth = 30
-        curriculaTable.boundWidth = 20
+        curriculaTable.boundWidth = 19
+        
         
         //view settings
         curriculaTable.bgColor = UIColor(red: 0.94, green: 0.94, blue: 0.94, alpha: 1.0)
@@ -153,6 +143,7 @@ class WidgetCurriculaViewController: UIViewController {
         curriculaTable.cornerRadius = 5 //item courner radius
         curriculaTable.textEdgeInsets = UIEdgeInsets(top: 2, left: 2, bottom: 2, right: 2) //padding (when positive number)
         curriculaTable.maximumNameLength = 10
+        curriculaTable.textFontSize = 9
         
     }
     

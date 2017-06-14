@@ -187,9 +187,9 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
             
             time2 = Int(mTime.substring(with:8..<10))!
             if(mTime.substring(with:11..<12) != "0"){
-                time2 = 2*time2 - 16
-            }else{
                 time2 = 2*time2 - 17
+            }else{
+                time2 = 2*time2 - 18
             }
             
             times.append((weekday, time1, time2))
