@@ -30,7 +30,9 @@ class DatabaseManagement {
     private let professor = Expression<String>("professor")
         
     init(DBName : String) {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
+        
+        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.HYU-TT")!.path
+        print ("\(path)/\(DBName).sqlite3")
         do {
             db = try Connection("\(path)/\(DBName).sqlite3")
             createTableProduct()

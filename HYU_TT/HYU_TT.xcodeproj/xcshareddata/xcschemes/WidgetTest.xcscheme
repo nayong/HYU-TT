@@ -67,16 +67,26 @@
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES"
       launchAutomaticallySubstyle = "2">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <RemoteRunnable
+         runnableDebuggingMode = "2"
+         BundleIdentifier = "com.apple.springboard">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "B6E63CBE1ECB7E7600A94CEF"
-            BuildableName = "HYU_TT.app"
-            BlueprintName = "HYU_TT"
+            BlueprintIdentifier = "B6D218791EE84F17005DCD7F"
+            BuildableName = "WidgetTest.appex"
+            BlueprintName = "WidgetTest"
             ReferencedContainer = "container:HYU_TT.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </RemoteRunnable>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "B6D218791EE84F17005DCD7F"
+            BuildableName = "WidgetTest.appex"
+            BlueprintName = "WidgetTest"
+            ReferencedContainer = "container:HYU_TT.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
