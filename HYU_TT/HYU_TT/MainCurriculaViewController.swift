@@ -27,6 +27,7 @@ class MainCurriculaViewController: UIViewController {
         UIColor(red:0.70, green:0.70, blue:0.28, alpha:1.0)
     ]
     var colorIndex = 0
+    static var tableItemArray:[CurriculaTableItem] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()        
@@ -44,19 +45,20 @@ class MainCurriculaViewController: UIViewController {
           }
     
     override func viewWillAppear(_ animated: Bool) {
-        print("main view")
         //Subject 불러 올 때
         let subjects = DatabaseManagement.SeletedTable.queryAllProduct()
         let handler = { (curriculum: CurriculaTableItem) in }
+        print("main subjects[0] ::: " + String(subjects[0].count))
         
         //각 강의들을 시간표에 맞는 struct로 바꾼 배열
-        var tableItemArray:[CurriculaTableItem] = []
+        MainCurriculaViewController.tableItemArray = []
         
         //불러온 Table 을 과목 하나씩 돌기
         var index = 0
         if (subjects.count - 1) > 0{
             index = subjects.count - 1
         }
+        
         for subject in subjects[index] {
             
             //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
@@ -64,7 +66,7 @@ class MainCurriculaViewController: UIViewController {
             
             //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
             for indexForTime in 0..<subject.time.count {
-                tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
+                MainCurriculaViewController.tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!
                     , startPeriod: periods[indexForTime].start, endPeriod: periods[indexForTime].end, textColor: UIColor.white, bgColor: colors[colorIndex], identifier: "20393", tapHandler: handler))
             }
             colorIndex = (colorIndex + 1) % 12
@@ -72,7 +74,7 @@ class MainCurriculaViewController: UIViewController {
         colorIndex = 0
         //set data
         setTable()
-        curriculaTable.curricula = tableItemArray
+        curriculaTable.curricula = MainCurriculaViewController.tableItemArray
         self.curriculaTable.reloadInputViews()
     }
     

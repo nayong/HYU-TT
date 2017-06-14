@@ -121,11 +121,11 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         
         let mCell:StorageCellCollectionViewCell = collectionView.cellForItem(at: indexPath) as! StorageCellCollectionViewCell
         
-        if clickedIndexPath == indexPath {
+        if (clickedIndexPath == indexPath) && (mCell.background.backgroundColor == colorBlue){
             mCell.background.backgroundColor = colorTrasparent
             mCell.checkBox.isHidden = true
             mCell.checkBox.setOn(false, animated: true)
-        } else if mCell.background.backgroundColor == colorBlue {
+        } else if (clickedIndexPath != indexPath) && (mCell.background.backgroundColor == colorBlue) {
             mCell.background.backgroundColor = colorTrasparent
             mCell.checkBox.isHidden = true
             mCell.checkBox.setOn(false, animated: true)
@@ -144,11 +144,9 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         }
         for subject in set {
             DatabaseManagement.SeletedTable.addSubject(subject: subject, index: 0)
-            print("\(subject.nameOfLecture)")
         }
         //self.collectionView.deleteItems(at: [clickedIndex])
     }
-
     
 //    func tableTapped(sender: UITapGestureRecognizer){
 //        print("tapped")
