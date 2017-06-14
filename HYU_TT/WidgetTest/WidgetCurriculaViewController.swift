@@ -30,16 +30,7 @@ class WidgetCurriculaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-<<<<<<< HEAD
-=======
-<<<<<<< Updated upstream
-////        guard let path = Bundle.main.path(forResource: "Info", ofType: "plist")?.components(separatedBy: "/PlugIns/WidgetTest.appex")[0] else {
-//            print("cannot find file!")
-//            return
-//        }
-//        print (path)
-//        let selectedDB = DatabaseManagement(path: path, DBName: "SelectedDB")
-=======
+
         print("main view")
         //Subject 불러 올 때
         let subjects = DatabaseManagement.SeletedTable.queryAllProduct()
@@ -47,8 +38,6 @@ class WidgetCurriculaViewController: UIViewController {
         print("widget subjects[0] ::: " + String(subjects[0].count))
 //        //각 강의들을 시간표에 맞는 struct로 바꾼 배열
         var tableItemArray:[CurriculaTableItem] = []
->>>>>>> Stashed changes
->>>>>>> origin/master
         
         //불러온 Table 을 과목 하나씩 돌기
         let index = 0

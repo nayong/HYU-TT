@@ -630,11 +630,6 @@
 				B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */,
 				B625B6B61EEF0207007BA617 /* CurriculaViewController.swift in Sources */,
 				B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */,
-<<<<<<< Updated upstream
-				CB14B1521EF04891000135CC /* DataSource.swift in Sources */,
-				CB14B1511EF0487E000135CC /* DatabaseManagement.swift in Sources */,
-				CB14B1531EF048F4000135CC /* MakeTImeTables.swift in Sources */,
-=======
 				B625B6BF1EEF0223007BA617 /* MainCurriculaViewController.swift in Sources */,
 				B625B6BD1EEF021E007BA617 /* MakeTImeTables.swift in Sources */,
 				B625B6BC1EEF021C007BA617 /* MyChoiceViewController.swift in Sources */,
@@ -642,7 +637,6 @@
 				B625B6B71EEF020C007BA617 /* SubjectViewController.swift in Sources */,
 				B625B6B51EEF0202007BA617 /* ViewController.swift in Sources */,
 				B625B6AC1EEF001B007BA617 /* DatabaseManagement.swift in Sources */,
->>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -660,11 +654,7 @@
 				B6013F131EEBAF1E0031857A /* StorageViewController.swift in Sources */,
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
 				CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */,
-<<<<<<< Updated upstream
-				CB78D39D1EEF0074008E021A /* WidgetCurriculaViewController.swift in Sources */,
-=======
 				B625B6B21EEF01A4007BA617 /* WidgetCurriculaViewController.swift in Sources */,
->>>>>>> Stashed changes
 				6A19E0721EEC2031002B8C09 /* MyChoiceViewController.swift in Sources */,
 				6AE78F9E1EEACA1700049BEE /* DetailViewController.swift in Sources */,
 				B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */,
