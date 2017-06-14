@@ -9,7 +9,7 @@
 import Foundation
 import SQLite
 
-class DatabaseManagement {
+public class DatabaseManagement {
     static let MakedServeralTables:DatabaseManagement = DatabaseManagement(DBName: "MakedDB")
     static let SeletedTable:DatabaseManagement = DatabaseManagement(DBName: "SelectedDB")
     
@@ -30,13 +30,18 @@ class DatabaseManagement {
     private let professor = Expression<String>("professor")
         
     init(DBName : String) {
-        let path = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first!
-        do {
-            db = try Connection("\(path)/\(DBName).sqlite3")
-            createTableProduct()
-        } catch {
+        if let path = Bundle.main.path(forResource: "SeletedDB", ofType: "sqlite3") {
+            print(path)
+            do {
+                db = try Connection("\(path)/\(DBName).sqlite3")
+                createTableProduct()
+            } catch {
+                db = nil
+                print ("Unable to open database")
+            }
+        }
+        else {
             db = nil
-            print ("Unable to open database")
         }
     }
     

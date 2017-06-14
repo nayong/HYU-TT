@@ -21,6 +21,19 @@
 		B6013F131EEBAF1E0031857A /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6013F121EEBAF1E0031857A /* StorageViewController.swift */; };
 		B6013F151EEBC5390031857A /* StorageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6013F141EEBC5390031857A /* StorageCellCollectionViewCell.swift */; };
 		B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */; };
+		B625B6AC1EEF001B007BA617 /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
+		B625B6AD1EEF0067007BA617 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
+		B625B6B21EEF01A4007BA617 /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
+		B625B6B31EEF01CE007BA617 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
+		B625B6B41EEF01F3007BA617 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CC21ECB7E7600A94CEF /* AppDelegate.swift */; };
+		B625B6B51EEF0202007BA617 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CC41ECB7E7600A94CEF /* ViewController.swift */; };
+		B625B6B61EEF0207007BA617 /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
+		B625B6B71EEF020C007BA617 /* SubjectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE21ECBF60200A94CEF /* SubjectViewController.swift */; };
+		B625B6B81EEF020F007BA617 /* SubjectFirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E63CE41ECBFAF300A94CEF /* SubjectFirstViewController.swift */; };
+		B625B6BC1EEF021C007BA617 /* MyChoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A19E0711EEC2031002B8C09 /* MyChoiceViewController.swift */; };
+		B625B6BD1EEF021E007BA617 /* MakeTImeTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */; };
+		B625B6BE1EEF0221007BA617 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6AE78F9D1EEACA1700049BEE /* DetailViewController.swift */; };
+		B625B6BF1EEF0223007BA617 /* MainCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */; };
 		B6B4D1841ED7F4A6009BA65C /* CurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */; };
 		B6D2187C1EE84F17005DCD7F /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */; };
 		B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D2187E1EE84F17005DCD7F /* TodayViewController.swift */; };
@@ -111,6 +124,8 @@
 		B6013F121EEBAF1E0031857A /* StorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		B6013F141EEBC5390031857A /* StorageCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCurriculaViewController.swift; sourceTree = "<group>"; };
+		B61D62491EEFDCEF00F02BB5 /* SelectedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectedDB.sqlite3; sourceTree = "<group>"; };
+		B61D624A1EEFDD9B00F02BB5 /* MakedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakedDB.sqlite3; sourceTree = "<group>"; };
 		B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculaViewController.swift; sourceTree = "<group>"; };
 		B6D2187A1EE84F17005DCD7F /* WidgetTest.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WidgetTest.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		B6D2187B1EE84F17005DCD7F /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -244,6 +259,8 @@
 				B6E63CC21ECB7E7600A94CEF /* AppDelegate.swift */,
 				CB2084D91EE00FE600C90DDD /* CheckMarkHeader.h */,
 				B6E63CC41ECB7E7600A94CEF /* ViewController.swift */,
+				B61D62491EEFDCEF00F02BB5 /* SelectedDB.sqlite3 */,
+				B61D624A1EEFDD9B00F02BB5 /* MakedDB.sqlite3 */,
 				B6E63CC61ECB7E7600A94CEF /* Main.storyboard */,
 				CB14B14D1EF04581000135CC /* MakedDB.sqlite3 */,
 				CB14B14E1EF04581000135CC /* SelectedDB.sqlite3 */,
@@ -445,6 +462,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D218821EE84F17005DCD7F /* MainInterface.storyboard in Resources */,
+				B625B6AD1EEF0067007BA617 /* liberal.xml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -606,11 +624,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B625B6B31EEF01CE007BA617 /* DataSource.swift in Sources */,
+				B625B6BE1EEF0221007BA617 /* DetailViewController.swift in Sources */,
+				B625B6B81EEF020F007BA617 /* SubjectFirstViewController.swift in Sources */,
 				B6D2187F1EE84F17005DCD7F /* TodayViewController.swift in Sources */,
+				B625B6B61EEF0207007BA617 /* CurriculaViewController.swift in Sources */,
 				B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */,
+<<<<<<< Updated upstream
 				CB14B1521EF04891000135CC /* DataSource.swift in Sources */,
 				CB14B1511EF0487E000135CC /* DatabaseManagement.swift in Sources */,
 				CB14B1531EF048F4000135CC /* MakeTImeTables.swift in Sources */,
+=======
+				B625B6BF1EEF0223007BA617 /* MainCurriculaViewController.swift in Sources */,
+				B625B6BD1EEF021E007BA617 /* MakeTImeTables.swift in Sources */,
+				B625B6BC1EEF021C007BA617 /* MyChoiceViewController.swift in Sources */,
+				B625B6B41EEF01F3007BA617 /* AppDelegate.swift in Sources */,
+				B625B6B71EEF020C007BA617 /* SubjectViewController.swift in Sources */,
+				B625B6B51EEF0202007BA617 /* ViewController.swift in Sources */,
+				B625B6AC1EEF001B007BA617 /* DatabaseManagement.swift in Sources */,
+>>>>>>> Stashed changes
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -628,7 +660,11 @@
 				B6013F131EEBAF1E0031857A /* StorageViewController.swift in Sources */,
 				B6E63CE31ECBF60200A94CEF /* SubjectViewController.swift in Sources */,
 				CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */,
+<<<<<<< Updated upstream
 				CB78D39D1EEF0074008E021A /* WidgetCurriculaViewController.swift in Sources */,
+=======
+				B625B6B21EEF01A4007BA617 /* WidgetCurriculaViewController.swift in Sources */,
+>>>>>>> Stashed changes
 				6A19E0721EEC2031002B8C09 /* MyChoiceViewController.swift in Sources */,
 				6AE78F9E1EEACA1700049BEE /* DetailViewController.swift in Sources */,
 				B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */,
