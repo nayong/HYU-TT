@@ -31,6 +31,7 @@ class StorageViewController: UIViewController {
         UIColor(red:0.70, green:0.70, blue:0.28, alpha:1.0)
     ]
     var colorIndex = 0
+    var totalCredit = 0
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -73,6 +74,8 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
     
     //@available(iOS 6.0, *)
     public func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        totalCredit = 0
         
         //cell setting
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! StorageCellCollectionViewCell
@@ -82,6 +85,8 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         
         setTable(curriculaTable: cell.curriculaTable)
         setData(curriculaTable: cell.curriculaTable, index: indexPath.item)
+        
+        cell.creditLabel.text = String(totalCredit)
         
         cell.checkBox.delegate = self
         cell.checkBox.isEnabled = false
@@ -234,9 +239,12 @@ extension StorageViewController : UICollectionViewDataSource, UICollectionViewDe
         
         let set = subjects[index]
  
+        totalCredit = 0
+        
         for subject in set {
             //time 배열을 (요일, 시작 시간, 끝나는 시간) 배열로 바꿈
             let periods = getTime(time:subject.time)
+            totalCredit = totalCredit + Int(CFStringGetIntValue(subject.credit as CFString))
             //time 배열의 수만큼 for문을 돌면서 시간표에 맞는 struct로 바꾸고, 배열에 넣어줌
             for indexForTime in 0..<subject.time.count {
                 tableItemArray.append(CurriculaTableItem(name: subject.nameOfLecture, place: subject.place[indexForTime],weekday: CurriculaTableWeekday(rawValue: getWeekday(weekday: periods[indexForTime].weekday))!

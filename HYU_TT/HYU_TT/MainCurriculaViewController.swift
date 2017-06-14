@@ -30,7 +30,8 @@ class MainCurriculaViewController: UIViewController {
     static var tableItemArray:[CurriculaTableItem] = []
     
     override func viewDidLoad() {
-        super.viewDidLoad()        
+        super.viewDidLoad()
+
 //        var temp = Subject()
 //        DatabaseManagement.MakedServeralTables.deleteTable()
 //        
