@@ -150,3 +150,93 @@ public class DatabaseManagement {
 
 
 
+
+                                            /* Memo Database */
+
+
+public class MemoDatabaseManagement {
+    static let MakedMemoDB:MemoDatabaseManagement = MemoDatabaseManagement()
+    
+    
+    private let db: Connection?
+    
+    private let makedMemoDB = Table("MemoDB")
+    private let id = Expression<Int64>("id")
+    private let nameOfLecture = Expression<String>("nameOfLecture")
+    private let memoForSubject = Expression<String>("memoForSubject")
+    
+    
+    init() {
+        let path = FileManager.default.containerURL(forSecurityApplicationGroupIdentifier: "group.HYU-TT")!.path
+        do {
+            db = try Connection("\(path)/memoDB.sqlite3")
+            createTableProduct()
+        } catch {
+            db = nil
+        }
+    }
+    
+    func createTableProduct() {
+        do {
+            
+            try db!.run(makedMemoDB.create(ifNotExists: true) { table in
+                //                table.column(id, primaryKey: true)
+                table.column(nameOfLecture)
+                table.column(memoForSubject)
+            })
+            print("create table successfully")
+        } catch {
+            print("Unable to create table")
+        }
+    }
+    
+    func addSubject(nameOfClickedLecture : String, memo : String) {
+        do {
+            let insert = makedMemoDB.insert(nameOfLecture <- nameOfClickedLecture, memoForSubject <- memo)
+            try db!.run(insert)
+        } catch {
+            print("Cannot insert to database")
+            return
+        }
+    }
+    
+    func queryForSubjectMemo(nameOfClickedLecture : String) -> String? {
+        do {
+            var memoForClickedLecture : String? = nil
+            for memo in try db!.prepare(makedMemoDB) {
+                if (nameOfClickedLecture == memo[nameOfLecture]) {
+                    memoForClickedLecture = memo[memoForSubject]
+                    break
+                }
+            }
+            return memoForClickedLecture
+        } catch {
+            print ("Cannot get list of product")
+            return nil
+        }
+    }
+
+    func deleteSubjectMemoInTable(nameOfClickedLecture : String) {
+        let memoForClickedLecture = makedMemoDB.filter(nameOfLecture == nameOfClickedLecture)
+        do {
+            try db!.run(memoForClickedLecture.delete())
+            print ("delete row sucessfully")
+        } catch {
+            print ("delete fail")
+        }
+    }
+    
+    func deleteTable() -> Bool {
+        do {
+            try db!.run(makedMemoDB.delete())
+            print("delete sucessfully")
+            return true
+        } catch {
+            
+            print("Delete failed")
+        }
+        return false
+    }
+}
+
+

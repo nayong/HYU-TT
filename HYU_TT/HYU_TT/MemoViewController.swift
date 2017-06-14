@@ -11,12 +11,14 @@ import UIKit
 class MemoViewController: UIViewController {
 
     @IBOutlet weak var contents: UITextView!
-    
+    @IBOutlet weak var nameOfLecture: UILabel!
+    var name:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        contents.text = "이삭"
-
+        nameOfLecture.text = name
+        if let memo = MemoDatabaseManagement.MakedMemoDB.queryForSubjectMemo(nameOfClickedLecture: nameOfLecture.text!) {
+            contents.text = memo
+        }
         // Do any additional setup after loading the view.
     }
 
@@ -31,6 +33,8 @@ class MemoViewController: UIViewController {
         
     }
     @IBAction func write(_ sender: Any) {
+        MemoDatabaseManagement.MakedMemoDB.deleteSubjectMemoInTable(nameOfClickedLecture: nameOfLecture.text!)
+        MemoDatabaseManagement.MakedMemoDB.addSubject(nameOfClickedLecture: nameOfLecture.text!, memo: contents.text!)
         dismiss(animated: true, completion: nil)
         
     }

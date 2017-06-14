@@ -138,7 +138,7 @@ class TributeTableViewCell:UITableViewCell {
                     ChoosenSub.totalCredit = ChoosenSub.totalCredit + Int(CFStringGetIntValue(thisSub.credit as CFString))
                     ChoosenSub.totalCreditChanged = true
                 }
-                ChoosenSub.subjects.append((thisSub, true))
+                ChoosenSub.subjects.append((thisSub, false))
             }
             MySubjects.isChanged = true
             ChoosenSub.isChanged = true

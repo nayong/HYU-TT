@@ -51,7 +51,8 @@ class MainCurriculaViewController: UIViewController {
             print("main clicked")
             print(curriculum.name, curriculum.identifier)
             let storyboard:UIStoryboard = self.storyboard!
-            let nextView = storyboard.instantiateViewController(withIdentifier: "Memo")
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Memo") as! MemoViewController
+            nextView.name = curriculum.name
             self.present(nextView, animated: true, completion: nil)
             
         }

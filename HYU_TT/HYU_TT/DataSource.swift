@@ -18,12 +18,12 @@ struct MapBuildingNumberToName {
 func changeBuildingNumberToName(buildingNumber : String) -> String {
     //H일 경우 미정
     if (buildingNumber == "") { return "" }
-    if (buildingNumber == "H") { return "미정" }
+    if (buildingNumber == "H") { return "" }
     
     var result = ""
     //맵에 없을 경우 미정 리턴, 있을 경우 해당 번호에 맞는 건물이름 저장
     guard let nameOfBuilding = MapBuildingNumberToName.map[buildingNumber.substring(with: 0..<3)] else {
-        return "미정"
+        return ""
     }
     //결과에 "건물이름 - "저장
     result += nameOfBuilding + " "
@@ -35,9 +35,7 @@ func changeBuildingNumberToName(buildingNumber : String) -> String {
     //강의실번호 시작이 0일 경우 지상, B일 경우 지하
     switch buildingNumber.substring(with: 4..<5) {
     case "0":
-        roomNumber = buildingNumber.substring(with: 5..<buildingNumber.characters.count) + "호"
-    case "B":
-        roomNumber = "지하" + buildingNumber.substring(with: 5..<buildingNumber.characters.count) + "호"
+        roomNumber = buildingNumber.substring(with: 5..<buildingNumber.characters.count)
     default:
         roomNumber = buildingNumber.substring(with: 4..<buildingNumber.characters.count)
         
@@ -109,4 +107,8 @@ struct Category {
 
 struct Detail {
     static var subject:Subject?
+}
+
+struct clickedLectureInfo {
+    static var nameForLecture:String = ""
 }
