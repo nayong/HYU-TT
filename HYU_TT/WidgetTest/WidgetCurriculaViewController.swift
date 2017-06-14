@@ -36,7 +36,8 @@ class WidgetCurriculaViewController: UIViewController {
         print("widget appear")
         //Subject 불러 올 때
         let subjects = DatabaseManagement.SeletedTable.queryAllProduct()
-        let handler = { (curriculum: CurriculaTableItem) in }
+        let handler = { (curriculum: CurriculaTableItem) in
+        }
         print("widget subjects[0] ::: " + String(subjects[0].count))
         //각 강의들을 시간표에 맞는 struct로 바꾼 배열
         var tableItemArray:[CurriculaTableItem] = []

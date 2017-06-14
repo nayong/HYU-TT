@@ -47,7 +47,14 @@ class MainCurriculaViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         //Subject 불러 올 때
         let subjects = DatabaseManagement.SeletedTable.queryAllProduct()
-        let handler = { (curriculum: CurriculaTableItem) in }
+        let handler = { (curriculum: CurriculaTableItem) in
+            print("main clicked")
+            print(curriculum.name, curriculum.identifier)
+            let storyboard:UIStoryboard = self.storyboard!
+            let nextView = storyboard.instantiateViewController(withIdentifier: "Memo")
+            self.present(nextView, animated: true, completion: nil)
+            
+        }
         print("main subjects[0] ::: " + String(subjects[0].count))
         
         //각 강의들을 시간표에 맞는 struct로 바꾼 배열

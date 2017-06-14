@@ -21,6 +21,7 @@
 		B6013F131EEBAF1E0031857A /* StorageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6013F121EEBAF1E0031857A /* StorageViewController.swift */; };
 		B6013F151EEBC5390031857A /* StorageCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6013F141EEBC5390031857A /* StorageCellCollectionViewCell.swift */; };
 		B601FC291EEA7F27000DADA7 /* MainCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */; };
+		B60289491EF0F461004C1518 /* MemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60289481EF0F461004C1518 /* MemoViewController.swift */; };
 		B625B6AC1EEF001B007BA617 /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
 		B625B6AD1EEF0067007BA617 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
 		B625B6B21EEF01A4007BA617 /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
@@ -51,9 +52,6 @@
 		B6FDE26E1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
 		CB14B14F1EF04581000135CC /* MakedDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14D1EF04581000135CC /* MakedDB.sqlite3 */; };
 		CB14B1501EF04581000135CC /* SelectedDB.sqlite3 in Resources */ = {isa = PBXBuildFile; fileRef = CB14B14E1EF04581000135CC /* SelectedDB.sqlite3 */; };
-		CB14B1511EF0487E000135CC /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
-		CB14B1521EF04891000135CC /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
-		CB14B1531EF048F4000135CC /* MakeTImeTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */; };
 		CB2084C91EDFE3F800C90DDD /* MakeTImeTables.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084C81EDFE3F800C90DDD /* MakeTImeTables.swift */; };
 		CB2084CB1EE0027700C90DDD /* SubjectSecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB2084CA1EE0027700C90DDD /* SubjectSecondViewController.swift */; };
 		CB2084D51EE00F0900C90DDD /* BEMAnimationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CB2084CE1EE00F0900C90DDD /* BEMAnimationManager.m */; };
@@ -63,7 +61,6 @@
 		CB6968201ED6CB1F007202D2 /* DataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB69681F1ED6CB1F007202D2 /* DataSource.swift */; };
 		CB6968231ED6CFD5007202D2 /* liberal.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968211ED6CFD5007202D2 /* liberal.xml */; };
 		CB6968241ED6CFD5007202D2 /* major.xml in Resources */ = {isa = PBXBuildFile; fileRef = CB6968221ED6CFD5007202D2 /* major.xml */; };
-		CB78D39D1EEF0074008E021A /* WidgetCurriculaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6FDE26D1EE90B9F00AFDEFC /* WidgetCurriculaViewController.swift */; };
 		CBF10E1C1EEA815500B5CDE5 /* MyChoiceTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBF10E1B1EEA815500B5CDE5 /* MyChoiceTableViewController.swift */; };
 		CBFF76D01EE83CC0003F5442 /* DatabaseManagement.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBFF76CF1EE83CC0003F5442 /* DatabaseManagement.swift */; };
 		D2CC9C69DE11850505670996 /* Pods_HYU_TT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40947DC9DD0EB3B72B11D000 /* Pods_HYU_TT.framework */; };
@@ -124,6 +121,7 @@
 		B6013F121EEBAF1E0031857A /* StorageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageViewController.swift; sourceTree = "<group>"; };
 		B6013F141EEBC5390031857A /* StorageCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		B601FC281EEA7F27000DADA7 /* MainCurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainCurriculaViewController.swift; sourceTree = "<group>"; };
+		B60289481EF0F461004C1518 /* MemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MemoViewController.swift; sourceTree = "<group>"; };
 		B61D62491EEFDCEF00F02BB5 /* SelectedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SelectedDB.sqlite3; sourceTree = "<group>"; };
 		B61D624A1EEFDD9B00F02BB5 /* MakedDB.sqlite3 */ = {isa = PBXFileReference; lastKnownFileType = file; path = MakedDB.sqlite3; sourceTree = "<group>"; };
 		B6B4D1831ED7F4A6009BA65C /* CurriculaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurriculaViewController.swift; sourceTree = "<group>"; };
@@ -283,6 +281,7 @@
 				CB69681F1ED6CB1F007202D2 /* DataSource.swift */,
 				CB6968211ED6CFD5007202D2 /* liberal.xml */,
 				CB6968221ED6CFD5007202D2 /* major.xml */,
+				B60289481EF0F461004C1518 /* MemoViewController.swift */,
 			);
 			path = HYU_TT;
 			sourceTree = "<group>";
@@ -644,6 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B60289491EF0F461004C1518 /* MemoViewController.swift in Sources */,
 				B6E63CE51ECBFAF300A94CEF /* SubjectFirstViewController.swift in Sources */,
 				CB2084D51EE00F0900C90DDD /* BEMAnimationManager.m in Sources */,
 				B6013F151EEBC5390031857A /* StorageCellCollectionViewCell.swift in Sources */,
